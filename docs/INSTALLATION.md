@@ -5,13 +5,13 @@
 Install the whole repository:
 
 ```bash
-npx skills add https://github.com/YOUR_USERNAME/universal-ui-skills
+npx skills add https://github.com/thakur698/universal-ui-skills
 ```
 
 Install a particular skill:
 
 ```bash
-npx skills add https://github.com/YOUR_USERNAME/universal-ui-skills --skill "ui-master"
+npx skills add https://github.com/thakur698/universal-ui-skills --skill "ui-master"
 ```
 
 ## Antigravity
