@@ -3,47 +3,37 @@ name: ui-assets
 description: Creates and integrates coherent icons, illustrations, imagery and visual assets for web and mobile interfaces.
 ---
 
-# UI Assets
+# Asset System
 
-## Asset hierarchy
+## Mission
 
-Prefer:
-1. brand/product-specific assets
-2. custom commissioned/generated assets
-3. coherent licensed asset sets
-4. framework primitives
+Keep icons, illustrations, and imagery coherent across the product. Ensure visual assets fit the product's design direction and maintain strict consistency.
 
-## Consistency
+## Asset Workflow
 
-Match:
-- visual weight
-- line thickness
-- perspective
-- corner language
-- material
-- lighting
-- palette
-- level of detail
+Follow these steps for every new asset:
 
-## Never
+1. **Define purpose**: What is this asset communicating?
+2. **Define dimensions**: What is the required size and aspect ratio?
+3. **Define visual style**: Match the product's established design direction.
+4. **Generate/source candidate**: Create or locate the asset.
+5. **Review consistency**: Compare against existing assets in the product.
+6. **Normalize**: Adjust sizing, bounding boxes, or paths.
+7. **Name semantically**: Use clear naming (e.g., `ic_action_search`, `img_onboarding_hero`).
+8. **Integrate centrally**: Add to the asset pipeline, public folder, or asset catalog.
+9. **Check licensing**: Ensure the asset is clear for use.
 
-- mix random stock icon sets
-- mix photorealism and flat illustrations accidentally
-- use AI-generated text inside tiny rasterized UI when real text can be rendered
-- commit unlicensed third-party assets
-- use placeholder assets in final screens
+## Asset Consistency Checks
 
-## Generation
+Asset consistency must consider:
+- **Visual weight**: Does a new icon look too heavy/thin compared to others?
+- **Perspective**: Are illustrations isometric, flat, or 3D?
+- **Lighting**: Are shadows and highlights consistent?
+- **Material**: Do surfaces look metallic, matte, glossy?
+- **Stroke**: Consistent stroke width and terminal caps (round vs. square)?
+- **Palette**: Does it use the product's semantic or brand colors?
+- **Detail level**: Are some icons overly detailed while others are minimalist?
 
-For generated graphics, specify:
-- exact purpose
-- dimensions/aspect ratio
-- safe area
-- transparency
-- visual style
-- lighting
-- palette
-- allowed details
-- forbidden details
+## Reference
 
-Generate asset families, not isolated random images.
+Refer to `docs/asset-guidelines.md` for extended guidelines.

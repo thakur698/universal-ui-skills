@@ -5,50 +5,37 @@ description: Performs deterministic visual QA of web and mobile interfaces using
 
 # Visual QA
 
-## Build checks
+## Mission
 
-Run the project's normal validation:
-- type check
-- lint
-- tests
-- build
+Visual QA ensures that what was intended visually is actually rendering correctly.
 
-## Visual checks
+**Important distinction:**
+CODE QA (compilation, unit tests) is NOT VISUAL QA.
+Passing builds and tests does NOT equal visual approval.
 
-Inspect:
-- spacing
-- alignment
-- text clipping
-- responsive breakpoints
-- loading states
-- empty states
-- error states
-- focus/pressed states
-- navigation transitions
-- modal/sheet behavior
+## Structured Visual QA Process
 
-## Evidence
+Follow these steps rigorously:
 
-When tooling supports it:
-- capture representative screenshots
-- use golden/snapshot tests
-- compare before/after states
-- inspect multiple viewport/device sizes
+1. **Build verification**: Does it compile and launch?
+2. **Layout inspection**: Are elements in the right place? Any clipping or overflow?
+3. **Responsive inspection**: Does it break at narrow or ultra-wide dimensions?
+4. **Interaction-state inspection**: Do hover, active, and focus states render correctly?
+5. **Accessibility inspection**: Is contrast sufficient? Are focus rings visible?
+6. **Screenshot inspection**: If tooling allows, capture screenshots and evaluate visual balance.
+7. **Anti-slop inspection**: Does the result look generic or generated?
+8. **Final polish**: Fix spacing, alignment, and typography issues before declaring success.
 
-## Required device/view set
+## Tooling Integration
 
-Web:
-- narrow
-- desktop
-- wide
+Where tooling exists, support and utilize:
+- Screenshot capture (e.g., Puppeteer, Playwright)
+- Browser automation
+- Device automation (e.g., Appium, Flutter Integration Tests)
+- Golden tests (e.g., Flutter golden tests, Storybook)
+- Snapshot tests
+- Visual regression tools (e.g., Percy, Chromatic)
 
-Mobile:
-- small phone
-- large phone
-- tablet when supported
-
-## Completion rule
-
-Compilation passing is not visual approval.
-
-A visually broken UI must be fixed even when all code tests pass.
+**Critical rules:**
+- Do not invent screenshots if tooling cannot generate them.
+- Do not claim visual validation happened unless evidence exists.

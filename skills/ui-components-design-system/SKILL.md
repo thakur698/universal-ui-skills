@@ -3,70 +3,51 @@ name: ui-components-design-system
 description: Creates maintainable component systems, design tokens, variants and interaction states for web and mobile apps.
 ---
 
-# Component + Design System Skill
+# UI Components & Design System
 
-## Token layers
+## Mission
 
-Define:
-1. primitive values
-2. semantic tokens
-3. component tokens
+Create reusable, semantically named, and maintainable component architectures.
+Avoid both extremes:
+- BAD: One-off visual code (inline styles, magic numbers) everywhere.
+- ALSO BAD: Turning every tiny wrapper into a bloated, over-engineered component.
 
-Example semantic tokens:
-- `surfacePrimary`
-- `surfaceElevated`
-- `textPrimary`
-- `textMuted`
-- `actionPrimary`
-- `borderSubtle`
-- `focusRing`
-- `spaceMd`
-- `radiusControl`
-- `motionStandard`
+## Design Tokens
 
-## Components
+Require semantic design tokens. Do not hardcode magic values across the UI.
+At minimum cover:
+- **Typography**: scales, weights, line heights
+- **Spacing**: padding, margins, gaps
+- **Colors**: semantic palette (primary, secondary, success, error, text, background)
+- **Surfaces**: background, elevated, raised, depressed
+- **Borders**: colors, widths, styles
+- **Radii**: none, small, medium, large, full
+- **Elevation**: shadows, z-index layers
+- **Motion**: duration, easing curves
+- **Focus**: ring colors, offset
+- **States**: active, disabled, hover variables
 
-Prefer semantic components:
-- Button
-- IconButton
-- Input
-- Select
-- Dialog
-- Sheet
-- Card
-- ListItem
-- Navigation
-- Tabs
-- Toast
-- Badge
-- Progress
-- EmptyState
+### Semantic Token Naming
 
-Platform naming can differ.
+Examples of good token naming:
+- `color-surface-elevated`
+- `text-primary-inverse`
+- `space-layout-gutter`
+- `radius-control-default`
 
-## State completeness
+## Component States
 
-Interactive components should account for:
-- default
-- hover where applicable
-- pressed
-- focus
-- disabled
-- loading
-- selected
-- error
-- success where relevant
+Require rigorous component states. Ensure you design and implement the following states for interactive components:
+- **Default**: The resting state.
+- **Hover**: (Where relevant, primarily web)
+- **Pressed**: Active state during interaction.
+- **Focus**: Keyboard or programmatic focus.
+- **Disabled**: Uninteractive and visually muted.
+- **Loading**: Awaiting data or action completion.
+- **Selected**: Chosen option in a set.
+- **Error**: Invalid state.
+- **Success**: (Where applicable)
 
-## Avoid component inflation
+## Documentation
 
-Not every `div`, `Container` or wrapper needs to become a reusable component.
-
-Extract when:
-- repeated
-- semantically meaningful
-- independently testable
-- visually governed
-
-## Do not create visual inconsistency by over-abstraction
-
-Shared components should support controlled variation.
+Document your component structures using the `docs/design-system-template.md` format.

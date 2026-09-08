@@ -3,48 +3,40 @@ name: ui-layout-responsive
 description: Handles responsive web and mobile layout using constraints, hierarchy and platform-aware composition.
 ---
 
-# Responsive UI
+# Responsive Layout
 
-## Web
+## Mission
 
-Account for:
-- narrow laptop
-- standard desktop
-- wide desktop
-- browser zoom
-- content density
-- navigation changes
-- keyboard/mouse interaction
+Handle responsive adaptation properly. Make it explicit that responsive design is NOT simply "scale desktop down". The system should fundamentally change composition, navigation, and density when necessary.
 
-Prefer:
-- fluid containers
-- max-width constraints
-- intentional breakpoints
-- flexible grids
-- adaptive sidebars
-- contextual sticky elements
+## Supported Layout Environments
 
-## Mobile
+### WEB
+Design and test for these contexts:
+- **Narrow Viewport**: Mobile web, split-screen desktop.
+- **Laptop**: Standard 13-15" displays.
+- **Desktop**: Large standard monitors (1080p to 1440p).
+- **Wide Desktop**: Ultrawide monitors (preventing infinite line lengths and overstretched UI).
 
-Account for:
-- small phones
-- large phones
-- notches
-- safe areas
-- keyboard
-- touch reachability
-- orientation when relevant
-- dynamic type/text scaling
+### MOBILE
+Design and test for these contexts:
+- **Small Phones**: Legacy devices like iPhone SE.
+- **Large Phones**: Standard modern form factors.
+- **Tablets**: Expanded canvases requiring split views or master-detail layouts.
+- **Safe Areas**: Accounting for notches, dynamic islands, and home indicators.
+- **Keyboard**: Ensuring inputs remain visible when the virtual keyboard is open.
+- **Orientation**: (Where relevant) Handling portrait vs. landscape.
+- **Text Scaling**: Adapting to user accessibility font size preferences without breaking layout.
 
-## Do not
+## Composition Shifts
 
-- design one fixed canvas and scale it everywhere
-- use magic coordinates everywhere
-- allow content to collide with system UI
-- make all desktop UI simply "stack vertically"
+Instead of shrinking elements, consider:
+- Collapsing horizontal navigation into drawers/bottom bars.
+- Stacking multi-column layouts into single columns.
+- Converting datatables to list cards on narrow viewports.
+- Moving secondary actions behind menus.
+- Anchoring primary actions to the bottom on mobile (thumb reachability).
 
-## Responsive principle
+## Verification
 
-Change composition when necessary.
-
-A mobile layout is often a different composition of the same information, not a shrunken desktop screen.
+Consult `docs/responsive-checklist.md` to ensure layouts adapt correctly across platforms.

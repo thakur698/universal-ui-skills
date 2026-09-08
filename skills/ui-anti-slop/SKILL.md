@@ -5,49 +5,72 @@ description: Detects and prevents generic AI-generated UI patterns in web and mo
 
 # Anti-Slop UI Review
 
-## Reject by default
+## Mission
 
-- "modern SaaS" templates with no product-specific reasoning
-- identical cards everywhere
-- endless rounded containers
-- excessive pill controls
-- default gradient hero
-- random purple/blue glow
-- excessive blur
-- generic glassmorphism
-- huge drop shadows
-- emoji replacing real icons
-- mixed icon families
-- decorative noise
-- arbitrary floating UI
-- excessive badges
-- repeated centered layouts
-- one component pattern copied into every context
-- excessive animation
-- fake complexity
+Prevent the interface from looking like generic "AI slop".
+AI slop happens when an agent optimizes for "looks modern" instead of "fits the product".
 
-## Red flags
+## Anti-Slop Categories
 
-Ask:
-1. Could this screen belong to 20 unrelated products?
-2. Is a component present only because AI commonly uses it?
-3. Is the surface/container hierarchy doing useful work?
-4. Does the color system communicate meaning?
-5. Is the decoration tied to product identity?
-6. Does the UI still make sense without the effects?
+### CATEGORY A — Generic Structure
 
-## Fix strategy
+Reject or reconsider:
+- every section becoming a card
+- repeated three-card layouts
+- generic SaaS dashboard grids
+- centered hero copied everywhere
+- excessive symmetrical layouts
+- arbitrary floating elements
 
-When a pattern is generic:
-- simplify first
-- then introduce product-specific visual language
-- alter composition rather than adding decoration
-- use meaningful assets
-- use typography and spacing to create character
-- create variants based on real context
+### CATEGORY B — Generic Styling
 
-## Anti-slop does NOT mean minimal
+Reject or reconsider:
+- random purple/blue gradients
+- excessive glassmorphism
+- giant blur effects
+- excessive glow
+- giant soft shadows
+- endless pills
+- excessive rounded rectangles
 
-A rich UI can be excellent.
+### CATEGORY C — Generic Content Treatment
 
-The restriction is against **unjustified generic styling**, not visual richness.
+Reject or reconsider:
+- unnecessary badges
+- excessive labels
+- excessive helper text
+- emoji used as primary product icons
+- repetitive icon + label combinations
+
+### CATEGORY D — Generic Motion
+
+Reject or reconsider:
+- animation on every component
+- long entrance animations
+- unnecessary bounce
+- perpetual decorative movement
+- motion that delays interaction
+
+### CATEGORY E — Generic Implementation
+
+Reject or reconsider:
+- default component-library appearance becoming the entire product identity
+- copied component patterns without contextual variation
+- arbitrary magic numbers
+- visual duplication instead of a design system
+
+## Anti-Slop Review Questions
+
+Ask yourself these questions before declaring success:
+
+1. Could this UI belong to 20 unrelated products?
+2. Which visual decisions are actually specific to the product?
+3. Which elements exist only because AI commonly generates them?
+4. Is decoration doing useful work?
+5. Is hierarchy stronger than decoration?
+6. Is the typography doing enough visual work?
+7. Is the screen memorable without effects?
+
+## Enforcement
+
+If the result is generic, you must redesign it instead of simply reporting success. Remove unnecessary decorations, restore product context, and prioritize hierarchy over trends.

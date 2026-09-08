@@ -1,125 +1,81 @@
 ---
 name: ui-master
-description: Master UI generation, redesign and review skill for web and mobile applications. Coordinates design direction, anti-slop checks, responsive layout, components, assets, motion, accessibility and visual QA.
+description: Master orchestration layer for UI generation, redesign, and review. Orchestrates tool discovery, design direction, anti-slop checks, responsive layout, components, assets, motion, accessibility, and visual QA.
 ---
 
-# Universal UI Master
+# Universal UI Master (Orchestrator)
 
 ## Mission
 
-Build UI that looks like a real product team deliberately designed it.
+Act as an orchestration and quality layer. Do not simply execute one massive UI prompt. Instead, explicitly orchestrate the exact sequence below.
 
-The implementation should feel:
-- product-specific
-- coherent
-- intentional
-- visually balanced
-- technically maintainable
-- usable
+Never claim a tool was used unless it was actually available and invoked. Add fallback behavior when a tool is unavailable.
 
-## Phase 1 — Inspect
+## The Orchestration Workflow
 
-Before editing:
-- identify framework/platform
-- inspect existing theme
-- inspect typography
-- inspect components
-- inspect navigation
-- inspect assets
-- inspect responsive strategy
-- inspect current screens
-- preserve successful existing patterns
+When tasked with creating or modifying UI, you must orchestrate the following 13 steps explicitly:
 
-Do not replace functioning architecture merely for visual novelty.
+### 1. Platform Detection
+Determine the target platform (Web, Mobile, Flutter, React, etc.).
 
-## Phase 2 — Understand product context
+### 2. Tool Discovery
+Invoke `ui-tool-discovery` to scan for available MCP servers, tools, and integrations. Classify them honestly.
 
-Determine:
-- product category
-- target user
-- primary task
-- emotional tone
-- content density
-- interaction frequency
-- platform constraints
-- business priorities
+### 3. Skill Selection
+Select the internal skills needed for the task (e.g., `ui-flutter`, `ui-design-direction`).
 
-## Phase 3 — Design direction
+### 4. Tool Selection
+Select the external tools/integrations needed for the task. 
 
-Invoke `ui-design-direction`.
+### 5. Design Direction
+Invoke `ui-design-direction`. Define product identity, target user, typography, and color roles.
 
-Create:
-- visual concept
-- hierarchy
-- typography
-- color roles
-- surface strategy
-- shape language
-- icon strategy
-- image/illustration strategy
-- motion personality
+### 6. Design-System Decisions
+Invoke `ui-components-design-system`. Establish semantic tokens and component states.
 
-## Phase 4 — Systemize
+### 7. Implementation
+Implement the UI using the platform-specific skills and tools selected in steps 3 and 4.
 
-Invoke `ui-components-design-system`.
+### 8. Motion
+Invoke `ui-motion` and motion integrations (e.g., Rive) to add purposeful interaction.
 
-Define:
-- semantic design tokens
-- component variants
-- interaction states
-- spacing rhythm
-- typography scale
-- surface hierarchy
+### 9. Responsive Behavior
+Invoke `ui-layout-responsive`. Run responsive checks for mobile/desktop.
 
-## Phase 5 — Compose
+### 10. Accessibility
+Invoke `ui-accessibility` and any accessibility tools (e.g., Axe) to verify compliance.
 
-Design the screen before multiplying components.
+### 11. Visual QA
+Invoke `ui-visual-qa` and visual QA tools (e.g., Playwright, golden tests). Capture screenshots if possible.
 
-Every important screen needs:
-- clear primary action
-- clear focal point
-- deliberate hierarchy
-- useful empty space
-- context-specific visual treatment
+### 12. Anti-Slop QA
+Invoke `ui-anti-slop`. Ensure the design doesn't look like generic AI output. Redesign if necessary.
 
-## Phase 6 — Implement
+### 13. Final Polish
+Fix 1px alignment issues, spacing inconsistencies, and typographical hierarchy.
 
-Use framework-native patterns where appropriate.
+## Required Reporting
 
-Do not make the UI depend on arbitrary decorative CSS/widgets just to appear sophisticated.
+At the end of every UI task, you must provide a final execution report showing exactly which skills/tools were used, skipped, and why.
 
-## Phase 7 — Motion
+Format your final report exactly like this:
 
-Invoke `ui-motion`.
+```text
+UI TASK COMPLETE
 
-Motion should explain state change, reinforce hierarchy or improve feedback.
+Skills used:
+✓ ui-master
+✓ ui-design-direction
+✓ [other skills]
 
-## Phase 8 — Responsive + accessibility
+Tools used:
+✓ [Tool] — used
+✗ [Tool] — unavailable (Fallback: [action taken])
+✗ [Tool] — not relevant
 
-Invoke:
-- `ui-layout-responsive`
-- `ui-accessibility`
-
-## Phase 9 — Visual QA
-
-Invoke `ui-visual-qa`.
-
-Never claim visual completion only because compilation succeeds.
-
-## Phase 10 — Anti-slop review
-
-Invoke `ui-anti-slop`.
-
-Redesign anything that looks like a generic generated template.
-
-## Completion standard
-
-The final UI should pass:
-- product-fit test
-- hierarchy test
-- consistency test
-- responsive test
-- accessibility test
-- motion-purpose test
-- visual QA
-- anti-slop review
+Visual QA:
+✓ Mobile
+✓ Desktop
+✓ Accessibility
+✓ Anti-slop
+```

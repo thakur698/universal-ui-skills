@@ -3,60 +3,44 @@ name: ui-motion
 description: Designs purposeful interaction and animation systems for web and mobile applications.
 ---
 
-# Motion
+# UI Motion System
 
-## Motion exists to communicate
+## Mission
 
-Use motion for:
-- feedback
-- hierarchy
-- navigation
-- continuity
-- state change
-- progress
-- reward
-- focus
+Motion is treated as communication, not decoration. Do not animate every element just to make a screen feel "premium".
 
-## Avoid
+## Explicit Motion Levels
 
-- animating every component
-- long entrance animations
-- constant movement
-- bounce everywhere
-- decorative parallax without purpose
+### MICRO
+- Button presses, switch toggles, checkbox interactions.
+- Tiny feedback ensuring the user knows an input registered.
 
-## Motion levels
+### STANDARD
+- Modal opens/closes, route transitions, panel expansions.
+- List insertion/deletion, layout state transitions.
+- Focus should remain on continuity.
 
-### Micro
-Press, toggle, hover, small feedback.
+### HERO
+- Major task completion, rewards, onboarding reveals, major product events.
+- Highly expressive but rare.
 
-### Standard
-Panel transitions, route changes, modal movement, list insertion/removal.
+## Required Motion Checks
 
-### Hero
-Rare important events such as completion, onboarding moments and major reveals.
+Require every non-trivial animation to answer:
+1. What changed?
+2. Why does the user need to notice?
+3. What is the visual focal point?
+4. Does motion delay interaction?
+5. What is the reduced-motion behavior?
 
-## Platform guidance
+## Framework Guidance
 
-Web:
-- respect `prefers-reduced-motion`
-- avoid blocking interaction
-- use transform/opacity efficiently where appropriate
+### Flutter
+- Use native animation primitives for simple motion (e.g., `AnimatedContainer`, `TweenAnimationBuilder`).
+- Use Rive when interactive, stateful animation is genuinely useful (e.g., complex characters, custom animated icons).
+- Use Lottie for authored, finite animations where appropriate.
 
-Mobile:
-- preserve touch responsiveness
-- avoid animations that delay primary actions
-- respect reduced-motion/accessibility settings where supported
-
-Flutter:
-- use native animation primitives for simple transitions
-- consider Rive for interactive stateful motion
-- consider Lottie for authored, finite animation assets
-
-React/web:
-- use CSS transitions/animations when sufficient
-- use a motion library when it adds meaningful orchestration
-
-## Rule
-
-A component should not animate simply because it can.
+### Web
+- Use CSS transitions/animations where sufficient (they are performant and native).
+- Use framework motion libraries (e.g., Framer Motion) only when they add real value (e.g., layout animations, complex orchestration).
+- Do NOT force a dependency just to have animation.

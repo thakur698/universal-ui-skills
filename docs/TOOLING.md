@@ -1,47 +1,31 @@
-# Tooling Integration Map
+# Tooling & Integrations Registry
 
-The skill pack is vendor-neutral.
+External tools are adapters, not hard dependencies.
 
-## Useful tool categories
+## 3 Levels of Integration
 
-### Design/reference
-- Figma or other design tools
-- design reference boards
-- component/documentation systems
+When assessing an external tool for this framework, understand its level of integration:
 
-### Asset creation
-- image generation/editing
-- icon tooling
-- vector tooling
-- licensed asset libraries
+1. **Documentation**: The tool is documented, but the agent cannot invoke it automatically (e.g., "Rive can be used for animation").
+2. **Detection**: The agent can reliably detect if the tool is installed/available in the environment (e.g., checking `package.json`).
+3. **Execution**: The agent can automatically execute the tool (e.g., "Use Playwright to capture a screenshot").
 
-### Motion
-- native CSS/Flutter/React animation
-- Rive
-- Lottie
-- platform motion APIs
+Your goal is to reach Level 2 + Level 3 wherever the host agent supports it.
 
-### Implementation
-- Flutter
-- React/Next.js
-- native mobile stacks
-- accessible component libraries
+## Tool Matrix
 
-### Visual QA
-- screenshot capture
-- browser automation
-- device automation
-- golden/snapshot tests
-- accessibility auditing
+*Note: Claims of "verified" below mean the tool has been actively integration-tested in a specific agent environment. Unverified tools are marked as "experimental" or "partial" until explicitly proven to execute.*
 
-## Integration policy
+| Category | Tool | Purpose | Required? | Compatibility | Notes |
+|---|---|---|---|---|---|
+| Design | Figma | Design-to-code, reference | Optional | Requires verification | Requires API keys outside repo |
+| Visual QA | Playwright | Browser automation/screenshots | Optional | Requires verification | Ideal for web snapshot tests |
+| Visual QA | Percy | Visual regression | Experimental | Partial | Requires CI integration |
+| Motion | Rive | Interactive stateful animation | Optional | Requires verification | Best for Flutter/React |
+| Motion | Framer Motion | Web React animation | Optional | Requires verification | Excellent for layout animations |
 
-The agent should:
-1. inspect available tooling
-2. prefer mature and compatible tools
-3. use existing project infrastructure
-4. avoid needless dependencies
-5. ask before paid/secret-required services
-6. document optional tooling
-
-Core skills must remain useful without premium services.
+## Integration Principles
+- Do NOT make external vendor APIs mandatory for the core skills.
+- Do NOT commit API keys.
+- Do NOT force the installation of a dependency just for decoration.
+- Agents must **detect** what is already installed and use compatible tools before suggesting new ones.
