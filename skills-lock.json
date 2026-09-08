@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "skills": {
+    "ui-accessibility": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-accessibility/SKILL.md",
+      "computedHash": "a23cf63e95da73c0f7708261503ff92501d7bd48fb18c9f1ead2898faa09b1b5"
+    },
+    "ui-anti-slop": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-anti-slop/SKILL.md",
+      "computedHash": "8d22145cc49d42b8ea8eb23b4fe90e67179f3bd0683810385adf5fcbbebc0535"
+    },
+    "ui-assets": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-assets/SKILL.md",
+      "computedHash": "bebcadd9da524b71feab44dc506b11ab550694d3dc46ea2d68f7b885d29a6085"
+    },
+    "ui-components-design-system": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-components-design-system/SKILL.md",
+      "computedHash": "a970eb9bae24832a5077fb89b78a78771fedafd389b6dc82c8ffc576e8d9e1ce"
+    },
+    "ui-design-direction": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-design-direction/SKILL.md",
+      "computedHash": "687bdbbb23a7acef7147ba60c97171b2070789d2fe7afd064dc40031d9b16dd2"
+    },
+    "ui-flutter": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-flutter/SKILL.md",
+      "computedHash": "27605e70264db59a0a5206b649200f60c556ca686257932a8e2f5a88d8132073"
+    },
+    "ui-layout-responsive": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-layout-responsive/SKILL.md",
+      "computedHash": "757a92dbd1c3300870d8b0f8a044a9fd747a9d106f7a32eee53fb112c3fd1c78"
+    },
+    "ui-master": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-master/SKILL.md",
+      "computedHash": "b0c844647748665dc6d93353c05be05ade38886453b558d0456779964d04c7cc"
+    },
+    "ui-mobile": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-mobile/SKILL.md",
+      "computedHash": "e098ced446901bce46d432fe3622ed7e15186fcf29442f889f01a66b5c34c363"
+    },
+    "ui-motion": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-motion/SKILL.md",
+      "computedHash": "1905c23ab1daf58bef8a235d8a3d8c0de3d43137cb6f1bb1131521b7cc51fec6"
+    },
+    "ui-react": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-react/SKILL.md",
+      "computedHash": "159408c676a6252bacf91069dfebe5c88a0647bf121fa4e3810f365c8fa35d22"
+    },
+    "ui-tool-discovery": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-tool-discovery/SKILL.md",
+      "computedHash": "1738f9ec3f182d85dc4fd7973f3da550ec46f4566599999e87aeaa986a1ed1e7"
+    },
+    "ui-visual-qa": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-visual-qa/SKILL.md",
+      "computedHash": "3e872eaf0937be0437d576308cb28d7d794d95e697e128ec1cfd332cbd38f7b6"
+    },
+    "ui-web": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-web/SKILL.md",
+      "computedHash": "23790a45b99a5df6d43ad871af319a6d058d7e1491555babb2ef4ed85b160c6c"
+    }
+  }
+}

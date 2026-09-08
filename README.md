@@ -1,492 +1,160 @@
 # Universal UI Skills
 
-> **Make AI-generated interfaces feel designed, not generated.**
+> **An adaptive design engine for AI coding agents.**
 
-Universal UI Skills is an open-source skill system for AI coding agents that helps create polished, distinctive **web and mobile interfaces** without falling into repetitive "AI-slop" patterns.
+Turn product context into distinctive, production-ready interfaces through design direction, references, composition, motion, visual critique, and pre-flight QA.
 
-It is designed to work across product types and frameworks, including **React, Next.js, Flutter, mobile apps, SaaS products, dashboards, consumer apps, ecommerce and more**.
-
-The project is intentionally vendor-neutral: the core skills provide design reasoning, implementation guidance and visual QA without requiring a specific paid tool or API.
+**Repository:** https://github.com/thakur698/universal-ui-skills
 
 ---
 
 ## Why this exists
 
-AI coding agents are extremely good at producing functional interfaces quickly.
+AI coding agents can produce working interfaces very quickly, but without strict constraints, they default to "AI-slop": generic, repetitive, overly rounded, visually noisy, SaaS-derivative patterns.
 
-The problem is that functional UI can still look:
+Universal UI Skills replaces the generic `Prompt → Code` cycle with a rigorous **V2 Adaptive Design Engine**. It forces agents to analyze references, dial in measurable metrics, compose structured layouts, critique their own visual output, and pass hard binary pre-flight checks before delivering UI.
 
-- generic
-- repetitive
-- over-carded
-- overly rounded
-- visually noisy
-- inconsistent
-- heavily dependent on gradients and glow
-- copied from common SaaS patterns
+---
 
-Universal UI Skills adds a structured design process before and after implementation.
+## The V2 Adaptive Engine
 
-Instead of:
+The core engine is driven by 7 orchestrated skills:
+
+1. **`ui-creative-director`**: Extracts a Design Read (Audience, Metaphor, Density) from the brief.
+2. **`ui-design-dials`**: Provides a measurable 1-10 control surface (`DESIGN_VARIANCE`, `VISUAL_DENSITY`, etc.) constraining implementation.
+3. **`ui-reference-first`**: Enforces a strict reference analysis phase, extracting grid/typography metrics to build a Composition Map.
+4. **`ui-composition-engine`**: Defines strict Layout Families (e.g., Asymmetric Hero, Bento) and mechanical combination limits.
+5. **`ui-visual-critic`**: Introduces an internal adversarial loop (`BUILD → CRITIQUE → FIX → RENDER`). The critic scores 10 dimensions, forcing revisions.
+6. **`ui-preflight`**: The final mechanical gate with binary (PASS/FAIL) rules (e.g., fails for broken CTAs or missing mobile fallbacks).
+7. **`ui-design-memory`**: Cures AI "amnesia" by maintaining a `.design/` directory to store persistent decisions across sessions.
+
+---
+
+## The Orchestration Pipeline
+
+The `ui-master` skill orchestrates the entire workflow. Instead of suggesting guidelines, it enforces this execution pipeline:
 
 ```text
-Prompt → Code → Done
-```
-
-the system encourages:
-
-```text
-Product context
-      ↓
-Design direction
-      ↓
-Information hierarchy
-      ↓
-Design tokens
-      ↓
-Component language
-      ↓
-Screen composition
-      ↓
-Implementation
-      ↓
-Motion
-      ↓
-Responsive + accessibility
-      ↓
-Visual QA
-      ↓
-Anti-slop review
-      ↓
-Polish
+Brief
+  ↓
+Design Read 
+  ↓
+Reference Analysis
+  ↓
+Design Dials
+  ↓
+Composition Plan
+  ↓
+Asset Plan
+  ↓
+Implementation (using V1 Foundational Skills)
+  ↓
+Motion & Responsive
+  ↓
+Accessibility
+  ↓
+Visual Render
+  ↓
+AI Critic
+  ↓
+Fix 
+  ↓
+Pre-flight
+  ↓
+Final UI
 ```
 
 ---
 
-## What you get
+## Empirical Benchmarks
 
-| Skill | Purpose |
-|---|---|
-| `ui-master` | Orchestrates a complete UI generation/redesign workflow |
-| `ui-design-direction` | Establishes product-specific visual direction |
-| `ui-anti-slop` | Detects generic AI-generated visual patterns |
-| `ui-layout-responsive` | Handles responsive/adaptive composition |
-| `ui-motion` | Creates purposeful motion and interaction feedback |
-| `ui-components-design-system` | Builds reusable tokens, components and states |
-| `ui-assets` | Keeps icons, illustrations and imagery coherent |
-| `ui-accessibility` | Reviews accessibility and inclusive interaction |
-| `ui-visual-qa` | Uses screenshots/tests/goldens for visual verification |
-| `ui-web` | Web implementation guidance |
-| `ui-mobile` | Mobile implementation guidance |
-| `ui-flutter` | Flutter implementation guidance |
-| `ui-react` | React/Next.js implementation guidance |
+To definitively prove that the Universal UI V2 Engine outperforms one-shot UI generation, we maintain a strict `evals/benchmarks/` suite. For each task, we test the exact same prompt with and without the V2 Orchestrator.
 
-The master skill can coordinate the focused skills instead of forcing every project into one visual template.
+| Task | Control (Generic AI Output) | Universal UI V2 Engine Output | Status |
+|---|---|---|---|
+| **Flutter Onboarding** | Generic centered stack, flat Material buttons, placeholder imagery. | Distinctive Asymmetric composition, custom typography, edge-lighting. | ✅ Completed |
+| **Web Landing Page** | Standard 3-column feature grid, generic gradients. | Editorial Split layout, dense technical typography, scroll reveals. | ⏳ Pending |
+| **Mobile Dashboard** | Basic vertical list of transactions, default charts. | Trustworthy Data-Dense composition, micro-interactions. | ⏳ Pending |
+| **Ecommerce Storefront** | Product image + title + buy button side-by-side. | Immersive Image hero, display serif typography, massive whitespace. | ⏳ Pending |
+| **Game UI** | Standard card grid, no aesthetic cohesion. | Diegetic Interaction-led panel, skewed borders, high motion intensity. | ⏳ Pending |
+| **React SaaS** | Basic form inputs, blue submit button. | Brutalist structure, tight grid spacing, robust state management. | ⏳ Pending |
 
 ---
 
-# Installation
+## Foundational Skills (V1 Compatibility)
 
-## Skills CLI
+The V2 engine orchestrates these foundational implementation layers:
 
-Install the complete skill repository:
+- `ui-web` / `ui-react` / `ui-mobile` / `ui-flutter`
+- `ui-layout-responsive`
+- `ui-motion`
+- `ui-accessibility`
+- `ui-anti-slop`
+- `ui-assets`
+- `ui-visual-qa`
+
+---
+
+## Tool Discovery
+
+The `ui-tool-discovery` skill ensures the agent maps out exactly what is executable in the current environment:
+
+- `AVAILABLE + EXECUTABLE`
+- `AVAILABLE + MANUAL`
+- `NOT AVAILABLE`
+- `REQUIRES USER SETUP`
+
+Agents must never fabricate tool execution or claim external tools were used if they were unavailable.
+
+---
+
+## Design Memory: Do Not Default to the Last Project
+
+AI agents often develop one favorite aesthetic and apply it everywhere. Universal UI Skills enforces a strict rule: **Never reuse previous-project visual decisions merely because they worked before.**
+
+For every new product, the agent must re-evaluate typography, composition, density, and imagery, saving these decisions to `.design/` for persistent project context.
+
+---
+
+## Installation
+
+Install the full repository:
 
 ```bash
 npx skills add https://github.com/thakur698/universal-ui-skills
 ```
 
-Install only the master skill:
+Install a specific skill:
 
 ```bash
 npx skills add https://github.com/thakur698/universal-ui-skills --skill "ui-master"
 ```
 
-Install a focused skill:
+---
 
-```bash
-npx skills add https://github.com/thakur698/universal-ui-skills --skill "ui-anti-slop"
-```
+## Examples & Recipes
+
+See the `examples/` and `recipes/` directories to understand how the V2 workflow translates to specific framework implementations (Web, Mobile, Flutter, React).
 
 ---
 
-# Use with AI coding agents
+## Official Website
 
-The repository is intended for agentic workflows.
-
-Typical workflow:
-
-```text
-1. Install skills
-2. Open your existing project
-3. Tell the agent what product/screen you are building
-4. Ask it to inspect the current UI before modifying it
-5. Let the design-direction skill establish the visual language
-6. Implement using the appropriate framework skill
-7. Add motion intentionally
-8. Validate responsive behavior and accessibility
-9. Capture screenshots / run visual QA
-10. Run the anti-slop review
-11. Polish the highest-impact visual issues
-```
-
-The skills are useful with environments that can load repository-based agent instructions and skills.
+The official website is located in `website/` and was built using the project's own V2 Engine (from Design Read to Pre-flight). It serves as a live demonstration of Anti-Slop principles.
 
 ---
 
-# Core design philosophy
+## Versioning & Validation
 
-Universal UI Skills does **not** enforce one aesthetic.
+Currently at `v2.0.0`.
+All skills, frontmatter, and websites have been successfully validated using internal repository CI checks (`check_skills.py`).
 
-It does not say every product should be:
-
-- dark
-- minimal
-- glassmorphic
-- colorful
-- heavily animated
-- rounded
-- "modern"
-
-Instead, it asks the agent to derive the visual language from the actual product.
-
-A fitness app, finance dashboard, game, developer tool and education product should not automatically look identical.
+**The Flutter Benchmark:**
+- Tested on a real Flutter project.
+- The same UI task was evaluated with and without the V2 orchestration pipeline.
+- V2 introduced explicit design reasoning, measurable design dials, composition planning, critique, and pre-flight validation, resulting in a production-ready interface over generic AI patterns.
 
 ---
 
-# Anti-slop standard
-
-The system rejects or questions patterns such as:
-
-- excessive rounded cards
-- "everything is a card"
-- endless pill controls
-- random purple/blue gradients
-- decorative glassmorphism without purpose
-- giant soft shadows
-- emoji replacing real product icons
-- inconsistent icon families
-- random glow effects
-- generic dashboard grids
-- repeated centered hero layouts
-- visual effects without product meaning
-- animation on everything
-- UI copied mechanically from another screen
-
-### The key question
-
-> **Could this interface belong to 20 unrelated products?**
-
-If the answer is yes, the agent should revisit the visual direction and composition.
-
-Anti-slop does **not** mean "make everything minimal".
-
-Rich, expressive and highly visual interfaces are welcome when the visual decisions are justified by the product.
-
----
-
-# Design before duplication
-
-Before generating many screens, the agent should establish:
-
-### Typography
-- display hierarchy
-- body hierarchy
-- numeric/data treatment
-- weight strategy
-- line-height strategy
-
-### Color
-Semantic roles such as:
-
-- background
-- surface
-- elevated surface
-- text primary
-- text secondary
-- border
-- brand
-- interactive
-- success
-- warning
-- error
-
-### Shape
-- radius families
-- control geometry
-- border language
-- icon containers
-
-### Depth
-- flat
-- outlined
-- layered
-- subtle elevation
-- atmospheric
-
-### Motion
-- micro interaction
-- standard transitions
-- important hero moments
-
-This creates a system instead of a pile of unrelated screens.
-
----
-
-# Motion philosophy
-
-Motion is treated as communication.
-
-Use it for:
-
-- interaction feedback
-- state changes
-- navigation
-- continuity
-- focus
-- progress
-- rewards
-
-Do not animate every element just to make a screen feel "premium".
-
-For Flutter, simple interactions should use native animation primitives where appropriate; specialized animation tools can be introduced when the interaction genuinely benefits from them.
-
-For web, motion should remain responsive, accessible and compatible with reduced-motion preferences.
-
----
-
-# Visual QA
-
-Compilation success does not equal visual success.
-
-Where the project/tooling supports it, validate with:
-
-- screenshots
-- golden/snapshot tests
-- component state checks
-- responsive viewport/device checks
-- accessibility checks
-- interaction-state checks
-
-Review representative layouts across:
-
-### Web
-- narrow viewport
-- desktop
-- wide desktop
-
-### Mobile
-- small phone
-- large phone
-- tablet where supported
-
-The agent should fix:
-
-- clipping
-- overflow
-- hierarchy problems
-- spacing problems
-- contrast problems
-- inconsistent states
-- awkward responsive composition
-
-before declaring the UI finished.
-
----
-
-# Framework support
-
-### React / Next.js
-
-Use:
-
-```text
-ui-master
-ui-design-direction
-ui-components-design-system
-ui-layout-responsive
-ui-motion
-ui-accessibility
-ui-visual-qa
-ui-web
-ui-react
-```
-
-### Flutter
-
-Use:
-
-```text
-ui-master
-ui-design-direction
-ui-components-design-system
-ui-layout-responsive
-ui-motion
-ui-accessibility
-ui-visual-qa
-ui-mobile
-ui-flutter
-```
-
-### Other stacks
-
-The framework-neutral skills can still be used:
-
-```text
-ui-design-direction
-ui-anti-slop
-ui-layout-responsive
-ui-motion
-ui-components-design-system
-ui-assets
-ui-accessibility
-ui-visual-qa
-```
-
-Add the stack-specific skill when available.
-
----
-
-# Tooling
-
-This project intentionally keeps external tooling optional.
-
-Useful categories include:
-
-### Design
-- Figma and compatible design workflows
-- reference/moodboard tools
-- design-system documentation tools
-
-### Assets
-- image generation/editing
-- vector tools
-- icon systems
-- licensed illustration/asset libraries
-
-### Motion
-- native CSS / Flutter / React animation
-- Rive
-- Lottie
-- platform motion APIs
-
-### Visual QA
-- browser automation
-- device automation
-- screenshot capture
-- golden/snapshot testing
-- accessibility auditing
-
-The agent should check what is already available before installing additional dependencies.
-
-Never commit API keys or proprietary assets.
-
----
-
-# Repository structure
-
-```text
-universal-ui-skills/
-├── .github/
-├── .claude-plugin/
-├── skills/
-│   ├── ui-master/
-│   ├── ui-design-direction/
-│   ├── ui-anti-slop/
-│   ├── ui-layout-responsive/
-│   ├── ui-motion/
-│   ├── ui-components-design-system/
-│   ├── ui-assets/
-│   ├── ui-accessibility/
-│   ├── ui-visual-qa/
-│   ├── ui-web/
-│   ├── ui-mobile/
-│   ├── ui-flutter/
-│   └── ui-react/
-├── docs/
-├── examples/
-├── scripts/
-├── tests/
-├── AGENTS.md
-├── CONTRIBUTING.md
-├── SECURITY.md
-├── LICENSE
-└── README.md
-```
-
----
-
-# Recommended project prompt
-
-After installing the skill, a project prompt can be as simple as:
-
-```text
-Use the Universal UI Skills workflow.
-
-First inspect the existing product and UI architecture.
-
-Then:
-1. establish a product-specific design direction
-2. preserve strong existing patterns
-3. create/reuse a coherent design system
-4. compose the screen around hierarchy rather than generic templates
-5. implement using the project's existing architecture
-6. add purposeful motion
-7. handle responsive behavior
-8. handle accessibility
-9. perform screenshot/visual QA where available
-10. run the anti-slop review
-11. fix visual issues before reporting completion
-
-Do not use generic SaaS/dashboard styling unless it genuinely fits the product.
-Do not add decoration merely to make the screen look "AI-generated premium".
-```
-
----
-
-# Contributing
-
-Contributions are welcome.
-
-Good contributions include:
-
-- improved UI review heuristics
-- framework-specific implementation guidance
-- better responsive patterns
-- stronger accessibility rules
-- motion techniques
-- visual QA workflows
-- examples showing distinctive UI
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
----
-
-# Roadmap
-
-Planned areas for expansion:
-
-- richer example projects
-- screenshot-based UI evaluation recipes
-- framework-specific design-system adapters
-- stronger visual regression workflows
-- additional mobile framework skills
-- additional web framework skills
-- reusable design-quality checklists
-- community-contributed UI patterns
-
----
-
-# License
-
+## License
 MIT.
-
-Third-party tools, libraries and assets referenced by this project remain under their respective licenses.
-
----
-
-## Author / Project
-
-**Universal UI Skills**
-
-GitHub:
-https://github.com/thakur698/universal-ui-skills

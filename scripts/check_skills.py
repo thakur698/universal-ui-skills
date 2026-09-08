@@ -48,7 +48,7 @@ secrets = [r"sk-[a-zA-Z0-9]{32}", r"AKIA[0-9A-Z]{16}"] # Basic openai / aws keys
 
 def check_file_content(path):
     global failed
-    if path.name == "check_skills.py":
+    if "node_modules" in path.parts or path.name == "check_skills.py":
         return
 
     try:
