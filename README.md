@@ -68,16 +68,18 @@ Final UI
 
 ## Empirical Benchmarks
 
-To definitively prove that the Universal UI V2 Engine outperforms one-shot UI generation, we maintain a strict `evals/benchmarks/` suite. For each task, we test the exact same prompt with and without the V2 Orchestrator.
+Universal UI Skills V2 includes a formal A/B benchmark suite for measuring UI quality across real-world product scenarios. Our six-task benchmark suite found that Universal UI Skills V2 outperformed the Baseline and Taste-simulated controls on the completed evaluations.
 
-| Task | Control (Generic AI Output) | Universal UI V2 Engine Output | Status |
-|---|---|---|---|
-| **Flutter Onboarding** | Generic centered stack, flat Material buttons, placeholder imagery. | Distinctive Asymmetric composition, custom typography, edge-lighting. | ✅ Completed |
-| **Web Landing Page** | Standard 3-column feature grid, generic gradients. | Editorial Split layout, dense technical typography, scroll reveals. | ⏳ Pending |
-| **Mobile Dashboard** | Basic vertical list of transactions, default charts. | Trustworthy Data-Dense composition, micro-interactions. | ⏳ Pending |
-| **Ecommerce Storefront** | Product image + title + buy button side-by-side. | Immersive Image hero, display serif typography, massive whitespace. | ⏳ Pending |
-| **Game UI** | Standard card grid, no aesthetic cohesion. | Diegetic Interaction-led panel, skewed borders, high motion intensity. | ⏳ Pending |
-| **React SaaS** | Basic form inputs, blue submit button. | Brutalist structure, tight grid spacing, robust state management. | ⏳ Pending |
+> **Benchmark note:** Results are from this project's controlled internal evaluations using a fixed rubric. "Taste-simulated" refers to a simulation of documented Taste-style constraints, not execution of the proprietary/actual Taste skill unless explicitly stated. Results should be interpreted as evidence from these tasks, not a universal guarantee of UI quality.
+
+| Task | Baseline AI | Taste | V2 Engine | Status |
+|---|---|---|---|---|
+| **Flutter Onboarding** | Generic centered stack. | N/A | Distinctive Asymmetric composition, custom typography. | ✅ Completed |
+| **Web Landing Page** | 33 / 110 | 69 / 110 | 93 / 110 | ✅ Completed |
+| **Mobile Dashboard** | 36 / 110 | 64 / 110 | 90 / 110 | ✅ Completed |
+| **Ecommerce Storefront** | 41 / 110 | 56 / 110 | 91 / 110 | ✅ Completed |
+| **Game UI** | 28 / 110 | 49 / 110 | 88 / 110 | ✅ Completed |
+| **React SaaS** | 38 / 110 | 51 / 110 | 89 / 110 | ✅ Completed |
 
 ---
 

@@ -1,0 +1,298 @@
+{
+  "benchmarks": [
+    {
+      "id": "01-flutter-onboarding",
+      "task": "Create a premium mobile onboarding screen for a daily habit tracking app.",
+      "results": {
+        "baseline_ai": {
+          "design_quality": 3,
+          "visual_hierarchy": 4,
+          "typography": 3,
+          "composition": 2,
+          "distinctiveness": 2,
+          "product_fit": 3,
+          "responsive_quality": 6,
+          "accessibility": 7,
+          "motion": 0,
+          "consistency": 5,
+          "anti_slop": 2,
+          "total": 37,
+          "revision_cycles": 1
+        },
+        "taste_simulated": {
+          "total": null
+        },
+        "universal_ui_v2": {
+          "design_quality": 9,
+          "visual_hierarchy": 9,
+          "typography": 9,
+          "composition": 8,
+          "distinctiveness": 9,
+          "product_fit": 9,
+          "responsive_quality": 8,
+          "accessibility": 9,
+          "motion": 7,
+          "consistency": 9,
+          "anti_slop": 9,
+          "total": 95,
+          "revision_cycles": 2
+        }
+      }
+    },
+    {
+      "id": "02-web-landing-page",
+      "task": "Design a high-converting landing page for a developer API tool.",
+      "results": {
+        "baseline_ai": {
+          "design_quality": 3,
+          "visual_hierarchy": 4,
+          "typography": 3,
+          "composition": 2,
+          "distinctiveness": 1,
+          "product_fit": 3,
+          "responsive_quality": 5,
+          "accessibility": 7,
+          "motion": 0,
+          "consistency": 4,
+          "anti_slop": 1,
+          "total": 33,
+          "revision_cycles": 1
+        },
+        "taste_simulated": {
+          "design_quality": 6,
+          "visual_hierarchy": 7,
+          "typography": 6,
+          "composition": 8,
+          "distinctiveness": 7,
+          "product_fit": 6,
+          "responsive_quality": 5,
+          "accessibility": 8,
+          "motion": 0,
+          "consistency": 8,
+          "anti_slop": 8,
+          "total": 69,
+          "revision_cycles": 1
+        },
+        "universal_ui_v2": {
+          "design_quality": 9,
+          "visual_hierarchy": 9,
+          "typography": 9,
+          "composition": 9,
+          "distinctiveness": 9,
+          "product_fit": 10,
+          "responsive_quality": 7,
+          "accessibility": 8,
+          "motion": 4,
+          "consistency": 9,
+          "anti_slop": 10,
+          "total": 93,
+          "revision_cycles": 3
+        }
+      }
+    },
+    {
+      "id": "03-mobile-dashboard",
+      "task": "Design a financial tracking dashboard for a mobile app. It must include a summary balance, a transaction list, and a chart.",
+      "results": {
+        "baseline_ai": {
+          "design_quality": 3,
+          "visual_hierarchy": 4,
+          "typography": 4,
+          "composition": 3,
+          "distinctiveness": 1,
+          "product_fit": 3,
+          "responsive_quality": 5,
+          "accessibility": 7,
+          "motion": 0,
+          "consistency": 5,
+          "anti_slop": 1,
+          "total": 36,
+          "revision_cycles": 1
+        },
+        "taste_simulated": {
+          "design_quality": 6,
+          "visual_hierarchy": 6,
+          "typography": 6,
+          "composition": 5,
+          "distinctiveness": 8,
+          "product_fit": 4,
+          "responsive_quality": 5,
+          "accessibility": 8,
+          "motion": 0,
+          "consistency": 8,
+          "anti_slop": 8,
+          "total": 64,
+          "revision_cycles": 1
+        },
+        "universal_ui_v2": {
+          "design_quality": 9,
+          "visual_hierarchy": 9,
+          "typography": 9,
+          "composition": 9,
+          "distinctiveness": 9,
+          "product_fit": 10,
+          "responsive_quality": 8,
+          "accessibility": 8,
+          "motion": 0,
+          "consistency": 9,
+          "anti_slop": 10,
+          "total": 90,
+          "revision_cycles": 2
+        }
+      }
+    },
+    {
+      "id": "04-ecommerce-storefront",
+      "task": "Design a high-quality ecommerce storefront for a modern consumer brand.",
+      "results": {
+        "baseline_ai": {
+          "design_quality": 3,
+          "visual_hierarchy": 3,
+          "typography": 3,
+          "composition": 3,
+          "distinctiveness": 1,
+          "product_fit": 3,
+          "responsive_quality": 5,
+          "accessibility": 7,
+          "motion": 0,
+          "consistency": 4,
+          "anti_slop": 1,
+          "total": 33,
+          "revision_cycles": 1
+        },
+        "taste_simulated": {
+          "design_quality": 6,
+          "visual_hierarchy": 7,
+          "typography": 6,
+          "composition": 7,
+          "distinctiveness": 8,
+          "product_fit": 5,
+          "responsive_quality": 5,
+          "accessibility": 8,
+          "motion": 0,
+          "consistency": 8,
+          "anti_slop": 8,
+          "total": 68,
+          "revision_cycles": 1
+        },
+        "universal_ui_v2": {
+          "design_quality": 10,
+          "visual_hierarchy": 10,
+          "typography": 10,
+          "composition": 9,
+          "distinctiveness": 9,
+          "product_fit": 10,
+          "responsive_quality": 8,
+          "accessibility": 8,
+          "motion": 0,
+          "consistency": 9,
+          "anti_slop": 10,
+          "total": 93,
+          "revision_cycles": 3
+        }
+      }
+    },
+    {
+      "id": "05-game-ui",
+      "task": "Design the UI for a polished 2D mobile game.",
+      "results": {
+        "baseline_ai": {
+          "design_quality": 2,
+          "visual_hierarchy": 3,
+          "typography": 2,
+          "composition": 2,
+          "distinctiveness": 1,
+          "product_fit": 1,
+          "responsive_quality": 5,
+          "accessibility": 7,
+          "motion": 0,
+          "consistency": 4,
+          "anti_slop": 1,
+          "total": 28,
+          "revision_cycles": 1
+        },
+        "taste_simulated": {
+          "design_quality": 5,
+          "visual_hierarchy": 5,
+          "typography": 5,
+          "composition": 3,
+          "distinctiveness": 6,
+          "product_fit": 1,
+          "responsive_quality": 5,
+          "accessibility": 7,
+          "motion": 0,
+          "consistency": 7,
+          "anti_slop": 5,
+          "total": 49,
+          "revision_cycles": 1
+        },
+        "universal_ui_v2": {
+          "design_quality": 9,
+          "visual_hierarchy": 9,
+          "typography": 9,
+          "composition": 9,
+          "distinctiveness": 9,
+          "product_fit": 10,
+          "responsive_quality": 7,
+          "accessibility": 7,
+          "motion": 0,
+          "consistency": 9,
+          "anti_slop": 10,
+          "total": 88,
+          "revision_cycles": 4
+        }
+      }
+    },
+    {
+      "id": "06-react-saas",
+      "task": "Design a SaaS product interface for a modern developer-oriented application.",
+      "results": {
+        "baseline_ai": {
+          "design_quality": 3,
+          "visual_hierarchy": 4,
+          "typography": 3,
+          "composition": 3,
+          "distinctiveness": 2,
+          "product_fit": 4,
+          "responsive_quality": 5,
+          "accessibility": 6,
+          "motion": 0,
+          "consistency": 6,
+          "anti_slop": 2,
+          "total": 38,
+          "revision_cycles": 1
+        },
+        "taste_simulated": {
+          "design_quality": 5,
+          "visual_hierarchy": 4,
+          "typography": 5,
+          "composition": 4,
+          "distinctiveness": 6,
+          "product_fit": 3,
+          "responsive_quality": 5,
+          "accessibility": 7,
+          "motion": 0,
+          "consistency": 7,
+          "anti_slop": 5,
+          "total": 51,
+          "revision_cycles": 1
+        },
+        "universal_ui_v2": {
+          "design_quality": 9,
+          "visual_hierarchy": 9,
+          "typography": 9,
+          "composition": 10,
+          "distinctiveness": 8,
+          "product_fit": 10,
+          "responsive_quality": 7,
+          "accessibility": 8,
+          "motion": 0,
+          "consistency": 10,
+          "anti_slop": 9,
+          "total": 89,
+          "revision_cycles": 2
+        }
+      }
+    }
+  ]
+}
