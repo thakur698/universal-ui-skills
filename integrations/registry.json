@@ -1,0 +1,40 @@
+{
+  "rive-react": {
+    "tool": "Rive",
+    "category": "Motion",
+    "verified_environment": "React/Web",
+    "repository_status": "VERIFIED",
+    "runtime_status": "AVAILABLE",
+    "test": "tests/rive-detector.js"
+  },
+  "rive-flutter": {
+    "tool": "Rive",
+    "category": "Motion",
+    "verified_environment": "Flutter",
+    "repository_status": "VERIFIED",
+    "runtime_status": "AVAILABLE",
+    "test": "tests/rive-detector.js"
+  },
+  "lottie-react": {
+    "tool": "Lottie",
+    "category": "Motion",
+    "verified_environment": "React/Web",
+    "repository_status": "VERIFIED",
+    "runtime_status": "AVAILABLE",
+    "test": "tests/lottie-detector.js"
+  },
+  "figma": {
+    "tool": "Figma",
+    "category": "Design",
+    "verified_environment": "—",
+    "repository_status": "PENDING",
+    "runtime_status": "REQUIRES_SETUP"
+  },
+  "browser-qa": {
+    "tool": "Browser Visual QA",
+    "category": "Visual QA",
+    "verified_environment": "—",
+    "repository_status": "PENDING",
+    "runtime_status": "AVAILABLE"
+  }
+}

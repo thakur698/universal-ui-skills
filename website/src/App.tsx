@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
-import { ArrowRight, Check, X, Code2, MonitorPlay, Sparkles, Box, Workflow, Monitor, Wrench, Package } from 'lucide-react';
+import { ArrowRight, Check, X, Code2, MonitorPlay, Sparkles, Box, Workflow, Monitor } from 'lucide-react';
+import { BenchmarkShowcase } from './BenchmarkShowcase';
+import { RiveShowcase } from './RiveShowcase';
+import { LottieShowcase } from './LottieShowcase';
+import { VisualQAShowcase } from './VisualQAShowcase';
+import registry from '../../integrations/registry.json';
 
 // Native IntersectionObserver Hook for Scroll Reveals
 function useIntersectionObserver() {
@@ -52,14 +57,14 @@ function App() {
       <header className="section hero-bg" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
         <div className="container grid-2">
           <div className="reveal">
-            <div className="text-sm font-mono text-text-muted mb-4 uppercase tracking-widest">Universal UI Skills V2</div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight mb-6 text-text-primary tracking-tight">
-              An adaptive design engine for AI coding agents.
+            <div className="text-sm font-mono text-text-muted mb-4 uppercase tracking-widest text-anim-blur" style={{ color: 'var(--text-secondary)' }}>Universal UI Skills V2</div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif leading-tight mb-6 text-text-primary tracking-tight text-anim-blur text-anim-delay-1" style={{ borderBottom: '2px solid var(--text-primary)', display: 'inline-block', paddingBottom: '0.5rem' }}>
+              Adaptive Design Engine.
             </h1>
-            <p className="text-xl text-text-secondary mb-8 font-sans max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-text-secondary mb-8 font-sans max-w-2xl mx-auto leading-relaxed text-anim-blur text-anim-delay-2">
               Turn product context into distinctive, production-ready interfaces through design direction, references, composition, motion, visual critique, and pre-flight QA.
             </p>
-            <div className="flex-gap">
+            <div className="flex-gap text-anim-blur text-anim-delay-3">
               <a href="#install" className="btn-primary">
                 Get Started <ArrowRight size={16} />
               </a>
@@ -124,9 +129,9 @@ function App() {
       <section className="section" style={{ backgroundColor: 'var(--bg-surface)' }}>
         <div className="container">
           <div className="text-center mx-auto max-w-2xl reveal" style={{ marginBottom: '4rem' }}>
-            <span className="tech-label">The Problem</span>
-            <h2>Functional does not mean well-designed.</h2>
-            <p style={{ color: 'var(--text-secondary)' }}>
+            <span className="tech-label text-anim-blur">The Problem</span>
+            <h2 className="text-anim-blur text-anim-delay-1">Functional does not mean well-designed.</h2>
+            <p className="text-anim-blur text-anim-delay-2" style={{ color: 'var(--text-secondary)' }}>
               AI can generate code quickly, but without strict orchestration, it relies on generic templates. We call this "AI Slop."
             </p>
           </div>
@@ -157,6 +162,10 @@ function App() {
         </div>
       </section>
 
+      <hr style={{ border: 'none', borderTop: '1px solid var(--border-strong)', margin: 0 }} />
+
+      <BenchmarkShowcase />
+
       {/* Skills Section */}
       <section id="skills" className="section">
         <div className="container">
@@ -165,91 +174,112 @@ function App() {
             <h2 style={{ marginBottom: '3rem' }}>The Skill System</h2>
           </div>
           
-          <div className="grid-3 reveal delay-100" style={{ borderTop: '1px solid var(--border-subtle)', borderLeft: '1px solid var(--border-subtle)' }}>
-            {[
-              { icon: <MonitorPlay size={20} />, name: 'ui-master', desc: 'The core orchestration layer.' },
-              { icon: <Wrench size={20} />, name: 'ui-tool-discovery', desc: 'Detects available MCPs and tools.' },
-              { icon: <Sparkles size={20} />, name: 'ui-design-direction', desc: 'Sets visual identity before coding.' },
-              { icon: <Box size={20} />, name: 'ui-components-design-system', desc: 'Translates rules to tokens.' },
-              { icon: <Monitor size={20} />, name: 'ui-layout-responsive', desc: 'Ensures structural adaptability.' },
-              { icon: <Workflow size={20} />, name: 'ui-motion', desc: 'Adds communicative interaction.' },
-              { icon: <Package size={20} />, name: 'ui-assets', desc: 'Manages semantic iconography.' },
-              { icon: <Check size={20} />, name: 'ui-accessibility', desc: 'Validates inclusiveness.' },
-              { icon: <Code2 size={20} />, name: 'ui-visual-qa', desc: 'Performs layout inspection.' }
-            ].map((skill, i) => (
-              <div key={i} className="skill-card">
-                <div className="skill-icon">{skill.icon}</div>
-                <div className="skill-title">{skill.name}</div>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', margin: 0 }}>{skill.desc}</p>
-              </div>
-            ))}
+          <div className="bento-grid reveal delay-100">
+            <div className="bento-item bento-span-2">
+              <div className="skill-icon"><MonitorPlay size={20} /></div>
+              <div className="skill-title">ui-master</div>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', margin: 0 }}>The core orchestration layer. Enforces the strict V2 pipeline.</p>
+            </div>
+            <div className="bento-item">
+              <div className="skill-icon"><Sparkles size={20} /></div>
+              <div className="skill-title">ui-design-direction</div>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', margin: 0 }}>Sets visual identity before coding.</p>
+            </div>
+            
+            <div className="bento-item">
+              <div className="skill-icon"><Box size={20} /></div>
+              <div className="skill-title">ui-components-design-system</div>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', margin: 0 }}>Translates rules to tokens.</p>
+            </div>
+            <div className="bento-item">
+              <div className="skill-icon"><Monitor size={20} /></div>
+              <div className="skill-title">ui-layout-responsive</div>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', margin: 0 }}>Ensures structural adaptability.</p>
+            </div>
+            <div className="bento-item">
+              <div className="skill-icon"><Workflow size={20} /></div>
+              <div className="skill-title">ui-motion</div>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', margin: 0 }}>Adds communicative interaction.</p>
+            </div>
+
+            <div className="bento-item bento-span-2" style={{ borderLeft: '2px solid var(--accent-cyan)' }}>
+              <div className="skill-icon" style={{ color: 'var(--accent-cyan)' }}><Code2 size={20} /></div>
+              <div className="skill-title" style={{ color: 'var(--text-primary)' }}>ui-visual-critic</div>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', margin: 0 }}>The mandatory AI critique feedback loop that forces refinement.</p>
+            </div>
+            <div className="bento-item" style={{ background: 'var(--bg-surface-elevated)' }}>
+              <div className="skill-icon"><Check size={20} /></div>
+              <div className="skill-title">ui-preflight</div>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', margin: 0 }}>The final validation gate.</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Integrations */}
       <section id="integrations" className="section" style={{ backgroundColor: 'var(--bg-surface-elevated)' }}>
-        <div className="container grid-2">
-          <div>
-            <span className="tech-label">Discovery Contract</span>
-            <h2>We don't fake execution.</h2>
-            <p style={{ color: 'var(--text-secondary)' }}>
-              The system discovers what tools are actually available before using them. It classifies every tool strictly:
-            </p>
-            <div>
-              <div className="status-row">
-                <span className="text-white">AVAILABLE + EXECUTABLE</span>
-                <span style={{ color: 'var(--text-secondary)' }}>Agent can invoke</span>
-              </div>
-              <div className="status-row">
-                <span className="text-white">AVAILABLE + MANUAL</span>
-                <span style={{ color: 'var(--text-secondary)' }}>Requires user</span>
-              </div>
-              <div className="status-row">
-                <span className="text-white">NOT AVAILABLE</span>
-                <span style={{ color: 'var(--text-secondary)' }}>Agent uses fallback</span>
-              </div>
-              <div className="status-row" style={{ border: 'none' }}>
-                <span className="text-white">REQUIRES USER SETUP</span>
-                <span style={{ color: 'var(--text-secondary)' }}>Missing credentials</span>
+        <div className="container">
+          <div className="terminal-window reveal">
+            <div className="terminal-header">
+              <div className="terminal-dot"></div>
+              <div className="terminal-dot"></div>
+              <div className="terminal-dot"></div>
+              <div style={{ marginLeft: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                bash - universal-ui-v2
               </div>
             </div>
-          </div>
-          
-          <div>
-            <span className="tech-label">Registry</span>
-            <h2 style={{ marginBottom: '1.5rem' }}>Integrations</h2>
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Tool</th>
-                  <th>Category</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="text-white">Playwright</td>
-                  <td style={{ color: 'var(--text-secondary)' }}>Visual QA</td>
-                  <td style={{ color: 'var(--accent-cyan)' }}>VERIFIED</td>
-                </tr>
-                <tr>
-                  <td className="text-white">Axe-core</td>
-                  <td style={{ color: 'var(--text-secondary)' }}>Accessibility</td>
-                  <td style={{ color: 'var(--accent-cyan)' }}>VERIFIED</td>
-                </tr>
-                <tr>
-                  <td className="text-white">Rive</td>
-                  <td style={{ color: 'var(--text-secondary)' }}>Motion</td>
-                  <td style={{ color: 'var(--text-secondary)' }}>PARTIAL</td>
-                </tr>
-                <tr>
-                  <td className="text-white">Figma</td>
-                  <td style={{ color: 'var(--text-secondary)' }}>Design</td>
-                  <td style={{ color: 'var(--text-secondary)' }}>PARTIAL</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="terminal-body grid-2">
+              <div>
+                <span className="tech-label text-anim-blur">Discovery Contract</span>
+                <h2 className="text-anim-blur text-anim-delay-1">We don't fake execution.</h2>
+                <p className="text-anim-blur text-anim-delay-2" style={{ color: 'var(--text-secondary)' }}>
+                  The system discovers what tools are actually available before using them. It classifies every tool strictly:
+                </p>
+                <div>
+                  <div className="status-row text-anim-blur text-anim-delay-3">
+                    <span className="text-white">AVAILABLE + EXECUTABLE</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>Agent can invoke</span>
+                  </div>
+                  <div className="status-row text-anim-blur text-anim-delay-3">
+                    <span className="text-white">AVAILABLE + MANUAL</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>Requires user</span>
+                  </div>
+                  <div className="status-row text-anim-blur text-anim-delay-3">
+                    <span className="text-white">NOT AVAILABLE</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>Agent uses fallback</span>
+                  </div>
+                  <div className="status-row text-anim-blur text-anim-delay-3" style={{ border: 'none' }}>
+                    <span className="text-white">REQUIRES USER SETUP</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>Missing credentials</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <span className="tech-label">Registry</span>
+                <h2 style={{ marginBottom: '1.5rem' }}>Integrations</h2>
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th>Integration</th>
+                      <th>Verified Environment</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Object.values(registry).map((integration, idx) => (
+                      <tr key={idx}>
+                        <td className="text-white font-mono">{integration.tool}</td>
+                        <td style={{ color: 'var(--text-secondary)' }}>{integration.verified_environment}</td>
+                        <td style={{ color: integration.repository_status === 'VERIFIED' ? 'var(--accent-cyan)' : 'var(--text-secondary)' }}>
+                          {integration.repository_status === 'VERIFIED' ? '✓ Verified' : '○ Pending'}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -275,6 +305,10 @@ function App() {
           </a>
         </div>
       </section>
+
+      <VisualQAShowcase />
+      <LottieShowcase />
+      <RiveShowcase />
 
       {/* Footer */}
       <footer style={{ backgroundColor: 'var(--bg-surface)', padding: '3rem 0' }}>

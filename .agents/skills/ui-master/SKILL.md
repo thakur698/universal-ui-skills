@@ -55,4 +55,12 @@ Final UI Task Complete
    - The final Design Dials.
    - The Critic Score.
    - The Pre-Flight Matrix (All PASS).
-   - The tools and skills utilized.
+   - The tools and skills utilized, using this explicit format for integrations (e.g., Rive):
+     ```text
+     Tool: [Tool Name]
+     Status: [AVAILABLE + EXECUTABLE | AVAILABLE + MANUAL | NOT AVAILABLE | REQUIRES USER SETUP]
+     Detection: [How it was detected]
+     Executable: [Yes/No]
+     Actually used: [Yes/No]
+     Verification: [How it was visually verified]
+     ```

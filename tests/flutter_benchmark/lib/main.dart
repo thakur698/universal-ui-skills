@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart' hide RadialGradient, LinearGradient;
 
 void main() {
   runApp(const HabitAppV2());
@@ -41,7 +42,7 @@ class OnboardingScreenV2 extends StatelessWidget {
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
-                    const Color(0xFF38BDF8).withOpacity(0.2),
+                    const Color(0xFF38BDF8).withValues(alpha: 0.2),
                     Colors.transparent,
                   ],
                   stops: const [0.0, 1.0],
@@ -81,7 +82,18 @@ class OnboardingScreenV2 extends StatelessWidget {
                     ],
                   ),
                   
-                  const Spacer(),
+                  Expanded(
+                    child: Center(
+                      child: Container(
+                        width: double.infinity,
+                        constraints: const BoxConstraints(maxHeight: 300),
+                        child: const RiveAnimation.asset(
+                          'assets/vehicles.riv',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
                   
                   // Text-Led Asymmetric Hero
                   const Text(
@@ -108,7 +120,7 @@ class OnboardingScreenV2 extends StatelessWidget {
                       'Stop breaking the chain. Build a bulletproof routine with our premium tracking system.',
                       style: TextStyle(
                         fontSize: 18,
-                        color: Colors.white.withOpacity(0.7),
+                        color: Colors.white.withValues(alpha: 0.7),
                         height: 1.5,
                       ),
                     ),
@@ -151,7 +163,7 @@ class OnboardingScreenV2 extends StatelessWidget {
                     child: Text(
                       'Already a member? Sign in',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.5),
+                        color: Colors.white.withValues(alpha: 0.5),
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),

@@ -97,6 +97,20 @@ The V2 engine orchestrates these foundational implementation layers:
 
 ---
 
+## Executable Integrations
+
+| Integration | Status | Verified environment |
+|---|---|---|
+| Rive | VERIFIED | React/Web |
+| Rive | VERIFIED | Flutter |
+| Lottie | VERIFIED | React/Web |
+| Browser QA adapter | VERIFIED | — |
+| Figma | PENDING | — |
+
+*Note: The system requires deterministic verification before an integration is marked executable. See `integrations/registry.json` for the authoritative source of truth.*
+
+---
+
 ## Tool Discovery
 
 The `ui-tool-discovery` skill ensures the agent maps out exactly what is executable in the current environment:

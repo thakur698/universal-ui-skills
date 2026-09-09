@@ -25,7 +25,15 @@ Every tool, MCP server, integration, or skill MUST be classified into one of the
 3. **NOT AVAILABLE**
    - The tool does not exist in this environment. (e.g., A Figma MCP when no token is provided).
 4. **REQUIRES USER SETUP**
-   - The tool could be used, but the user must first configure it (e.g., setting an API key).
+   - The tool could be used, but the user must first configure it (e.g., setting an API key, providing a specific `.riv` asset).
+
+## Deterministic Verification
+
+For libraries like **Rive** or **Lottie**, `ui-tool-discovery` MUST run a deterministic check before claiming `AVAILABLE + EXECUTABLE`. 
+- **Web**: Check `package.json` for `@rive-app/react-canvas` (or equivalent).
+- **Flutter**: Check `pubspec.yaml` for `rive`.
+- **Assets**: Verify a `.riv` or `.json` asset actually exists in the project.
+If the package is missing but the environment allows installation (e.g. `npm install`), the agent may install it *if the user requested motion*. If the asset is missing, it is `REQUIRES USER SETUP` (or `NOT AVAILABLE` if no installation is possible).
 
 ## Execution Rules
 
