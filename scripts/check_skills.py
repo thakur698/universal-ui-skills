@@ -7,13 +7,18 @@ failed = False
 
 # 1. Check skill frontmatter
 skill_names = set()
-for path in Path("skills").glob("*/SKILL.md"):
+for path in sorted(Path("skills").glob("*/SKILL.md")):
     text = path.read_text(encoding="utf-8")
-    if not text.startswith("---\n"):
+    if not (text.startswith("---\n") or text.startswith("---\r\n") or text.startswith("---")):
         print("[FAIL]", path, "missing frontmatter")
         failed = True
         continue
-    front = text.split("---\n", 2)[1]
+    parts = text.split("---", 2)
+    if len(parts) < 3:
+        print("[FAIL]", path, "malformed frontmatter")
+        failed = True
+        continue
+    front = parts[1]
     
     name_match = re.search(r"^name:\s*(.+)$", front, re.M)
     if not name_match:
