@@ -1,81 +1,101 @@
 ---
 name: ui-master
-description: Master orchestration layer for UI generation, redesign, and review. Orchestrates tool discovery, design direction, anti-slop checks, responsive layout, components, assets, motion, accessibility, and visual QA.
+description: Master orchestration layer for Universal UI Skills v2. Orchestrates the rigorous design pipeline from Brief to Pre-Flight with first-class media and scroll storytelling.
 ---
 
-# Universal UI Master (Orchestrator)
+# UI Master (V2 Orchestrator)
 
 ## Mission
 
-Act as an orchestration and quality layer. Do not simply execute one massive UI prompt. Instead, explicitly orchestrate the exact sequence below.
+`ui-master` is the central orchestration engine. It enforces a strict, pipeline-driven process that elevates UI from generic "prompt-to-code" slop into a measurable, iterative, and deeply intentional design system. 
 
-Never claim a tool was used unless it was actually available and invoked. Add fallback behavior when a tool is unavailable.
+## The V2 Pipeline
 
-## The Orchestration Workflow
-
-When tasked with creating or modifying UI, you must orchestrate the following 13 steps explicitly:
-
-### 1. Platform Detection
-Determine the target platform (Web, Mobile, Flutter, React, etc.).
-
-### 2. Tool Discovery
-Invoke `ui-tool-discovery` to scan for available MCP servers, tools, and integrations. Classify them honestly.
-
-### 3. Skill Selection
-Select the internal skills needed for the task (e.g., `ui-flutter`, `ui-design-direction`).
-
-### 4. Tool Selection
-Select the external tools/integrations needed for the task. 
-
-### 5. Design Direction
-Invoke `ui-design-direction`. Define product identity, target user, typography, and color roles.
-
-### 6. Design-System Decisions
-Invoke `ui-components-design-system`. Establish semantic tokens and component states.
-
-### 7. Implementation
-Implement the UI using the platform-specific skills and tools selected in steps 3 and 4.
-
-### 8. Motion
-Invoke `ui-motion` and motion integrations (e.g., Rive) to add purposeful interaction.
-
-### 9. Responsive Behavior
-Invoke `ui-layout-responsive`. Run responsive checks for mobile/desktop.
-
-### 10. Accessibility
-Invoke `ui-accessibility` and any accessibility tools (e.g., Axe) to verify compliance.
-
-### 11. Visual QA
-Invoke `ui-visual-qa` and visual QA tools (e.g., Playwright, golden tests). Capture screenshots if possible.
-
-### 12. Anti-Slop QA
-Invoke `ui-anti-slop`. Ensure the design doesn't look like generic AI output. Redesign if necessary.
-
-### 13. Final Polish
-Fix 1px alignment issues, spacing inconsistencies, and typographical hierarchy.
-
-## Required Reporting
-
-At the end of every UI task, you must provide a final execution report showing exactly which skills/tools were used, skipped, and why.
-
-Format your final report exactly like this:
+For any substantial UI task, you MUST execute this exact sequence. Do not skip steps.
 
 ```text
-UI TASK COMPLETE
+Brief
+  ↓
+Design Read (via ui-creative-director)
+  ↓
+Reference Analysis (via ui-reference-first)
+  ↓
+Design Dials (via ui-design-dials)
+  ↓
+Design System (via ui-design-memory / tokens)
+  ↓
+Composition Plan (via ui-composition-engine)
+  ↓
+Media Plan (via ui-media-composition)
+  ↓
+Scroll Story Plan (via ui-scroll-storytelling)
+  ↓
+Asset Plan (via ui-assets)
+  ↓
+Implementation (via ui-web / ui-react / ui-mobile / ui-flutter)
+  ↓
+Motion (via ui-motion / ui-cinematic-motion)
+  ↓
+Responsive (via ui-layout-responsive)
+  ↓
+Accessibility (via ui-accessibility)
+  ↓
+Visual Render (via ui-visual-qa)
+  ↓
+Visual Critic (via ui-visual-critic)
+  ↓
+Fix (Loop until Critic Score >= 8)
+  ↓
+Re-render
+  ↓
+Pre-flight (via ui-preflight)
+  ↓
+Final UI Task Complete
+```
 
-Skills used:
-✓ ui-master
-✓ ui-design-direction
-✓ [other skills]
+## Core Design Principles
 
-Tools used:
-✓ [Tool] — used
-✗ [Tool] — unavailable (Fallback: [action taken])
-✗ [Tool] — not relevant
+1. **Media-First Visual Storytelling**: Prefer `IMAGE`, `VIDEO`, `ILLUSTRATION`, `DIAGRAM`, `TYPOGRAPHY`, `LAYOUT`, and `MOTION` as primary visual storytelling tools. Icons are utilities for navigation and small controls, NOT the default visual language for feature storytelling.
+2. **Intentional Scroll Storytelling**: Use scroll interactions (pins, reveals, video scrubs, parallax) only where they elevate the narrative. Never animate every section simply because the capability exists.
+3. **Strict Media/Scroll Pre-Planning**: `Media Plan` and `Scroll Story Plan` MUST be defined before writing implementation code.
+4. **Iterative Adversarial Loop**: Do not treat generation as a one-shot task. The `CRITIC → FIX → RENDER` loop is mandatory.
 
-Visual QA:
-✓ Mobile
-✓ Desktop
-✓ Accessibility
-✓ Anti-slop
+## Execution & Reporting Requirements
+
+At the conclusion of every UI task, the agent must output a structured execution report:
+
+```text
+DESIGN DIALS
+SCROLL_INTERACTION: [1-10]
+MEDIA_PROMINENCE: [1-10]
+CINEMATIC_INTENSITY: [1-10]
+BENTO_COMPLEXITY: [1-10]
+
+MEDIA PLAN:
+[Summary of media types, roles, scales, and treatments]
+
+SCROLL STORY:
+[Summary of scroll patterns, sticky/pinned behaviors, choreography]
+
+MOTION:
+[Summary of micro, standard, and cinematic motion implementations]
+
+VIDEO: [Used / Not Used]
+PARALLAX: [Used / Not Used]
+STICKY/PINNED: [Used / Not Used]
+
+VISUAL QA:
+[Responsive render verification across mobile and desktop]
+
+REDUCED MOTION:
+[Verification of prefers-reduced-motion fallback]
+
+MOBILE FALLBACK:
+[Strategy for mobile recomposition and scroll fallback]
+
+ANTI-SLOP:
+[Verification that generic AI tropes and repetitive icon cards were eliminated]
+
+PRE-FLIGHT:
+PASS / FAIL [All binary pre-flight gates passed]
 ```

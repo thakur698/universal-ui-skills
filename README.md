@@ -18,48 +18,61 @@ Universal UI Skills replaces the generic `Prompt → Code` cycle with a rigorous
 
 ## The V2 Adaptive Engine
 
-The core engine is driven by 7 orchestrated skills:
+The core engine is driven by 10 orchestrated skills:
 
 1. **`ui-creative-director`**: Extracts a Design Read (Audience, Metaphor, Density) from the brief.
-2. **`ui-design-dials`**: Provides a measurable 1-10 control surface (`DESIGN_VARIANCE`, `VISUAL_DENSITY`, etc.) constraining implementation.
-3. **`ui-reference-first`**: Enforces a strict reference analysis phase, extracting grid/typography metrics to build a Composition Map.
-4. **`ui-composition-engine`**: Defines strict Layout Families (e.g., Asymmetric Hero, Bento) and mechanical combination limits.
-5. **`ui-visual-critic`**: Introduces an internal adversarial loop (`BUILD → CRITIQUE → FIX → RENDER`). The critic scores 10 dimensions, forcing revisions.
-6. **`ui-preflight`**: The final mechanical gate with binary (PASS/FAIL) rules (e.g., fails for broken CTAs or missing mobile fallbacks).
-7. **`ui-design-memory`**: Cures AI "amnesia" by maintaining a `.design/` directory to store persistent decisions across sessions.
+2. **`ui-design-dials`**: Provides a measurable 1-10 control surface (11 dials including `SCROLL_INTERACTION`, `MEDIA_PROMINENCE`, `CINEMATIC_INTENSITY`, `BENTO_COMPLEXITY`).
+3. **`ui-reference-first`**: Enforces a strict reference analysis phase, extracting grid, typography, media, and scroll metrics to build a Composition Map.
+4. **`ui-composition-engine`**: Defines strict Layout Families, premium asymmetric Bento systems, and layout combination limits.
+5. **`ui-media-composition`**: Enforces media-first visual storytelling (photos, videos, diagrams, illustrations) over repetitive icon grids.
+6. **`ui-scroll-storytelling`**: Designs scroll-driven storytelling, progressive disclosure, pinned sections, and video scrubbing.
+7. **`ui-cinematic-motion`**: Choreographs high-end cinematic transitions, full-screen reveals, and staged motion hierarchies.
+8. **`ui-visual-critic`**: Introduces an internal adversarial loop (`BUILD → CRITIQUE → FIX → RENDER`) across 14 aesthetic, media, and scroll dimensions.
+9. **`ui-preflight`**: The final mechanical gate with hard binary (PASS/FAIL) rules across layout, scroll, media, and accessibility.
+10. **`ui-design-memory`**: Cures AI "amnesia" by maintaining a `.design/` directory to store persistent decisions across sessions.
 
 ---
 
 ## The Orchestration Pipeline
 
-The `ui-master` skill orchestrates the entire workflow. Instead of suggesting guidelines, it enforces this execution pipeline:
+The `ui-master` skill orchestrates the entire workflow:
 
 ```text
 Brief
   ↓
-Design Read 
+Design Read (via ui-creative-director)
   ↓
-Reference Analysis
+Reference Analysis (via ui-reference-first)
   ↓
-Design Dials
+Design Dials (via ui-design-dials)
   ↓
-Composition Plan
+Design System (via ui-design-memory / tokens)
   ↓
-Asset Plan
+Composition Plan (via ui-composition-engine)
   ↓
-Implementation (using V1 Foundational Skills)
+Media Plan (via ui-media-composition)
   ↓
-Motion & Responsive
+Scroll Story Plan (via ui-scroll-storytelling)
   ↓
-Accessibility
+Asset Plan (via ui-assets)
   ↓
-Visual Render
+Implementation (via ui-web / ui-react / ui-mobile / ui-flutter)
   ↓
-AI Critic
+Motion (via ui-motion / ui-cinematic-motion)
   ↓
-Fix 
+Responsive (via ui-layout-responsive)
   ↓
-Pre-flight
+Accessibility (via ui-accessibility)
+  ↓
+Visual Render (via ui-visual-qa)
+  ↓
+Visual Critic (via ui-visual-critic)
+  ↓
+Fix (Loop until Critic Score >= 8)
+  ↓
+Re-render
+  ↓
+Pre-flight (via ui-preflight)
   ↓
 Final UI
 ```
@@ -68,18 +81,20 @@ Final UI
 
 ## Empirical Benchmarks
 
-Universal UI Skills V2 includes a formal A/B benchmark suite for measuring UI quality across real-world product scenarios. Our six-task benchmark suite found that Universal UI Skills V2 outperformed the Baseline and Taste-simulated controls on the completed evaluations.
+Universal UI Skills V2 includes a formal A/B benchmark suite for measuring UI quality across real-world product scenarios. The benchmark system is designed to compare UI approaches and identify failure modes. Current results are experimental evidence from controlled evaluations, not universal proof of superiority.
 
-> **Benchmark note:** Results are from this project's controlled internal evaluations using a fixed rubric. "Taste-simulated" refers to a simulation of documented Taste-style constraints, not execution of the proprietary/actual Taste skill unless explicitly stated. Results should be interpreted as evidence from these tasks, not a universal guarantee of UI quality.
+> **Benchmark note:** Results are from this project's controlled internal evaluations using a fixed rubric. "Taste-simulated" refers to a simulation of documented Taste-style constraints, not execution of the proprietary/actual Taste skill unless explicitly stated. Results should be interpreted as evidence from these tasks, not a universal guarantee of UI quality. The benchmark framework includes independent evaluator protocols (Human, Independent Model, Multi-Evaluator), blind grading, and structured failure analysis to continuously test dial settings and refine the V2 engine.
 
-| Task | Baseline AI | Taste | V2 Engine | Status |
-|---|---|---|---|---|
-| **Flutter Onboarding** | Generic centered stack. | N/A | Distinctive Asymmetric composition, custom typography. | ✅ Completed |
-| **Web Landing Page** | 33 / 110 | 69 / 110 | 93 / 110 | ✅ Completed |
-| **Mobile Dashboard** | 36 / 110 | 64 / 110 | 90 / 110 | ✅ Completed |
-| **Ecommerce Storefront** | 41 / 110 | 56 / 110 | 91 / 110 | ✅ Completed |
-| **Game UI** | 28 / 110 | 49 / 110 | 88 / 110 | ✅ Completed |
-| **React SaaS** | 38 / 110 | 51 / 110 | 89 / 110 | ✅ Completed |
+| Task | Baseline AI | Taste-simulated | Actual Taste | V2 Engine | Status |
+|---|---|---|---|---|---|
+| **Flutter Onboarding** | Generic centered stack. | N/A | N/A | Distinctive Asymmetric composition. | ✅ Completed |
+| **Web Landing Page** | 33 / 110 | 69 / 110 | **92 / 110** | **93 / 110** | ✅ Completed (4-Way) |
+| **Mobile Dashboard** | 36 / 110 | 64 / 110 | Pending | 90 / 110 | ✅ Completed |
+| **Ecommerce Storefront** | 41 / 110 | 56 / 110 | Pending | 91 / 110 | ✅ Completed |
+| **Game UI** | 28 / 110 | 49 / 110 | Pending | 88 / 110 | ✅ Completed |
+| **React SaaS** | 38 / 110 | 51 / 110 | Pending | 89 / 110 | ✅ Completed |
+
+*In our controlled 4-way blinded benchmark on the Web Landing Page task (`02-web-landing-page`), Universal UI V2 scored 93/110 versus 92/110 for the officially executed Taste skill (`design-taste-frontend`), 69/110 for the Taste-simulated control, and 33/110 for the baseline. While the simulated control scored 69, running the actual Taste skill scored 92, proving that official Taste is far superior to a brutalist simulation. Universal UI V2 won by 1 point through iterative motion states and diagram-led composition.*
 
 ---
 

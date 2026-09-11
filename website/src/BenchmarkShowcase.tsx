@@ -29,8 +29,8 @@ export function BenchmarkShowcase() {
         <div className="reveal">
           <span className="tech-label">Empirical Evaluation</span>
           <h2 style={{ marginBottom: '1rem' }}>Controlled Benchmarks</h2>
-          <p style={{ color: 'var(--text-secondary)', maxWidth: '42rem', marginBottom: '3rem' }}>
-            We evaluated the Universal UI V2 engine against standard Baseline AI and rigid Taste-simulated constraints across 6 distinct UI domains. All evaluations used the exact same prompt and requirements.
+          <p style={{ color: 'var(--text-secondary)', maxWidth: '44rem', marginBottom: '3rem' }}>
+            The benchmark system is designed to compare UI approaches and identify failure modes. Current results are experimental evidence from controlled evaluations, not universal proof of superiority. We evaluate Universal UI V2 against Baseline AI, Taste-simulated controls, and officially executed Taste skills across distinct UI domains.
           </p>
         </div>
 

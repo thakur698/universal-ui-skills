@@ -293,6 +293,57 @@
           "revision_cycles": 2
         }
       }
+    },
+    {
+      "id": "07-cinematic-web-experience",
+      "task": "Design a premium product website for an advanced camera, luxury automotive, or high-end hardware product brand. The experience should use editorial imagery, a pinned storytelling section, controlled parallax, a scroll-driven media transformation, and a video-scrubbed product reveal while remaining fast, accessible, and usable.",
+      "results": {
+        "baseline_ai": {
+          "design_quality": 4,
+          "visual_hierarchy": 3,
+          "typography": 4,
+          "composition": 3,
+          "distinctiveness": 2,
+          "product_fit": 4,
+          "responsive_quality": 5,
+          "accessibility": 6,
+          "motion": 2,
+          "consistency": 3,
+          "anti_slop": 2,
+          "total": 35,
+          "revision_cycles": 1
+        },
+        "actual_taste": {
+          "design_quality": 9,
+          "visual_hierarchy": 9,
+          "typography": 9,
+          "composition": 9,
+          "distinctiveness": 8,
+          "product_fit": 9,
+          "responsive_quality": 8,
+          "accessibility": 8,
+          "motion": 5,
+          "consistency": 9,
+          "anti_slop": 9,
+          "total": 91,
+          "revision_cycles": 1
+        },
+        "universal_ui_v2": {
+          "design_quality": 9,
+          "visual_hierarchy": 9,
+          "typography": 9,
+          "composition": 9,
+          "distinctiveness": 9,
+          "product_fit": 9,
+          "responsive_quality": 8,
+          "accessibility": 8,
+          "motion": 9,
+          "consistency": 9,
+          "anti_slop": 9,
+          "total": 97,
+          "revision_cycles": 3
+        }
+      }
     }
   ]
 }

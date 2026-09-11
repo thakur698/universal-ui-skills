@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-page: #09090b;
+  --bg-surface: #121215;
+  --bg-surface-elevated: #18181b;
+  --border-subtle: #27272a;
+  --border-strong: #3f3f46;
+  --text-high: #fafafa;
+  --text-dim: #a1a1aa;
+  --accent-emerald: #10b981;
+  --accent-emerald-dark: #059669;
+  --radius-std: 8px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-page);
+  color: var(--text-high);
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.taste-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav */
+.taste-nav {
+  height: 68px;
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: rgba(9, 9, 11, 0.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.taste-nav-container {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taste-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-icon {
+  color: var(--accent-emerald);
+}
+
+.taste-nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.taste-nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.taste-nav-links a:hover {
+  color: var(--text-high);
+}
+
+.taste-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.taste-nav-signin {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.taste-nav-signin:hover {
+  color: var(--text-high);
+}
+
+.taste-btn-primary {
+  background-color: var(--text-high);
+  color: var(--bg-page);
+  border: 1px solid var(--text-high);
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-std);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.taste-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.taste-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.taste-btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--text-high);
+  border: 1px solid var(--border-subtle);
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-std);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s ease;
+}
+
+.taste-btn-secondary:hover {
+  border-color: var(--border-strong);
+}
+
+/* Main */
+.taste-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hero */
+.taste-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  min-height: 82vh;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.taste-eyebrow {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--accent-emerald);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.taste-headline {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  margin: 0 0 1.25rem 0;
+  color: #ffffff;
+}
+
+.taste-subtext {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  max-width: 540px;
+}
+
+.taste-cta-group {
+  display: flex;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.taste-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.meta-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.meta-text {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  font-family: 'Geist Mono', monospace;
+}
+
+/* Code Preview Card */
+.taste-code-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-std);
+  overflow: hidden;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.code-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-surface-elevated);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.code-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.code-tab {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.code-tab.active {
+  background-color: var(--bg-surface);
+  color: var(--text-high);
+  font-weight: 600;
+}
+
+.code-status {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent-emerald);
+}
+
+.code-body pre {
+  margin: 0;
+  padding: 1.5rem;
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #d4d4d8;
+  overflow-x: auto;
+}
+
+.c-dim { color: #71717a; }
+.c-green { color: #34d399; }
+.c-comment { color: #71717a; font-style: italic; }
+.c-key { color: #38bdf8; }
+.c-val { color: #facc15; }
+.c-num { color: #f472b6; }
+.c-status { color: #34d399; }
+.c-keyword { color: #a78bfa; }
+
+/* Logo Wall */
+.taste-logo-wall {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 6rem;
+}
+
+.logo-wall-label {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: #71717a;
+  text-align: center;
+  margin: 0 0 1.75rem 0;
+}
+
+.logo-strip {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #71717a;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: color 0.15s ease;
+}
+
+.logo-item:hover {
+  color: var(--text-high);
+}
+
+/* Bento Section */
+.taste-bento-section {
+  padding-bottom: 8rem;
+}
+
+.taste-section-header {
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.taste-section-header h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem 0;
+}
+
+.taste-section-header p {
+  color: var(--text-dim);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.taste-bento-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+}
+
+.bento-tile {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-std);
+  padding: 2rem;
+  transition: border-color 0.2s ease;
+}
+
+.bento-tile:hover {
+  border-color: var(--border-strong);
+}
+
+.bento-large {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-badge {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-emerald);
+  margin-bottom: 1rem;
+}
+
+.bento-tile h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem 0;
+}
+
+.bento-tile p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin: 0 0 1.5rem 0;
+}
+
+.tile-icon-wrap {
+  width: 36px;
+  height: 36px;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-emerald);
+  margin-bottom: 1.25rem;
+}
+
+.latency-telemetry {
+  margin-top: auto;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.telemetry-node {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.node-city {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-family: 'Geist Mono', monospace;
+}
+
+.node-ms {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Geist Mono', monospace;
+}

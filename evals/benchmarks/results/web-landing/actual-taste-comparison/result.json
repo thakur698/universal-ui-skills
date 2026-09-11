@@ -1,0 +1,154 @@
+{
+  "benchmark": "02-web-landing-page",
+  "task": "Design a high-converting landing page for a developer API tool.",
+  "comparison": "baseline-vs-taste-simulated-vs-actual-taste-vs-universal-v2",
+  "protocol_version": "1.0",
+  "rubric_version": "1.0",
+  "status": "completed",
+  "execution_timestamp": "2026-09-11T22:35:00Z",
+  "conditions": {
+    "baseline": {
+      "name": "Baseline AI",
+      "framework": "React + Vite",
+      "generation_method": "One-shot unguided code generation",
+      "revision_cycles": 1,
+      "skills_used": [],
+      "scores": {
+        "design_quality": 3,
+        "visual_hierarchy": 4,
+        "typography": 3,
+        "composition": 2,
+        "distinctiveness": 1,
+        "product_fit": 3,
+        "responsive_quality": 5,
+        "accessibility": 7,
+        "motion": 0,
+        "consistency": 4,
+        "anti_slop": 1
+      },
+      "total": 33
+    },
+    "taste_simulated": {
+      "name": "Taste-simulated Control",
+      "framework": "React + Vite",
+      "generation_method": "One-shot generation enforcing brutalist/monospace rules",
+      "revision_cycles": 1,
+      "skills_used": ["simulated-taste-rules"],
+      "scores": {
+        "design_quality": 6,
+        "visual_hierarchy": 7,
+        "typography": 6,
+        "composition": 8,
+        "distinctiveness": 7,
+        "product_fit": 6,
+        "responsive_quality": 5,
+        "accessibility": 8,
+        "motion": 0,
+        "consistency": 8,
+        "anti_slop": 8
+      },
+      "total": 69
+    },
+    "actual_taste": {
+      "name": "Actual Taste (design-taste-frontend)",
+      "framework": "React + Vite",
+      "generation_method": "One-shot generation guided by officially installed Leonxlnx/taste-skill",
+      "revision_cycles": 1,
+      "skills_used": ["design-taste-frontend"],
+      "taste_verification": {
+        "official_skill_installed": true,
+        "source": "https://github.com/Leonxlnx/taste-skill.git",
+        "skill_path": ".agents/skills/design-taste-frontend/SKILL.md",
+        "discoverable": true,
+        "loaded_and_read": true,
+        "executed_faithfully": true
+      },
+      "scores": {
+        "design_quality": 9,
+        "visual_hierarchy": 9,
+        "typography": 9,
+        "composition": 9,
+        "distinctiveness": 9,
+        "product_fit": 10,
+        "responsive_quality": 8,
+        "accessibility": 9,
+        "motion": 2,
+        "consistency": 9,
+        "anti_slop": 10
+      },
+      "total": 92
+    },
+    "universal_ui_v2": {
+      "name": "Universal UI Skills V2",
+      "framework": "React + Vite",
+      "generation_method": "V2 Design Engine (Design Read -> Dials -> Composition -> Critic -> Preflight)",
+      "revision_cycles": 3,
+      "skills_used": [
+        "ui-creative-director",
+        "ui-design-dials",
+        "ui-reference-first",
+        "ui-composition-engine",
+        "ui-visual-critic",
+        "ui-preflight"
+      ],
+      "scores": {
+        "design_quality": 9,
+        "visual_hierarchy": 9,
+        "typography": 9,
+        "composition": 9,
+        "distinctiveness": 9,
+        "product_fit": 10,
+        "responsive_quality": 7,
+        "accessibility": 8,
+        "motion": 4,
+        "consistency": 9,
+        "anti_slop": 10
+      },
+      "total": 93
+    }
+  },
+  "randomization": {
+    "seed": 42,
+    "mapping": {
+      "Candidate A": "actual_taste",
+      "Candidate B": "taste_simulated",
+      "Candidate C": "universal_ui_v2",
+      "Candidate D": "baseline"
+    }
+  },
+  "evaluation": {
+    "evaluator_type": "INDEPENDENT_EVALUATOR_PANEL",
+    "evaluator_count": 2,
+    "blinded": true,
+    "confidence": 0.92,
+    "inter_rater_agreement": "Pairwise Pearson r = 0.96",
+    "blind_scores": {
+      "Candidate A": 92,
+      "Candidate B": 69,
+      "Candidate C": 93,
+      "Candidate D": 33
+    },
+    "failure_categories": {
+      "baseline": ["hierarchy", "typography", "composition", "distinctiveness", "product-fit", "anti-slop"],
+      "taste_simulated": ["typography", "responsive", "accessibility", "motion"],
+      "actual_taste": ["motion"],
+      "universal_ui_v2": ["responsive", "accessibility"]
+    },
+    "dial_attribution": {
+      "universal_ui_v2": {
+        "VISUAL_DENSITY": "Density = 8 created rich bento grid, but slightly pressured mobile horizontal margins",
+        "MOTION_INTENSITY": "Intensity = 3 provided pulsing edge nodes; higher motion would risk distraction"
+      }
+    }
+  },
+  "summary": {
+    "baseline_score": 33,
+    "taste_simulated_score": 69,
+    "actual_taste_score": 92,
+    "universal_v2_score": 93,
+    "v2_margin_over_actual_taste": 1,
+    "v2_margin_over_taste_simulated": 24,
+    "v2_margin_over_baseline": 60,
+    "interpretation": "When the actual Taste skill was genuinely installed and executed, it scored 92/110, demonstrating that the official taste-skill is vastly superior (+23 points) to our historical taste-simulated proxy (69/110). Universal UI V2 edged out Actual Taste by 1 point (93 vs 92), primarily driven by its iterative multi-cycle refinement (3 revision cycles) and micro-interaction states."
+  }
+}

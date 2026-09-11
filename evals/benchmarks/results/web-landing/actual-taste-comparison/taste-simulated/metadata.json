@@ -1,0 +1,10 @@
+{
+  "condition": "taste_simulated",
+  "name": "Taste-simulated Control",
+  "framework": "React + Vite",
+  "dependencies": ["react", "react-dom"],
+  "revision_cycles": 1,
+  "tools_used": [],
+  "skills_used": ["simulated-taste-rules"],
+  "frozen": true
+}

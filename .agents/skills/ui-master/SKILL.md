@@ -1,6 +1,6 @@
 ---
 name: ui-master
-description: Master orchestration layer for Universal UI Skills v2. Orchestrates the rigorous design pipeline from Brief to Pre-Flight.
+description: Master orchestration layer for Universal UI Skills v2. Orchestrates the rigorous design pipeline from Brief to Pre-Flight with first-class media and scroll storytelling.
 ---
 
 # UI Master (V2 Orchestrator)
@@ -26,11 +26,15 @@ Design System (via ui-design-memory / tokens)
   ↓
 Composition Plan (via ui-composition-engine)
   ↓
+Media Plan (via ui-media-composition)
+  ↓
+Scroll Story Plan (via ui-scroll-storytelling)
+  ↓
 Asset Plan (via ui-assets)
   ↓
-Implementation (via ui-web / ui-react / ui-mobile)
+Implementation (via ui-web / ui-react / ui-mobile / ui-flutter)
   ↓
-Motion (via ui-motion)
+Motion (via ui-motion / ui-cinematic-motion)
   ↓
 Responsive (via ui-layout-responsive)
   ↓
@@ -38,29 +42,60 @@ Accessibility (via ui-accessibility)
   ↓
 Visual Render (via ui-visual-qa)
   ↓
-AI Critic (via ui-visual-critic)
+Visual Critic (via ui-visual-critic)
   ↓
 Fix (Loop until Critic Score >= 8)
+  ↓
+Re-render
   ↓
 Pre-flight (via ui-preflight)
   ↓
 Final UI Task Complete
 ```
 
-## Execution Requirements
+## Core Design Principles
 
-1. **Invoke Dependencies**: The master agent must read the underlying skills (e.g., `ui-creative-director`, `ui-design-dials`, `ui-visual-critic`) to understand the strict mechanical rules of each phase.
-2. **Iterative Flow**: Do not treat this as a single shot. The `CRITIC → FIX → RENDER` loop is mandatory.
-3. **The Final Report**: The agent must provide an Execution Report that explicitly lists:
-   - The final Design Dials.
-   - The Critic Score.
-   - The Pre-Flight Matrix (All PASS).
-   - The tools and skills utilized, using this explicit format for integrations (e.g., Rive):
-     ```text
-     Tool: [Tool Name]
-     Status: [AVAILABLE + EXECUTABLE | AVAILABLE + MANUAL | NOT AVAILABLE | REQUIRES USER SETUP]
-     Detection: [How it was detected]
-     Executable: [Yes/No]
-     Actually used: [Yes/No]
-     Verification: [How it was visually verified]
-     ```
+1. **Media-First Visual Storytelling**: Prefer `IMAGE`, `VIDEO`, `ILLUSTRATION`, `DIAGRAM`, `TYPOGRAPHY`, `LAYOUT`, and `MOTION` as primary visual storytelling tools. Icons are utilities for navigation and small controls, NOT the default visual language for feature storytelling.
+2. **Intentional Scroll Storytelling**: Use scroll interactions (pins, reveals, video scrubs, parallax) only where they elevate the narrative. Never animate every section simply because the capability exists.
+3. **Strict Media/Scroll Pre-Planning**: `Media Plan` and `Scroll Story Plan` MUST be defined before writing implementation code.
+4. **Iterative Adversarial Loop**: Do not treat generation as a one-shot task. The `CRITIC → FIX → RENDER` loop is mandatory.
+
+## Execution & Reporting Requirements
+
+At the conclusion of every UI task, the agent must output a structured execution report:
+
+```text
+DESIGN DIALS
+SCROLL_INTERACTION: [1-10]
+MEDIA_PROMINENCE: [1-10]
+CINEMATIC_INTENSITY: [1-10]
+BENTO_COMPLEXITY: [1-10]
+
+MEDIA PLAN:
+[Summary of media types, roles, scales, and treatments]
+
+SCROLL STORY:
+[Summary of scroll patterns, sticky/pinned behaviors, choreography]
+
+MOTION:
+[Summary of micro, standard, and cinematic motion implementations]
+
+VIDEO: [Used / Not Used]
+PARALLAX: [Used / Not Used]
+STICKY/PINNED: [Used / Not Used]
+
+VISUAL QA:
+[Responsive render verification across mobile and desktop]
+
+REDUCED MOTION:
+[Verification of prefers-reduced-motion fallback]
+
+MOBILE FALLBACK:
+[Strategy for mobile recomposition and scroll fallback]
+
+ANTI-SLOP:
+[Verification that generic AI tropes and repetitive icon cards were eliminated]
+
+PRE-FLIGHT:
+PASS / FAIL [All binary pre-flight gates passed]
+```

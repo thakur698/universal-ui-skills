@@ -1,0 +1,10 @@
+{
+  "condition": "baseline",
+  "name": "Baseline AI",
+  "framework": "React + Vite",
+  "dependencies": ["react", "react-dom"],
+  "revision_cycles": 1,
+  "tools_used": [],
+  "skills_used": [],
+  "frozen": true
+}

@@ -1,0 +1,17 @@
+{
+  "condition": "universal_ui_v2",
+  "name": "Universal UI Skills V2",
+  "framework": "React + Vite",
+  "dependencies": ["react", "react-dom"],
+  "revision_cycles": 3,
+  "tools_used": ["browser_qa"],
+  "skills_used": [
+    "ui-creative-director",
+    "ui-design-dials",
+    "ui-reference-first",
+    "ui-composition-engine",
+    "ui-visual-critic",
+    "ui-preflight"
+  ],
+  "frozen": true
+}

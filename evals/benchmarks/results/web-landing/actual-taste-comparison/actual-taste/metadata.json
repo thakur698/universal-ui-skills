@@ -1,0 +1,18 @@
+{
+  "condition": "actual_taste",
+  "name": "Actual Taste (design-taste-frontend)",
+  "framework": "React + Vite",
+  "dependencies": ["react", "react-dom"],
+  "revision_cycles": 1,
+  "tools_used": ["skills-cli"],
+  "skills_used": ["design-taste-frontend"],
+  "taste_verification": {
+    "official_skill_installed": true,
+    "source": "https://github.com/Leonxlnx/taste-skill.git",
+    "skill_path": ".agents/skills/design-taste-frontend/SKILL.md",
+    "discoverable": true,
+    "loaded_and_read": true,
+    "executed_faithfully": true
+  },
+  "frozen": true
+}

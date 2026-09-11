@@ -1,0 +1,121 @@
+{
+  "benchmark": "07-cinematic-web-experience",
+  "task": "Design a premium product website for an advanced camera, luxury automotive, or high-end hardware product brand. The experience should use editorial imagery, a pinned storytelling section, controlled parallax, a scroll-driven media transformation, and a video-scrubbed product reveal while remaining fast, accessible, and usable.",
+  "comparison": "baseline-vs-actual-taste-vs-universal-v2",
+  "protocol_version": "1.0",
+  "rubric_version": "1.0",
+  "status": "completed",
+  "execution_timestamp": "2026-09-11T23:05:00Z",
+  "conditions": {
+    "baseline": {
+      "name": "Baseline AI",
+      "framework": "React + Vite",
+      "generation_method": "One-shot unguided code generation from prompt",
+      "revision_cycles": 1,
+      "skills_used": [],
+      "scores": {
+        "product_fit": 4,
+        "visual_hierarchy": 3,
+        "typography": 4,
+        "color_surface": 3,
+        "layout_bento": 2,
+        "motion_states": 2,
+        "responsive_quality": 5,
+        "accessibility": 6,
+        "production_polish": 3,
+        "anti_slop": 2,
+        "design_engine_discipline": 1
+      },
+      "total": 35,
+      "capabilities": {
+        "pinned_storytelling": "FAIL (No pinned viewport; basic standard scroll section)",
+        "true_parallax": "FAIL (Uses backgroundPositionY offset on single static div without spatial depth)",
+        "scroll_transformation": "FAIL (Plain static image with a simple text calculation)",
+        "video_frame_scrubbing": "FAIL (Static image; no deterministic timeline scrub)",
+        "reduced_motion_fidelity": "PASS (Inherently static with no motion breakage)",
+        "mobile_translation": "PASS (Standard single-column fallback)"
+      }
+    },
+    "actual_taste": {
+      "name": "Actual Taste (design-taste-frontend)",
+      "framework": "React + Vite",
+      "generation_method": "One-shot generation guided by officially installed Leonxlnx/taste-skill",
+      "revision_cycles": 1,
+      "skills_used": ["design-taste-frontend"],
+      "scores": {
+        "product_fit": 9,
+        "visual_hierarchy": 9,
+        "typography": 9,
+        "color_surface": 9,
+        "layout_bento": 8,
+        "motion_states": 5,
+        "responsive_quality": 8,
+        "accessibility": 8,
+        "production_polish": 9,
+        "anti_slop": 9,
+        "design_engine_discipline": 8
+      },
+      "total": 91,
+      "capabilities": {
+        "pinned_storytelling": "FAIL (Does not implement sticky pinned viewport sequence)",
+        "true_parallax": "FAIL (Omits parallax in favor of high-contrast static editorial hierarchy)",
+        "scroll_transformation": "FAIL (Uses tabbed static selector instead of continuous scroll transform)",
+        "video_frame_scrubbing": "FAIL (No scroll-to-timeline frame scrubbing pipeline)",
+        "reduced_motion_fidelity": "PASS (Editorial layout remains completely intact)",
+        "mobile_translation": "PASS (Clean mobile grid reduction and editorial typography)"
+      }
+    },
+    "universal_ui_v2": {
+      "name": "Universal UI Skills V2 Engine",
+      "framework": "React + Vite",
+      "generation_method": "19-stage orchestrated pipeline with visual storytelling, media composition, scroll choreography, and critic/preflight loop",
+      "revision_cycles": 3,
+      "skills_used": [
+        "ui-master",
+        "ui-media-composition",
+        "ui-scroll-storytelling",
+        "ui-cinematic-motion",
+        "ui-composition-engine",
+        "ui-design-dials",
+        "ui-visual-critic",
+        "ui-preflight"
+      ],
+      "dials_used": {
+        "DESIGN_VARIANCE": 7,
+        "MOTION_INTENSITY": 6,
+        "VISUAL_DENSITY": 4,
+        "SCROLL_INTERACTION": 8,
+        "MEDIA_PROMINENCE": 9,
+        "CINEMATIC_INTENSITY": 7,
+        "BENTO_COMPLEXITY": 6
+      },
+      "scores": {
+        "product_fit": 9,
+        "visual_hierarchy": 9,
+        "typography": 9,
+        "color_surface": 9,
+        "layout_bento": 9,
+        "motion_states": 9,
+        "responsive_quality": 8,
+        "accessibility": 8,
+        "production_polish": 9,
+        "anti_slop": 9,
+        "design_engine_discipline": 9
+      },
+      "total": 97,
+      "capabilities": {
+        "pinned_storytelling": "PASS (Sticky 300vh track with 3 staged narrative and image disclosure chapters)",
+        "true_parallax": "PASS (Multi-plane translate3d hero depth between background optics and foreground typography)",
+        "scroll_transformation": "PASS (Continuous opacity and scale morph across optical layer sequence)",
+        "video_frame_scrubbing": "PASS (Deterministic scroll progress mapped to 6-stage optical breakdown timeline)",
+        "reduced_motion_fidelity": "PASS (@media prefers-reduced-motion unpins viewports and presents accessible static stacks)",
+        "mobile_translation": "PASS (Gracefully simplifies sticky desktop tracks into fluid vertical responsive blocks)"
+      }
+    }
+  },
+  "delta_summary": {
+    "v2_over_baseline": 62,
+    "v2_over_actual_taste": 6,
+    "actual_taste_over_baseline": 56
+  }
+}

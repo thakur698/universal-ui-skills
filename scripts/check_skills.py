@@ -48,7 +48,9 @@ secrets = [r"sk-[a-zA-Z0-9]{32}", r"AKIA[0-9A-Z]{16}"] # Basic openai / aws keys
 
 def check_file_content(path):
     global failed
-    if "node_modules" in path.parts or path.name == "check_skills.py":
+    ignored_parts = {"node_modules", ".dart_tool", "build", "dist", ".idea", ".vscode", "ephemeral"}
+    ignored_names = {"check_skills.py", "local.properties", ".flutter-plugins-dependencies", "flutter_export_environment.sh", "Generated.xcconfig"}
+    if any(part in path.parts for part in ignored_parts) or path.name in ignored_names:
         return
 
     try:

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&display=swap');
+
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.taste-sim-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.taste-sim-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid #222222;
+}
+
+.taste-sim-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.taste-sim-btn-nav {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.taste-sim-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 3rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.taste-sim-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.taste-sim-title {
+  font-size: 3.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 2rem;
+  color: #111111;
+  text-transform: uppercase;
+}
+
+.taste-sim-desc {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 3rem;
+  max-width: 480px;
+}
+
+.taste-sim-btn-hero {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.taste-sim-img-placeholder {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: #0d0d0d;
+  border: 1px solid #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555555;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+}
