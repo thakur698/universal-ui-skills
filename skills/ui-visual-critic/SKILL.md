@@ -35,6 +35,21 @@ Score the current iteration on these dimensions:
 
 ---
 
+## Hard Diagnostic Flags
+
+### ❌ `ICON_SUBSTITUTION` (FAIL Condition)
+Flag as **FAIL** when:
+- An icon is used where meaningful imagery, illustrations, or diagrams would communicate better.
+- Multiple feature cards rely primarily on static icons to represent core capabilities.
+- Iconography is being used as a cosmetic bandage to compensate for weak layout composition.
+- A static generic icon is used where a stateful, interactive/animated visual (e.g. Rive, Lottie, or canvas) would materially enhance user understanding.
+
+### ✅ `MEDIA_FIRST_COMPOSITION` (PASS Condition)
+Flag as **PASS** when:
+- Primary feature communication is carried by meaningful imagery, technical architecture diagrams, live product visualizations, video loops, editorial typography, or asymmetric bento layouts rather than repetitive iconography.
+
+---
+
 ## Adversarial Critic Questions
 
 When critiquing, the agent must ask:
