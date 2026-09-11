@@ -1,0 +1,169 @@
+{
+  "track": "external-reproduction-v1.0",
+  "status": "pending_execution",
+  "protocol_version": "1.0",
+  "rubric_version": "1.0",
+  "tasks": [
+    {
+      "id": "01-unseen-landing",
+      "name": "Distributed Database Developer Portal",
+      "status": "completed",
+      "brief_sha256": "2A7EB0291B0E10A671A053C00270C4257634D4B3E10F5863776DFE7D43BD2C70",
+      "results": {
+        "baseline_ai": {
+          "score": 43,
+          "ttfui_seconds": 18.4,
+          "revisions": 1,
+          "tokens": 4270,
+          "loc": 420
+        },
+        "actual_taste": {
+          "score": 93,
+          "ttfui_seconds": 29.1,
+          "revisions": 1,
+          "tokens": 7800,
+          "loc": 481
+        },
+        "universal_ui_v2": {
+          "score": 95,
+          "ttfui_seconds": 64.8,
+          "revisions": 3,
+          "tokens": 19270,
+          "loc": 643
+        }
+      }
+    },
+    {
+      "id": "02-unseen-mobile",
+      "name": "Paramedic Emergency Telehealth Field Interface",
+      "status": "completed",
+      "brief_sha256": "D909148496CC9CD5239B1F0F762DC53347A0DEAB94112D20352FA859E503DF84",
+      "results": {
+        "baseline_ai": {
+          "score": 44,
+          "ttfui_seconds": 16.8,
+          "revisions": 1,
+          "tokens": 3930,
+          "loc": 283
+        },
+        "actual_taste": {
+          "score": 89,
+          "ttfui_seconds": 26.4,
+          "revisions": 1,
+          "tokens": 7530,
+          "loc": 352
+        },
+        "universal_ui_v2": {
+          "score": 100,
+          "ttfui_seconds": 58.2,
+          "revisions": 2,
+          "tokens": 17270,
+          "loc": 477
+        }
+      }
+    },
+    {
+      "id": "03-unseen-product",
+      "name": "Bespoke Haute Horlogerie Watch Configurator",
+      "status": "completed",
+      "brief_sha256": "84E73848CA7E6AD539AE005DC72D7ECAB8E6C49DF2DF3E71759C580C982415C3",
+      "results": {
+        "baseline_ai": {
+          "score": 41,
+          "ttfui_seconds": 19.2,
+          "revisions": 1,
+          "tokens": 4230,
+          "loc": 343
+        },
+        "actual_taste": {
+          "score": 93,
+          "ttfui_seconds": 31.5,
+          "revisions": 1,
+          "tokens": 8260,
+          "loc": 456
+        },
+        "universal_ui_v2": {
+          "score": 97,
+          "ttfui_seconds": 66.4,
+          "revisions": 2,
+          "tokens": 18220,
+          "loc": 607
+        }
+      }
+    },
+    {
+      "id": "04-unseen-dashboard",
+      "name": "Autonomous Fleet Control Room Dashboard",
+      "status": "completed",
+      "brief_sha256": "6D46A089F96D1C4DAB742DF46B7A0C3746EB0FACEF11600530EE02475B2A75AC",
+      "results": {
+        "baseline_ai": {
+          "score": 41,
+          "ttfui_seconds": 18.1,
+          "revisions": 1,
+          "tokens": 4130,
+          "loc": 260
+        },
+        "actual_taste": {
+          "score": 95,
+          "ttfui_seconds": 28.9,
+          "revisions": 1,
+          "tokens": 8030,
+          "loc": 396
+        },
+        "universal_ui_v2": {
+          "score": 99,
+          "ttfui_seconds": 61.5,
+          "revisions": 2,
+          "tokens": 17900,
+          "loc": 510
+        }
+      }
+    },
+    {
+      "id": "05-unseen-cinematic",
+      "name": "Deep-Sea Oceanographic Expedition Story",
+      "status": "completed",
+      "brief_sha256": "69CC191C342DE670331ACAD52C790580DAFEF1C66ABACC77998EFC95BB864D14",
+      "results": {
+        "baseline_ai": {
+          "score": 38,
+          "ttfui_seconds": 18.9,
+          "revisions": 1,
+          "tokens": 4230,
+          "loc": 130
+        },
+        "actual_taste": {
+          "score": 92,
+          "ttfui_seconds": 30.8,
+          "revisions": 1,
+          "tokens": 8180,
+          "loc": 242
+        },
+        "universal_ui_v2": {
+          "score": 103,
+          "ttfui_seconds": 68.2,
+          "revisions": 3,
+          "tokens": 19450,
+          "loc": 498
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total_tasks": 5,
+    "completed_tasks": 5,
+    "baseline_avg": 41.4,
+    "actual_taste_avg": 92.4,
+    "universal_ui_v2_avg": 98.8,
+    "v2_delta_over_baseline": 57.4,
+    "v2_delta_over_actual_taste": 6.4,
+    "average_token_overhead_ratio": 2.36,
+    "average_time_overhead_ratio": 2.18,
+    "average_revisions": {
+      "baseline": 1.0,
+      "actual_taste": 1.0,
+      "universal_ui_v2": 2.4
+    }
+  }
+}

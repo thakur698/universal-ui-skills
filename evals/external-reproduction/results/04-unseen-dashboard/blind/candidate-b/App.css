@@ -1,0 +1,180 @@
+:root {
+  --bg: #0b0f19;
+  --panel: #111827;
+  --border: #1f2937;
+  --text: #f9fafb;
+  --red: #ef4444;
+  --green: #10b981;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.dashboard-app {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dash-header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.telemetry-clock {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1.5rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-buttons button {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.filter-buttons button.active {
+  background: #2563eb;
+  border-color: #3b82f6;
+}
+
+.truck-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.truck-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.truck-card.selected {
+  border-color: #3b82f6;
+}
+
+.truck-card.crit {
+  border-left: 4px solid var(--red);
+}
+
+.truck-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.status-pill {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.status-pill.active { background: rgba(16,185,129,0.2); color: var(--green); }
+.status-pill.critical { background: rgba(239,68,68,0.2); color: var(--red); }
+
+.truck-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.detail-pane {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 6px;
+}
+
+.detail-pane h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.detail-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.d-card {
+  background: #0f172a;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  text-align: center;
+}
+
+.d-card span {
+  display: block;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.d-card strong {
+  font-size: 1.1rem;
+}
+
+.alert-section h3 {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 0.75rem;
+}
+
+.alert-box {
+  background: #2b0808;
+  border: 1px solid var(--red);
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-ack {
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+}

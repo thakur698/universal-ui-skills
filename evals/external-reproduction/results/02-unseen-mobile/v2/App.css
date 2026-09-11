@@ -1,0 +1,326 @@
+:root {
+  --bg-dark: #040406;
+  --surface-panel: #0d0d12;
+  --surface-active: #15151e;
+  --border-dim: rgba(255, 255, 255, 0.08);
+  --border-bright: rgba(255, 255, 255, 0.2);
+  --text-pure: #ffffff;
+  --text-muted: #90909e;
+  --text-dim: #545462;
+  --triage-p1-red: #ff334b;
+  --triage-p2-yellow: #ffb800;
+  --triage-p3-green: #00e676;
+  --font-mono: 'SF Mono', 'Roboto Mono', Menlo, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  --touch-min: 52px;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  color: var(--text-pure);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+}
+
+.v2-clinical-app {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1.25rem 1rem;
+  border-left: 1px solid var(--border-dim);
+  border-right: 1px solid var(--border-dim);
+}
+
+/* Topbar */
+.v2-clinical-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-dim);
+  margin-bottom: 0.75rem;
+}
+
+.v2-meta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.v2-unit-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-pure);
+}
+
+.v2-patient-id {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.v2-connection-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface-panel);
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--border-dim);
+  border-radius: 999px;
+}
+
+.v2-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.v2-pulse-dot.synced { background: var(--triage-p3-green); box-shadow: 0 0 8px var(--triage-p3-green); }
+.v2-pulse-dot.cached { background: var(--triage-p2-yellow); box-shadow: 0 0 8px var(--triage-p2-yellow); }
+
+.v2-sync-text {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Patient Strip */
+.v2-patient-strip {
+  margin-bottom: 1rem;
+}
+
+.v2-patient-info h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.25rem 0;
+  color: var(--text-pure);
+}
+
+.v2-gcs {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Triage Selector */
+.v2-triage-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.v2-triage-btn {
+  background: var(--surface-panel);
+  border: 1px solid var(--border-dim);
+  padding: 0.75rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  min-height: 60px;
+  box-sizing: border-box;
+}
+
+.v2-triage-btn .triage-num {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.v2-triage-btn .triage-name {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0.15rem 0;
+}
+
+.v2-triage-btn .triage-sub {
+  font-size: 0.55rem;
+  color: var(--text-dim);
+}
+
+.v2-triage-btn.red.selected {
+  background: #2b060b;
+  border-color: var(--triage-p1-red);
+  color: var(--triage-p1-red);
+}
+
+.v2-triage-btn.yellow.selected {
+  background: #2b1d00;
+  border-color: var(--triage-p2-yellow);
+  color: var(--triage-p2-yellow);
+}
+
+.v2-triage-btn.green.selected {
+  background: #002b14;
+  border-color: var(--triage-p3-green);
+  color: var(--triage-p3-green);
+}
+
+/* Vitals Bento 2x2 */
+.v2-vitals-bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.v2-vital-cell {
+  background: var(--surface-panel);
+  border: 1px solid var(--border-dim);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90px;
+  cursor: pointer;
+}
+
+.v2-vital-cell.focused {
+  border-color: #38bdf8;
+  background: #0f1520;
+}
+
+.v2-vital-cell.critical-alert {
+  border-left: 3px solid var(--triage-p1-red);
+}
+
+.v2-cell-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vital-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.vital-flag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--triage-p1-red);
+}
+
+.v2-cell-val {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.v2-cell-val .numeric {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.v2-cell-val .unit {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+/* Gloved Stepper Zone */
+.v2-stepper-panel {
+  background: var(--surface-panel);
+  border: 1px solid var(--border-dim);
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.v2-stepper-header {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.v2-stepper-header strong {
+  color: #38bdf8;
+}
+
+.v2-stepper-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+}
+
+.glove-btn {
+  background: var(--surface-active);
+  border: 1px solid var(--border-bright);
+  color: var(--text-pure);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  min-height: 52px;
+}
+
+.glove-btn:active {
+  background: var(--text-pure);
+  color: var(--bg-dark);
+}
+
+/* Field Action Dock */
+.v2-action-dock {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-top: 0.5rem;
+}
+
+.v2-audio-record-btn {
+  background: var(--surface-panel);
+  border: 1px solid var(--border-bright);
+  color: var(--text-pure);
+  padding: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 54px;
+}
+
+.v2-audio-record-btn.recording-active {
+  background: #40060d;
+  border-color: var(--triage-p1-red);
+  color: var(--triage-p1-red);
+}
+
+.v2-dispatch-button {
+  background: var(--text-pure);
+  color: var(--bg-dark);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 1.15rem;
+  cursor: pointer;
+  min-height: 58px;
+}

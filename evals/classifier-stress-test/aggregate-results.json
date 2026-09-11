@@ -1,0 +1,28 @@
+{
+  "track": "classifier-stress-test-v2.2-exp",
+  "status": "protocol_registered",
+  "protocol_version": "1.0",
+  "rubric_version": "1.0",
+  "tolerances": {
+    "max_under_orchestration_rate": 0.05,
+    "max_over_orchestration_rate": 0.15,
+    "min_expected_retained_gain": 0.90
+  },
+  "evaluation_schema": [
+    "task_id",
+    "domain",
+    "predicted_tier",
+    "empirical_optimal_tier",
+    "is_exact_match",
+    "is_under_orchestrated",
+    "is_over_orchestrated",
+    "predicted_tier_score",
+    "full_l3_score",
+    "actual_taste_score",
+    "retained_gain_rl",
+    "predicted_tier_tokens",
+    "full_l3_tokens",
+    "token_savings_pct",
+    "selection_efficiency"
+  ]
+}

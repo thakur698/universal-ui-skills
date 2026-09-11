@@ -1,0 +1,160 @@
+:root {
+  --bg-hadal: #040608;
+  --surface-ocean: #0a0e14;
+  --border-ocean: #151d28;
+  --text-main: #f0f4f8;
+  --text-muted: #748294;
+  --cyan-biolum: #38bdf8;
+  --font-mono: 'SF Mono', 'Roboto Mono', Menlo, monospace;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-hadal);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+.taste-ocean-app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+}
+
+.ocean-monograph-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-ocean);
+  margin-bottom: 2.5rem;
+}
+
+.brand-code {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  display: block;
+}
+
+.brand-loc {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.telemetry-pill {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+}
+
+.depth-metric { color: var(--cyan-biolum); font-weight: 700; }
+.press-metric { color: var(--text-muted); }
+
+.tier-selector-strip {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  overflow-x: auto;
+}
+
+.tier-btn {
+  background: var(--surface-ocean);
+  border: 1px solid var(--border-ocean);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+  min-width: 140px;
+}
+
+.tier-btn.active {
+  background: var(--text-main);
+  color: var(--bg-hadal);
+  border-color: var(--text-main);
+  font-weight: 700;
+}
+
+.t-idx { font-size: 0.65rem; }
+.t-name { font-size: 0.8rem; letter-spacing: 0.08em; }
+
+.stage-meta-head {
+  margin-bottom: 2rem;
+}
+
+.stage-ref {
+  font-size: 0.7rem;
+  color: var(--cyan-biolum);
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.stage-meta-head h2 {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.bathymetry-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.bathy-tile {
+  background: var(--surface-ocean);
+  border: 1px solid var(--border-ocean);
+  padding: 2rem;
+}
+
+.bathy-label { font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.08em; display: block; }
+.bathy-val { font-size: 1.6rem; font-weight: 800; margin: 1rem 0; color: var(--text-main); }
+.bathy-sub { font-size: 0.65rem; color: #405064; }
+
+.benthic-monograph-card {
+  background: var(--surface-ocean);
+  border: 1px solid var(--border-ocean);
+  padding: 2.5rem;
+}
+
+.benthic-monograph-card h3 {
+  font-size: 0.9rem;
+  color: var(--cyan-biolum);
+  letter-spacing: 0.1em;
+  margin: 0 0 1rem 0;
+}
+
+.benthic-monograph-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin: 0 0 1.5rem 0;
+}
+
+.card-footnote {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.ocean-footer {
+  margin-top: 5rem;
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-ocean);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 960px) {
+  .bathymetry-matrix {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

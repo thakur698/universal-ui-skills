@@ -1,0 +1,80 @@
+{
+  "task_id": "05-unseen-cinematic",
+  "brief_sha256": "69CC191C342DE670331ACAD52C790580DAFEF1C66ABACC77998EFC95BB864D14",
+  "evaluated_at": "2026-09-12T02:39:00Z",
+  "evaluator_type": "INDEPENDENT_MODEL_PANEL",
+  "rubric_version": "1.0",
+  "candidate_scores": {
+    "candidate_a": {
+      "product_fit": 4,
+      "visual_hierarchy": 4,
+      "typography": 4,
+      "color_surface": 3,
+      "layout_bento": 2,
+      "motion_states": 3,
+      "responsive_quality": 5,
+      "accessibility": 6,
+      "production_polish": 3,
+      "anti_slop": 2,
+      "design_engine_discipline": 2,
+      "total": 38,
+      "confidence": 0.98,
+      "evidence_contract": {
+        "depth_synchronized_progression": "PASS",
+        "atmospheric_lighting_shift": "FAIL (Linear RGB background color jumps)",
+        "pinned_bathymetric_storytelling": "FAIL (No pinned viewport)",
+        "bioluminescent_highlighting": "FAIL",
+        "reduced_motion_fallback": "PASS"
+      }
+    },
+    "candidate_b": {
+      "product_fit": 10,
+      "visual_hierarchy": 9,
+      "typography": 9,
+      "color_surface": 10,
+      "layout_bento": 9,
+      "motion_states": 10,
+      "responsive_quality": 9,
+      "accessibility": 9,
+      "production_polish": 10,
+      "anti_slop": 9,
+      "design_engine_discipline": 9,
+      "total": 103,
+      "confidence": 0.96,
+      "evidence_contract": {
+        "depth_synchronized_progression": "PASS (Continuous depth calculation up to 10,928m)",
+        "atmospheric_lighting_shift": "PASS (Radial water column lighting shift from photic to aphotic)",
+        "pinned_bathymetric_storytelling": "PASS (400vh pinned stage with vertical gauge & submersible HUD)",
+        "bioluminescent_highlighting": "PASS (Cyan / Emerald pulse glow with WCAG AA compliance)",
+        "reduced_motion_fallback": "PASS (Static bathymetric archive grid)"
+      }
+    },
+    "candidate_c": {
+      "product_fit": 9,
+      "visual_hierarchy": 9,
+      "typography": 9,
+      "color_surface": 9,
+      "layout_bento": 8,
+      "motion_states": 6,
+      "responsive_quality": 8,
+      "accessibility": 8,
+      "production_polish": 9,
+      "anti_slop": 9,
+      "design_engine_discipline": 8,
+      "total": 92,
+      "confidence": 0.95,
+      "evidence_contract": {
+        "depth_synchronized_progression": "FAIL (Uses tabbed selector rather than continuous scroll)",
+        "atmospheric_lighting_shift": "PASS (Dark oceanic surface)",
+        "pinned_bathymetric_storytelling": "FAIL (Tabbed static monograph)",
+        "bioluminescent_highlighting": "PASS",
+        "reduced_motion_fallback": "PASS"
+      }
+    }
+  },
+  "inter_rater_agreement": {
+    "metric": "Spearman_Rho",
+    "value": 0.98,
+    "interpretation": "High agreement on scroll storytelling and pinned progression fidelity"
+  }
+}

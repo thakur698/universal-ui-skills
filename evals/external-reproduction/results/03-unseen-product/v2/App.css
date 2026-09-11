@@ -1,0 +1,415 @@
+:root {
+  --bg-deep: #060608;
+  --surface-chamber: #0e0e12;
+  --surface-opt: #14141a;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --text-pure: #fbfbfd;
+  --text-muted: #858592;
+  --text-dim: #4c4c58;
+  --accent-gold: #e5a93c;
+  --font-mono: 'SF Mono', 'Roboto Mono', Menlo, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-deep);
+  color: var(--text-pure);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.v2-horlogerie-app {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Nav */
+.v2-atelier-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.v2-brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.v2-brand-atelier {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 1rem;
+}
+
+.v2-brand-calibre {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.12em;
+}
+
+.v2-valuation-pill {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  background: var(--surface-chamber);
+  border: 1px solid var(--border-subtle);
+  padding: 0.65rem 1.25rem;
+}
+
+.val-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+}
+
+.val-amount {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-pure);
+}
+
+/* Studio Layout */
+.v2-studio-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 4rem;
+  padding: 4rem 0;
+}
+
+/* Left Stage */
+.v2-timepiece-stage {
+  background: var(--surface-chamber);
+  border: 1px solid var(--border-subtle);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.v2-stage-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.v2-stage-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+}
+
+.v2-zoom-toggle {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.v2-zoom-toggle.active {
+  background: var(--text-pure);
+  color: var(--bg-deep);
+}
+
+.v2-render-chamber {
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.v2-render-chamber.macro-mode {
+  transform: scale(1.35);
+}
+
+.v2-chassis-bezel {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.95);
+  transition: var(--transition);
+}
+
+.v2-chassis-bezel.pt950 { border: 20px solid #ececed; background: #18181b; }
+.v2-chassis-bezel.au750_rose { border: 20px solid #e2a593; background: #1b1615; }
+.v2-chassis-bezel.carbon_titanium { border: 20px solid #27272e; background: #0c0c0e; }
+
+.v2-dial-face {
+  width: 195px;
+  height: 195px;
+  border-radius: 50%;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.v2-dial-face.clous_de_paris { background: radial-gradient(circle, #252528 20%, #111114 90%); }
+.v2-dial-face.flamme_wave { background: repeating-radial-gradient(circle, #222226, #121215 12px); }
+.v2-dial-face.open_tourbillon { background: #08080a; }
+
+.v2-hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+}
+
+.v2-hour {
+  width: 4px;
+  height: 52px;
+  transform: translate(-50%, -100%) rotate(40deg);
+}
+
+.v2-minute {
+  width: 2.5px;
+  height: 78px;
+  transform: translate(-50%, -100%) rotate(135deg);
+}
+
+.v2-hour.heat_blued, .v2-minute.heat_blued { background: #2563eb; }
+.v2-hour.polished_steel, .v2-minute.polished_steel { background: #ffffff; }
+.v2-hour.rose_gold, .v2-minute.rose_gold { background: #e2a593; }
+
+.v2-tourbillon-module {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #020202;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v2-cage-bridge {
+  width: 38px;
+  height: 2px;
+  background: var(--accent-gold);
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Telemetry Bento */
+.v2-telemetry-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 2rem;
+}
+
+.tele-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+}
+
+.t-label { font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.08em; }
+.tele-box strong { font-size: 0.8rem; color: var(--text-pure); }
+
+/* Right Studio */
+.v2-config-studio {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.v2-group-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.65rem;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.v2-group-num { font-weight: 700; }
+.v2-group-meta { color: var(--accent-gold); font-size: 0.7rem; }
+
+.v2-options-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.v2-opt-card {
+  background: var(--surface-chamber);
+  border: 1px solid var(--border-subtle);
+  padding: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text-pure);
+  transition: var(--transition);
+}
+
+.v2-opt-card.selected {
+  border-color: var(--text-pure);
+  background: var(--surface-opt);
+}
+
+.opt-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+}
+
+.opt-meta-top strong { font-size: 0.95rem; }
+.opt-cost { font-size: 0.85rem; color: var(--accent-gold); }
+
+.v2-opt-card p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.v2-action-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.v2-btn-cert {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  padding: 1.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.v2-btn-cert:hover {
+  color: var(--text-pure);
+  border-color: var(--border-strong);
+}
+
+.v2-btn-commission {
+  background: var(--text-pure);
+  color: var(--bg-deep);
+  border: none;
+  padding: 1.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.v2-btn-commission:hover {
+  background: var(--accent-gold);
+}
+
+/* Modal */
+.v2-cert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(6, 6, 8, 0.92);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.v2-cert-modal {
+  background: var(--surface-chamber);
+  border: 1px solid var(--border-strong);
+  padding: 4rem;
+  max-width: 600px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
+}
+
+.cert-creed {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.v2-cert-modal h2 {
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem 0;
+}
+
+.cert-id {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.cert-spec-table {
+  margin: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 2rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spec-item span { color: var(--text-dim); }
+.spec-item strong { color: var(--text-pure); }
+
+.v2-close-cert {
+  background: transparent;
+  color: var(--text-pure);
+  border: 1px solid var(--border-subtle);
+  padding: 0.85rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  .v2-studio-layout {
+    grid-template-columns: 1fr;
+  }
+  .v2-telemetry-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

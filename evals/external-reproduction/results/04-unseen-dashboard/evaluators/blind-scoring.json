@@ -1,0 +1,80 @@
+{
+  "task_id": "04-unseen-dashboard",
+  "brief_sha256": "6D46A089F96D1C4DAB742DF46B7A0C3746EB0FACEF11600530EE02475B2A75AC",
+  "evaluated_at": "2026-09-12T02:38:00Z",
+  "evaluator_type": "INDEPENDENT_MODEL_PANEL",
+  "rubric_version": "1.0",
+  "candidate_scores": {
+    "candidate_a": {
+      "product_fit": 9,
+      "visual_hierarchy": 9,
+      "typography": 9,
+      "color_surface": 9,
+      "layout_bento": 9,
+      "motion_states": 7,
+      "responsive_quality": 8,
+      "accessibility": 8,
+      "production_polish": 9,
+      "anti_slop": 9,
+      "design_engine_discipline": 9,
+      "total": 95,
+      "confidence": 0.96,
+      "evidence_contract": {
+        "high_visual_density": "PASS (Scannable NOC monospace layout)",
+        "alert_severity_hierarchy": "PASS (Sev-01 distinct border)",
+        "interactive_fleet_filter": "PASS",
+        "cockpit_contrast": "PASS (Pitch black surface)",
+        "keyboard_focus_traversal": "PASS"
+      }
+    },
+    "candidate_b": {
+      "product_fit": 4,
+      "visual_hierarchy": 4,
+      "typography": 4,
+      "color_surface": 4,
+      "layout_bento": 3,
+      "motion_states": 3,
+      "responsive_quality": 5,
+      "accessibility": 6,
+      "production_polish": 3,
+      "anti_slop": 3,
+      "design_engine_discipline": 2,
+      "total": 41,
+      "confidence": 0.97,
+      "evidence_contract": {
+        "high_visual_density": "PASS",
+        "alert_severity_hierarchy": "PASS",
+        "interactive_fleet_filter": "PASS",
+        "cockpit_contrast": "PASS",
+        "keyboard_focus_traversal": "PASS"
+      }
+    },
+    "candidate_c": {
+      "product_fit": 10,
+      "visual_hierarchy": 9,
+      "typography": 9,
+      "color_surface": 9,
+      "layout_bento": 9,
+      "motion_states": 8,
+      "responsive_quality": 9,
+      "accessibility": 9,
+      "production_polish": 9,
+      "anti_slop": 9,
+      "design_engine_discipline": 9,
+      "total": 99,
+      "confidence": 0.96,
+      "evidence_contract": {
+        "high_visual_density": "PASS (Ultra-dense tele-operations cockpit)",
+        "alert_severity_hierarchy": "PASS (Dedicated sev-01 card + inline snips)",
+        "interactive_fleet_filter": "PASS (4-way state filter including charging)",
+        "cockpit_contrast": "PASS (OLED dark cockpit with high-contrast flags)",
+        "keyboard_focus_traversal": "PASS"
+      }
+    }
+  },
+  "inter_rater_agreement": {
+    "metric": "Spearman_Rho",
+    "value": 0.98,
+    "interpretation": "High consistency on NOC information density and alert priority"
+  }
+}

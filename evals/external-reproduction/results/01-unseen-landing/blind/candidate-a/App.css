@@ -1,0 +1,315 @@
+:root {
+  --bg: #0a0a0a;
+  --surface: #121212;
+  --border: #222222;
+  --text: #f0f0f0;
+  --text-muted: #737373;
+  --text-dim: #444444;
+  --font-mono: 'SF Mono', 'Roboto Mono', Menlo, monospace;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+.taste-app {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.taste-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-code {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  display: block;
+}
+
+.brand-desc {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.taste-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.indicator-dot {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+/* Hero */
+.taste-hero {
+  padding: 5rem 0 4rem 0;
+}
+
+.taste-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+.taste-headline {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 1.5rem 0;
+}
+
+.taste-lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 800px;
+  line-height: 1.6;
+  margin: 0 0 3rem 0;
+}
+
+.taste-cli-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.75rem;
+}
+
+.taste-cli-prompt {
+  font-size: 0.85rem;
+  color: var(--text);
+  overflow-x: auto;
+}
+
+.taste-cli-btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.taste-cli-btn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* Sections */
+.taste-section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-dossier-header {
+  margin-bottom: 2.5rem;
+}
+
+.dossier-tag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-dossier-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Filter Bar */
+.taste-filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+  font-weight: 700;
+}
+
+/* Grid 4 */
+.taste-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.taste-grid-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.grid-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.grid-val {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
+}
+
+.grid-meta {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+
+/* Topology Monograph */
+.taste-topology-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 3rem;
+}
+
+.topo-stage {
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  background: #0e0e0e;
+}
+
+.topo-stage.highlight-stage {
+  border-color: #555555;
+  background: #141414;
+}
+
+.stage-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stage-code {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.stage-head h4 {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.stage-body {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.stage-body span {
+  background: #1a1a1a;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border);
+}
+
+.topo-divider {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  padding: 1.25rem 0;
+  letter-spacing: 0.15em;
+}
+
+/* Table */
+.taste-table-container {
+  overflow-x: auto;
+}
+
+.taste-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.taste-table th, .taste-table td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.taste-table th {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  background: var(--surface);
+}
+
+/* Footer */
+.taste-footer {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .taste-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stage-body {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .taste-cli-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

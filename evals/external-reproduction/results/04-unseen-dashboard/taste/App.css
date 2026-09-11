@@ -1,0 +1,235 @@
+:root {
+  --bg-noc: #060608;
+  --surface-deck: #0e0e12;
+  --border-noc: #1e1e24;
+  --text-main: #f0f0f2;
+  --text-muted: #747480;
+  --text-dim: #454550;
+  --crit-red: #ff3344;
+  --ok-green: #00e676;
+  --font-mono: 'SF Mono', 'Roboto Mono', Menlo, monospace;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-noc);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+.taste-noc-app {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+}
+
+.noc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-noc);
+  margin-bottom: 2rem;
+}
+
+.brand-code {
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 1rem;
+  display: block;
+}
+
+.brand-zone {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.noc-clock {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ok-green);
+}
+
+.noc-cockpit-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.6fr;
+  gap: 2.5rem;
+}
+
+.deck-filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+  background: var(--surface-deck);
+  border: 1px solid var(--border-noc);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--text-main);
+  color: var(--bg-noc);
+  border-color: var(--text-main);
+  font-weight: 700;
+}
+
+.asset-card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.asset-cell {
+  background: var(--surface-deck);
+  border: 1px solid var(--border-noc);
+  padding: 1.25rem;
+  cursor: pointer;
+}
+
+.asset-cell.active {
+  border-color: #ffffff;
+  background: #14141a;
+}
+
+.asset-cell.crit-cell {
+  border-left: 3px solid var(--crit-red);
+}
+
+.asset-cell-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.status-code {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.status-code.critical { color: var(--crit-red); }
+.status-code.active { color: var(--ok-green); }
+
+.asset-cell-meta {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.dossier-heading {
+  margin-bottom: 2rem;
+}
+
+.dossier-ref {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.dossier-heading h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.telemetry-stat-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-dossier-card {
+  background: var(--surface-deck);
+  border: 1px solid var(--border-noc);
+  padding: 1.5rem;
+}
+
+.stat-label { font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.08em; display: block; }
+.stat-value { font-size: 2rem; font-weight: 800; margin: 0.75rem 0; }
+.stat-sub { font-size: 0.65rem; color: var(--text-dim); }
+
+.priority-alert-chamber {
+  background: var(--surface-deck);
+  border: 1px solid var(--border-noc);
+  padding: 2rem;
+}
+
+.alert-chamber-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-noc);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.alert-action-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #190a0c;
+  border: 1px solid var(--crit-red);
+  padding: 1.5rem;
+}
+
+.alert-sev {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--crit-red);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.alert-desc p {
+  font-size: 0.8rem;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ack-btn {
+  background: transparent;
+  color: var(--crit-red);
+  border: 1px solid var(--crit-red);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ack-btn.acked {
+  background: var(--ok-green);
+  border-color: var(--ok-green);
+  color: black;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .noc-cockpit-grid {
+    grid-template-columns: 1fr;
+  }
+}

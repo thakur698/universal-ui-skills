@@ -1,0 +1,87 @@
+{
+  "track": "adaptive-orchestration-v2.1-exp",
+  "status": "in_progress",
+  "protocol_version": "1.0",
+  "rubric_version": "1.0",
+  "tasks": [
+    {
+      "id": "01-unseen-landing",
+      "name": "Distributed Database Developer Portal",
+      "domain_type": "developer_infrastructure",
+      "apriori_tier": "L1_minimal",
+      "results": {
+        "baseline_ai": { "score": 43, "tokens": 4270, "ttfui": 18.4 },
+        "actual_taste": { "score": 93, "tokens": 7800, "ttfui": 29.1 },
+        "l0_v2_oneshot": { "score": 92, "tokens": 8420, "ttfui": 31.0, "revisions": 1, "loc": 460 },
+        "l1_v2_minimal": { "score": 95, "tokens": 11340, "ttfui": 41.2, "revisions": 1, "loc": 530 },
+        "l2_v2_standard": { "score": 95, "tokens": 15400, "ttfui": 52.8, "revisions": 2, "loc": 590 },
+        "l3_v2_full": { "score": 95, "tokens": 19270, "ttfui": 64.8, "revisions": 3, "loc": 643 }
+      }
+    },
+    {
+      "id": "02-unseen-mobile",
+      "name": "Paramedic Emergency Telehealth Field Interface",
+      "domain_type": "emergency_mobile_ergonomics",
+      "apriori_tier": "L2_standard",
+      "results": {
+        "baseline_ai": { "score": 44, "tokens": 3930, "ttfui": 16.8 },
+        "actual_taste": { "score": 89, "tokens": 7530, "ttfui": 26.4 },
+        "l0_v2_oneshot": { "score": 88, "tokens": 8100, "ttfui": 28.5, "revisions": 1, "loc": 330 },
+        "l1_v2_minimal": { "score": 93, "tokens": 10900, "ttfui": 38.0, "revisions": 1, "loc": 410 },
+        "l2_v2_standard": { "score": 99, "tokens": 14100, "ttfui": 49.6, "revisions": 2, "loc": 465 },
+        "l3_v2_full": { "score": 100, "tokens": 17270, "ttfui": 58.2, "revisions": 2, "loc": 477 }
+      }
+    },
+    {
+      "id": "03-unseen-product",
+      "name": "Bespoke Haute Horlogerie Watch Configurator",
+      "domain_type": "luxury_product_configurator",
+      "apriori_tier": "L2_standard",
+      "results": {
+        "baseline_ai": { "score": 41, "tokens": 4230, "ttfui": 19.2 },
+        "actual_taste": { "score": 93, "tokens": 8260, "ttfui": 31.5 },
+        "l0_v2_oneshot": { "score": 91, "tokens": 8600, "ttfui": 32.8, "revisions": 1, "loc": 410 },
+        "l1_v2_minimal": { "score": 94, "tokens": 11800, "ttfui": 44.0, "revisions": 1, "loc": 495 },
+        "l2_v2_standard": { "score": 97, "tokens": 14850, "ttfui": 54.2, "revisions": 2, "loc": 560 },
+        "l3_v2_full": { "score": 97, "tokens": 18220, "ttfui": 66.4, "revisions": 2, "loc": 607 }
+      }
+    },
+    {
+      "id": "04-unseen-dashboard",
+      "name": "Autonomous Fleet Control Room Dashboard",
+      "domain_type": "dense_telemetry_cockpit",
+      "apriori_tier": "L2_standard",
+      "results": {
+        "baseline_ai": { "score": 41, "tokens": 4130, "ttfui": 18.1 },
+        "actual_taste": { "score": 95, "tokens": 8030, "ttfui": 28.9 },
+        "l0_v2_oneshot": { "score": 93, "tokens": 8500, "ttfui": 30.5, "revisions": 1, "loc": 380 },
+        "l1_v2_minimal": { "score": 96, "tokens": 11600, "ttfui": 42.5, "revisions": 1, "loc": 445 },
+        "l2_v2_standard": { "score": 99, "tokens": 14900, "ttfui": 51.0, "revisions": 2, "loc": 495 },
+        "l3_v2_full": { "score": 99, "tokens": 17900, "ttfui": 61.5, "revisions": 2, "loc": 510 }
+      }
+    },
+    {
+      "id": "05-unseen-cinematic",
+      "name": "Deep-Sea Oceanographic Expedition Story",
+      "domain_type": "cinematic_editorial_scroll",
+      "apriori_tier": "L3_full",
+      "results": {
+        "baseline_ai": { "score": 38, "tokens": 4230, "ttfui": 18.9 },
+        "actual_taste": { "score": 92, "tokens": 8180, "ttfui": 30.8 },
+        "l0_v2_oneshot": { "score": 89, "tokens": 8800, "ttfui": 33.2, "revisions": 1, "loc": 260 },
+        "l1_v2_minimal": { "score": 94, "tokens": 12400, "ttfui": 46.0, "revisions": 1, "loc": 340 },
+        "l2_v2_standard": { "score": 98, "tokens": 15800, "ttfui": 55.4, "revisions": 2, "loc": 420 },
+        "l3_v2_full": { "score": 103, "tokens": 19450, "ttfui": 68.2, "revisions": 3, "loc": 498 }
+      }
+    }
+  ],
+  "tier_summary": {
+    "baseline_ai": { "mean_score": 41.4, "avg_tokens": 4158, "avg_ttfui": 18.28, "gain_retained_pct": null, "pareto_status": "dominated" },
+    "actual_taste": { "mean_score": 92.4, "avg_tokens": 7960, "avg_ttfui": 29.34, "gain_retained_pct": 0.0, "pareto_status": "frontier" },
+    "l0_v2_oneshot": { "mean_score": 90.6, "avg_tokens": 8484, "avg_ttfui": 31.20, "gain_retained_pct": -28.1, "pareto_status": "dominated" },
+    "l1_v2_minimal": { "mean_score": 94.4, "avg_tokens": 11608, "avg_ttfui": 42.34, "gain_retained_pct": 31.2, "pareto_status": "frontier" },
+    "l2_v2_standard": { "mean_score": 97.6, "avg_tokens": 15010, "avg_ttfui": 52.60, "gain_retained_pct": 81.2, "pareto_status": "frontier (dominated by adaptive)" },
+    "l3_v2_full": { "mean_score": 98.8, "avg_tokens": 18422, "avg_ttfui": 63.82, "gain_retained_pct": 100.0, "pareto_status": "frontier" },
+    "adaptive_selection": { "mean_score": 98.4, "avg_tokens": 14948, "avg_ttfui": 52.12, "gain_retained_pct": 93.8, "pareto_status": "frontier (preferred knee-point; dominates L2)" }
+  }
+}

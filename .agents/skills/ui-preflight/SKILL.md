@@ -20,8 +20,9 @@ Evaluate the design against these binary (PASS/FAIL) rules:
 2. [ ] **FAIL: Same composition repeated too many times.** (Violates the Variance Rule).
 3. [ ] **FAIL: Generic card grid used without reason.** (Bento/Grids must have distinct purpose and hierarchy).
 4. [ ] **FAIL: Bento is merely repeated cards.** (Bento layouts must feature asymmetric spans and visual anchors).
-5. [ ] **FAIL: Icons replace meaningful product imagery unnecessarily.** (Feature storytelling must use diagrams/screenshots/media, not generic 3-card icon grids).
-6. [ ] **FAIL: Same eyebrow pattern repeated.** (e.g., "FEATURES", "BENEFITS" in small colored caps above every H2).
+5. [ ] **FAIL: ICON_SUBSTITUTION.** (Feature storytelling relies primarily on generic icon grids instead of meaningful diagrams, product renders, photography, or rich media).
+6. [ ] **FAIL: Static icon used where animated/interactive visual belongs.** (Static glyph used when a Lottie/Rive or canvas interaction would materially clarify the feature).
+7. [ ] **FAIL: Same eyebrow pattern repeated.** (e.g., "FEATURES", "BENEFITS" in small colored caps above every H2).
 
 ### Scroll & Motion Gates:
 7. [ ] **FAIL: Scroll animation exists without purpose.** (Animation must communicate hierarchy, state, or storytelling).

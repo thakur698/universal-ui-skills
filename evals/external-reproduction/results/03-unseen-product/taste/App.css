@@ -1,0 +1,320 @@
+:root {
+  --bg-atelier: #070707;
+  --surface-chamber: #111111;
+  --border-dossier: #222222;
+  --border-active: #ffffff;
+  --text-main: #f0f0f0;
+  --text-muted: #777777;
+  --text-dim: #444444;
+  --font-mono: 'SF Mono', 'Roboto Mono', Menlo, monospace;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-atelier);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+.taste-horlogerie-app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Topbar */
+.horlogerie-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border-dossier);
+}
+
+.brand-atelier {
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 1rem;
+  display: block;
+}
+
+.brand-serial {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.price-tag {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.price-currency {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.price-amount {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+/* Workspace Layout */
+.horlogerie-workspace {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 3.5rem;
+  padding: 4rem 0;
+}
+
+/* Left Chamber */
+.timepiece-display-chamber {
+  background: var(--surface-chamber);
+  border: 1px solid var(--border-dossier);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chamber-meta {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.timepiece-render-chassis {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  position: relative;
+  margin: 4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+}
+
+.timepiece-render-chassis.pt950 { border: 18px solid #eaeaea; background: #161616; }
+.timepiece-render-chassis.au750 { border: 18px solid #dfa290; background: #181413; }
+.timepiece-render-chassis.carbon { border: 18px solid #282828; background: #0c0c0c; }
+
+.timepiece-dial {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timepiece-dial.paris { background: radial-gradient(circle, #252525 20%, #111 90%); }
+.timepiece-dial.grained { background: #191919; }
+.timepiece-dial.skeleton { background: repeating-conic-gradient(from 0deg, #111 0deg 30deg, #222 30deg 60deg); }
+
+.hand-hour {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 50px;
+  background: #f0f0f0;
+  transform: translate(-50%, -100%) rotate(30deg);
+  transform-origin: bottom center;
+}
+
+.hand-minute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 75px;
+  background: #f0f0f0;
+  transform: translate(-50%, -100%) rotate(120deg);
+  transform-origin: bottom center;
+}
+
+.tourbillon-aperture {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #080808;
+}
+
+.timepiece-telemetry-strip {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-dossier);
+  padding-top: 1.5rem;
+}
+
+.tele-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tele-label { font-size: 0.6rem; color: var(--text-dim); }
+.tele-val { font-size: 0.75rem; font-weight: 700; color: var(--text-main); }
+
+/* Right Dossier */
+.specification-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.group-heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-dossier);
+  padding-bottom: 0.5rem;
+}
+
+.group-num { font-weight: 700; }
+.group-spec { color: var(--text-muted); font-size: 0.65rem; }
+
+.option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.option-cell {
+  background: var(--surface-chamber);
+  border: 1px solid var(--border-dossier);
+  padding: 1.25rem;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+}
+
+.option-cell.selected {
+  border-color: var(--border-active);
+  background: #181818;
+}
+
+.opt-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.35rem; }
+.opt-desc { font-size: 0.7rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 0.5rem; }
+.opt-price { font-size: 0.75rem; color: #ffffff; font-weight: 700; }
+
+.dossier-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.cert-preview-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-dossier);
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.commission-btn {
+  background: var(--text-main);
+  color: var(--bg-atelier);
+  border: 1px solid var(--text-main);
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal-dossier-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-dossier-card {
+  background: var(--surface-chamber);
+  border: 1px solid var(--border-active);
+  padding: 3.5rem;
+  max-width: 540px;
+  text-align: center;
+}
+
+.cert-seal {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.modal-dossier-card h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  margin: 0 0 1rem 0;
+}
+
+.cert-lead {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.cert-data-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  text-align: left;
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border-dossier);
+  border-bottom: 1px solid var(--border-dossier);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.cert-data-grid div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cert-close-btn {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-dossier);
+  padding: 0.75rem 2rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .horlogerie-workspace {
+    grid-template-columns: 1fr;
+  }
+}

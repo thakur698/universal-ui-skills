@@ -1,0 +1,50 @@
+{
+  "task_id": "01-unseen-landing",
+  "brief_sha256": "2A7EB0291B0E10A671A053C00270C4257634D4B3E10F5863776DFE7D43BD2C70",
+  "recorded_at": "2026-09-12T02:30:00Z",
+  "conditions": {
+    "baseline": {
+      "name": "Baseline AI",
+      "ttfui_seconds": 18.4,
+      "revision_cycles": 1,
+      "input_tokens": 1420,
+      "output_tokens": 2850,
+      "total_tokens": 4270,
+      "loc_tsx": 178,
+      "loc_css": 242,
+      "loc_total": 420,
+      "component_surface_area": 1
+    },
+    "taste": {
+      "name": "Actual Taste (design-taste-frontend)",
+      "ttfui_seconds": 29.1,
+      "revision_cycles": 1,
+      "input_tokens": 4680,
+      "output_tokens": 3120,
+      "total_tokens": 7800,
+      "loc_tsx": 195,
+      "loc_css": 286,
+      "loc_total": 481,
+      "component_surface_area": 1
+    },
+    "v2": {
+      "name": "Universal UI Skills V2",
+      "ttfui_seconds": 64.8,
+      "revision_cycles": 3,
+      "input_tokens": 12850,
+      "output_tokens": 6420,
+      "total_tokens": 19270,
+      "loc_tsx": 248,
+      "loc_css": 395,
+      "loc_total": 643,
+      "component_surface_area": 1,
+      "dials": {
+        "VISUAL_DENSITY": 9,
+        "DESIGN_VARIANCE": 6,
+        "MOTION_INTENSITY": 4,
+        "BRAND_EXPRESSIVENESS": 4,
+        "BENTO_COMPLEXITY": 6
+      }
+    }
+  }
+}

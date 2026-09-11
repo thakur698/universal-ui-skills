@@ -1,0 +1,80 @@
+{
+  "task_id": "01-unseen-landing",
+  "brief_sha256": "2A7EB0291B0E10A671A053C00270C4257634D4B3E10F5863776DFE7D43BD2C70",
+  "evaluated_at": "2026-09-12T02:31:00Z",
+  "evaluator_type": "INDEPENDENT_MODEL_PANEL",
+  "rubric_version": "1.0",
+  "candidate_scores": {
+    "candidate_a": {
+      "product_fit": 9,
+      "visual_hierarchy": 9,
+      "typography": 9,
+      "color_surface": 9,
+      "layout_bento": 8,
+      "motion_states": 7,
+      "responsive_quality": 8,
+      "accessibility": 8,
+      "production_polish": 9,
+      "anti_slop": 9,
+      "design_engine_discipline": 8,
+      "total": 93,
+      "confidence": 0.94,
+      "evidence_contract": {
+        "interactive_query_visualizer": "PASS",
+        "topology_diagram": "PASS",
+        "copyable_snippets": "PASS",
+        "accessible_theme_contrast": "PASS",
+        "mobile_responsiveness": "PASS"
+      }
+    },
+    "candidate_b": {
+      "product_fit": 10,
+      "visual_hierarchy": 9,
+      "typography": 9,
+      "color_surface": 9,
+      "layout_bento": 9,
+      "motion_states": 8,
+      "responsive_quality": 9,
+      "accessibility": 9,
+      "production_polish": 9,
+      "anti_slop": 9,
+      "design_engine_discipline": 9,
+      "total": 95,
+      "confidence": 0.96,
+      "evidence_contract": {
+        "interactive_query_visualizer": "PASS",
+        "topology_diagram": "PASS (Interactive hover states + bus routing)",
+        "copyable_snippets": "PASS",
+        "accessible_theme_contrast": "PASS",
+        "mobile_responsiveness": "PASS"
+      }
+    },
+    "candidate_c": {
+      "product_fit": 5,
+      "visual_hierarchy": 4,
+      "typography": 4,
+      "color_surface": 4,
+      "layout_bento": 3,
+      "motion_states": 3,
+      "responsive_quality": 5,
+      "accessibility": 6,
+      "production_polish": 4,
+      "anti_slop": 3,
+      "design_engine_discipline": 2,
+      "total": 43,
+      "confidence": 0.98,
+      "evidence_contract": {
+        "interactive_query_visualizer": "PASS (Basic tab toggle)",
+        "topology_diagram": "PASS (Static text boxes)",
+        "copyable_snippets": "PASS",
+        "accessible_theme_contrast": "PASS",
+        "mobile_responsiveness": "PASS"
+      }
+    }
+  },
+  "inter_rater_agreement": {
+    "metric": "Spearman_Rho",
+    "value": 0.97,
+    "interpretation": "High agreement on relative candidate rankings"
+  }
+}

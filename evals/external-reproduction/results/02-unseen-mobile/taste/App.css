@@ -1,0 +1,239 @@
+:root {
+  --bg-clinical: #050505;
+  --surface-clinical: #111111;
+  --border-clinical: #222222;
+  --border-strong: #444444;
+  --text-main: #f5f5f5;
+  --text-muted: #888888;
+  --triage-red: #ff3333;
+  --triage-yellow: #ffb800;
+  --triage-green: #00e676;
+  --font-mono: 'SF Mono', 'Roboto Mono', Menlo, monospace;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+}
+
+.taste-mobile-layout {
+  width: 100%;
+  max-width: 440px;
+  min-height: 100vh;
+  background: var(--bg-clinical);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1.25rem 1rem;
+  border-left: 1px solid var(--border-clinical);
+  border-right: 1px solid var(--border-clinical);
+}
+
+/* Header */
+.clinical-header {
+  border-bottom: 1px solid var(--border-clinical);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.clinical-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.connection-state {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.dot-green { background: var(--triage-green); }
+.dot-amber { background: var(--triage-yellow); }
+
+.patient-banner h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.25rem 0;
+  color: var(--text-main);
+}
+
+.incident-code {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* Triage Switcher */
+.triage-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.triage-box {
+  background: var(--surface-clinical);
+  border: 1px solid var(--border-clinical);
+  color: var(--text-muted);
+  padding: 0.75rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  min-height: 52px;
+}
+
+.triage-box .box-code {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.triage-box .box-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.triage-box.red.active {
+  background: #2b0808;
+  border-color: var(--triage-red);
+  color: var(--triage-red);
+}
+
+.triage-box.yellow.active {
+  background: #2b1e00;
+  border-color: var(--triage-yellow);
+  color: var(--triage-yellow);
+}
+
+.triage-box.green.active {
+  background: #002b11;
+  border-color: var(--triage-green);
+  color: var(--triage-green);
+}
+
+/* Vitals Dossier */
+.vitals-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.vital-dossier-card {
+  background: var(--surface-clinical);
+  border: 1px solid var(--border-clinical);
+  padding: 1rem;
+}
+
+.vital-dossier-card.alert-state {
+  border-left: 3px solid var(--triage-red);
+}
+
+.dossier-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.dossier-label { color: var(--text-muted); }
+.dossier-status { color: var(--triage-red); font-weight: 700; }
+
+.dossier-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.dossier-numeric {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-main);
+}
+
+.dossier-unit {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.glove-stepper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stepper-btn {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1px solid var(--border-clinical);
+  color: var(--text-main);
+  padding: 0.6rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.stepper-btn:active {
+  background: var(--text-main);
+  color: var(--bg-clinical);
+}
+
+/* Field Action Dock */
+.field-action-dock {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.audio-btn {
+  background: var(--surface-clinical);
+  border: 1px solid var(--border-clinical);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 1rem;
+  cursor: pointer;
+  min-height: 52px;
+}
+
+.audio-btn.active {
+  background: #330000;
+  border-color: var(--triage-red);
+  color: var(--triage-red);
+}
+
+.dispatch-action-btn {
+  background: var(--text-main);
+  color: var(--bg-clinical);
+  border: 1px solid var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 1.15rem;
+  cursor: pointer;
+  min-height: 54px;
+}

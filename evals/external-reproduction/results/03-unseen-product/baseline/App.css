@@ -1,0 +1,224 @@
+:root {
+  --bg: #111;
+  --surface: #1e1e1e;
+  --border: #333;
+  --gold: #d4af37;
+  --text: #eee;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.watch-app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.watch-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 1.1rem;
+}
+
+.total-price {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.config-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+}
+
+.visualizer-pane {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+}
+
+.watch-render-box {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+.watch-render-box.rosegold { border: 16px solid #e0a899; background: #1a1615; }
+.watch-render-box.platinum { border: 16px solid #e5e5e5; background: #151515; }
+.watch-render-box.carbon { border: 16px solid #2b2b2b; background: #0d0d0d; }
+
+.dial-layer {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.dial-layer.clous { background: radial-gradient(circle, #222 20%, #111 90%); }
+.dial-layer.sunburst { background: conic-gradient(from 0deg, #111, #333, #111); }
+.dial-layer.waves { background: repeating-radial-gradient(circle, #222, #111 10px); }
+
+.watch-hands {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 60px;
+  background: var(--gold);
+  transform: translate(-50%, -100%) rotate(45deg);
+  transform-origin: bottom center;
+}
+
+.watch-spec-tag {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 2rem;
+  letter-spacing: 0.1em;
+}
+
+.controls-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ctrl-group h3 {
+  font-size: 0.8rem;
+  font-family: monospace;
+  color: #aaa;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.1em;
+}
+
+.btn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btn-row button {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-row button.active {
+  border-color: var(--gold);
+  background: #282415;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.action-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn-cert {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.85rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.btn-reserve {
+  background: var(--gold);
+  color: black;
+  border: none;
+  padding: 1.15rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.cert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.cert-card {
+  background: #181818;
+  border: 1px solid var(--gold);
+  padding: 3rem;
+  max-width: 500px;
+  text-align: center;
+}
+
+.cert-card h2 {
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.cert-specs {
+  margin: 2rem 0;
+  text-align: left;
+  font-family: monospace;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #bbb;
+}
+
+.btn-close {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .config-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "02-unseen-mobile",
+  "brief_sha256": "D909148496CC9CD5239B1F0F762DC53347A0DEAB94112D20352FA859E503DF84",
+  "evaluated_at": "2026-09-12T02:35:00Z",
+  "evaluator_type": "INDEPENDENT_MODEL_PANEL",
+  "rubric_version": "1.0",
+  "candidate_scores": {
+    "candidate_a": {
+      "product_fit": 10,
+      "visual_hierarchy": 9,
+      "typography": 9,
+      "color_surface": 9,
+      "layout_bento": 9,
+      "motion_states": 8,
+      "responsive_quality": 9,
+      "accessibility": 10,
+      "production_polish": 9,
+      "anti_slop": 9,
+      "design_engine_discipline": 9,
+      "total": 100,
+      "confidence": 0.96,
+      "evidence_contract": {
+        "critical_triage_coding": "PASS (P1/P2/P3 high-stress distinction)",
+        "one_thumb_interaction": "PASS (Bottom action dock & dedicated glove stepper zone)",
+        "high_stress_contrast": "PASS (WCAG AAA pitch dark surface + vibrant triage tags)",
+        "offline_resilience": "PASS (Local cache pulse indicator)",
+        "touch_target_size": "PASS (All buttons >= 52px-60px for gloved use)"
+      }
+    },
+    "candidate_b": {
+      "product_fit": 5,
+      "visual_hierarchy": 4,
+      "typography": 4,
+      "color_surface": 4,
+      "layout_bento": 3,
+      "motion_states": 3,
+      "responsive_quality": 6,
+      "accessibility": 6,
+      "production_polish": 4,
+      "anti_slop": 3,
+      "design_engine_discipline": 2,
+      "total": 44,
+      "confidence": 0.98,
+      "evidence_contract": {
+        "critical_triage_coding": "PASS",
+        "one_thumb_interaction": "PASS",
+        "high_stress_contrast": "PASS",
+        "offline_resilience": "PASS",
+        "touch_target_size": "FAIL (Sub-steppers under 40px height)"
+      }
+    },
+    "candidate_c": {
+      "product_fit": 9,
+      "visual_hierarchy": 8,
+      "typography": 9,
+      "color_surface": 9,
+      "layout_bento": 8,
+      "motion_states": 6,
+      "responsive_quality": 8,
+      "accessibility": 8,
+      "production_polish": 8,
+      "anti_slop": 9,
+      "design_engine_discipline": 8,
+      "total": 89,
+      "confidence": 0.95,
+      "evidence_contract": {
+        "critical_triage_coding": "PASS",
+        "one_thumb_interaction": "PASS",
+        "high_stress_contrast": "PASS",
+        "offline_resilience": "PASS",
+        "touch_target_size": "PASS (48px stepper minimums)"
+      }
+    }
+  },
+  "inter_rater_agreement": {
+    "metric": "Spearman_Rho",
+    "value": 0.98,
+    "interpretation": "Strong consensus on mobile ergonomic and touch target hierarchy"
+  }
+}

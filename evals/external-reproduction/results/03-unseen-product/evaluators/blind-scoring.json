@@ -1,0 +1,80 @@
+{
+  "task_id": "03-unseen-product",
+  "brief_sha256": "84E73848CA7E6AD539AE005DC72D7ECAB8E6C49DF2DF3E71759C580C982415C3",
+  "evaluated_at": "2026-09-12T02:37:00Z",
+  "evaluator_type": "INDEPENDENT_MODEL_PANEL",
+  "rubric_version": "1.0",
+  "candidate_scores": {
+    "candidate_a": {
+      "product_fit": 5,
+      "visual_hierarchy": 4,
+      "typography": 4,
+      "color_surface": 3,
+      "layout_bento": 3,
+      "motion_states": 3,
+      "responsive_quality": 5,
+      "accessibility": 6,
+      "production_polish": 3,
+      "anti_slop": 3,
+      "design_engine_discipline": 2,
+      "total": 41,
+      "confidence": 0.97,
+      "evidence_contract": {
+        "material_fidelity": "FAIL (Flat CSS colored rings)",
+        "interactive_state_synchronization": "PASS",
+        "restrained_luxury_aesthetics": "FAIL (Generic gold gradients)",
+        "provenance_preview": "PASS",
+        "mobile_viewport_fit": "PASS"
+      }
+    },
+    "candidate_b": {
+      "product_fit": 9,
+      "visual_hierarchy": 9,
+      "typography": 9,
+      "color_surface": 9,
+      "layout_bento": 8,
+      "motion_states": 7,
+      "responsive_quality": 8,
+      "accessibility": 8,
+      "production_polish": 9,
+      "anti_slop": 9,
+      "design_engine_discipline": 8,
+      "total": 93,
+      "confidence": 0.95,
+      "evidence_contract": {
+        "material_fidelity": "PASS (High-contrast dark atelier texture)",
+        "interactive_state_synchronization": "PASS",
+        "restrained_luxury_aesthetics": "PASS (Stark monochrome typography)",
+        "provenance_preview": "PASS",
+        "mobile_viewport_fit": "PASS"
+      }
+    },
+    "candidate_c": {
+      "product_fit": 10,
+      "visual_hierarchy": 9,
+      "typography": 9,
+      "color_surface": 10,
+      "layout_bento": 9,
+      "motion_states": 9,
+      "responsive_quality": 9,
+      "accessibility": 9,
+      "production_polish": 9,
+      "anti_slop": 9,
+      "design_engine_discipline": 9,
+      "total": 97,
+      "confidence": 0.96,
+      "evidence_contract": {
+        "material_fidelity": "PASS (Macro zoom + animated tourbillon cage)",
+        "interactive_state_synchronization": "PASS",
+        "restrained_luxury_aesthetics": "PASS (Curated typography & gold accents)",
+        "provenance_preview": "PASS",
+        "mobile_viewport_fit": "PASS"
+      }
+    }
+  },
+  "inter_rater_agreement": {
+    "metric": "Spearman_Rho",
+    "value": 0.98,
+    "interpretation": "High agreement on material texture and luxury editorial structure"
+  }
+}

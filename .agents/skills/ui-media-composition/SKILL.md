@@ -9,22 +9,66 @@ description: Media-first composition system prioritizing images, video, illustra
 
 Universal UI Skills treats **IMAGE, VIDEO, ILLUSTRATION, DIAGRAM, TYPOGRAPHY, LAYOUT, and MOTION** as the primary visual storytelling language. 
 
-Icons are NOT the default visual language. Do not replace meaningful visual content with repetitive icon grids.
+Icons are NOT the default visual language. Prefer visual assets over iconography for primary UI storytelling. Use icons sparingly and only when they improve usability or interaction clarity. When an icon is genuinely needed, prefer premium animated/interactable icon systems such as Lottie or Rive over generic static icon libraries.
+
+---
+
+## Visual Hierarchy Priority
+
+1. **Product imagery / photography** (Hardware, UI, real contexts)
+2. **Custom illustrations / diagrams** (Technical architectures, workflows, editorial concepts)
+3. **Rich media / video** (Product reveals, interactive frame scrubbing, loops)
+4. **Typography + composition** (Asymmetric bento scales, editorial type hierarchies)
+5. **Interactive visual objects** (Live sandboxes, canvas models, responsive widgets)
+6. **Premium animated icons** (Stateful Rive runtimes, lightweight Lottie vector sequences)
+7. **Static utility icons** (Minimal functional glyphs for common navigation/actions)
+
+---
+
+## The Feature Communication Decision Flow
+
+```text
+Feature / Capability to Communicate
+      │
+      ▼
+Can this be communicated better with imagery/diagrams/media?
+      │
+      ├─────► [YES] ──► Use Product Image / Custom Illustration / Architecture Diagram
+      │
+     [NO]
+      │
+      ▼
+Does an interactive visual object improve it?
+      │
+      ├─────► [YES] ──► Use Stateful Rive Object / Lottie Motion Sequence
+      │
+     [NO]
+      │
+      ▼
+Is a utility icon actually required for immediate operational recognition?
+      │
+      ├─────► [YES] ──► Use Minimal, Semantic Utility Icon
+      │
+     [NO]
+      │
+      ▼
+Use Strong Typography & Layout Composition Instead
+```
 
 ---
 
 ## The Icon Policy
 
-### Permitted Uses of Icons:
+### Permitted Uses of Icons (Utility Only):
 - Navigation & headers (menu, back, home)
-- Search inputs
-- Dialog dismiss / close
+- Search inputs & filter triggers
+- Dialog dismiss / close buttons
 - Settings & system toggles
 - Media playback controls (play, pause, volume)
-- Directional indicators / arrows / carousels
+- Directional indicators / arrows / pagination
 - Accessibility controls
 - Small utility actions (copy code, download, external link)
-- Semantic status indicators (verified badge, success checkmark, warning dot)
+- Semantic status indicators (verified badge, success checkmark, error dot)
 
 ### Prohibited Uses of Icons:
 - ❌ **Feature Storytelling**: Do not build generic `[Icon] + Title + Description` grids repeated 3–6 times as the main feature section.
@@ -32,6 +76,7 @@ Icons are NOT the default visual language. Do not replace meaningful visual cont
 - ❌ **Product Differentiation**: Do not use generic icons to explain complex architectural advantages.
 - ❌ **Empty Card Filler**: Do not slap an icon into a card just because there is empty space.
 - ❌ **Replacing Real Visual Media**: If a photograph, interactive model, data visualization, or technical diagram is more expressive, you MUST use the richer media.
+- ❌ **Emoji Substitutions**: Never substitute emojis for semantic icons.
 
 ---
 
