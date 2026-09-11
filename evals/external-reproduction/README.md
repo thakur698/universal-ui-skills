@@ -59,8 +59,8 @@ Across five pre-registered out-of-distribution briefs, **Universal UI Skills V2 
 ## 4. Protocol & Research Status
 
 - **[protocol.md](protocol.md)**: Details double-blind randomization, scoring metrics, and process-overhead logging.
-- **[evaluators/](evaluators/)**: Independent reviewer scoring sheets with inter-rater ranking correlation $\rho = 0.97–0.98$.
-- **[results/](results/)**: Generated candidate code, build artifacts, unblinding keys, and per-task telemetry.
+- **[evaluators](evaluators/README.md)**: Independent reviewer scoring sheets with inter-rater ranking correlation $\rho = 0.97–0.98$.
+- **[results](results/01-unseen-landing/README.md)**: Generated candidate code, build artifacts, unblinding keys, and per-task telemetry.
 - **[aggregate-results.json](aggregate-results.json)**: Machine-readable consolidation of reproduction quality and cost scores.
 
 ### Research Status Matrix
