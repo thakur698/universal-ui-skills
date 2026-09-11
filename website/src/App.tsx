@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ArrowRight, Check, X, Code2, MonitorPlay, Sparkles, Box, Workflow, Layers, Video, Palette } from 'lucide-react';
 import { BenchmarkShowcase } from './BenchmarkShowcase';
 import { CinematicStorySection } from './CinematicStorySection';
+import { AdaptiveOrchestrationShowcase } from './AdaptiveOrchestrationShowcase';
 import { RiveShowcase } from './RiveShowcase';
 import { LottieShowcase } from './LottieShowcase';
 import { VisualQAShowcase } from './VisualQAShowcase';
@@ -354,6 +355,9 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Adaptive Orchestration Depth Interactive Showcase */}
+      <AdaptiveOrchestrationShowcase />
 
       {/* Integrations */}
       <section id="integrations" className="section" style={{ backgroundColor: 'var(--bg-surface)' }}>
