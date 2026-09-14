@@ -36,7 +36,8 @@ Ask exactly **one** clarifying question - never a multi-question dump - and only
 If you can confidently infer from context, **do not ask**. Just declare the design read and proceed.
 
 ### 0.D Anti-Default Discipline
-Do not default to: AI-purple gradients, centered hero over dark mesh, three equal feature cards, generic glassmorphism on everything, infinite-loop micro-animations everywhere, Inter + slate-900. These are the LLM defaults. Reach past them deliberately based on the design read.
+Do not default to: AI-purple gradients, centered hero over dark mesh, three equal feature cards, generic glassmorphism on everything, infinite-loop micro-animations everywhere, Inter + slate-900, pill badges/chips, background colors or boxes behind icons, or icon grids instead of rich visual imagery. These are the LLM defaults. Reach past them deliberately based on the design read.
+
 
 ---
 
@@ -138,11 +139,14 @@ Unless the design read picks a real design system (Section 2.A), these are the d
 * **NEVER** use `useState` to track continuous values driven by user input (mouse position, scroll progress, pointer physics, magnetic hover). Use Motion's `useMotionValue` / `useTransform` / `useScroll`. `useState` re-renders the React tree on every change and collapses on mobile.
 
 ### 3.C Icons
+* **Images Over Icons (Mandatory):** Use more and more images than icons across the entire site. Primary visual communication belongs to photography, product renders, UI captures, and architectural diagrams. Icons are strictly utility elements.
+* **NO Background Color Behind Icons (Mandatory):** NEVER add background colors, tinted containers, circular backdrops, or square boxes behind icons (e.g., `bg-primary/10 rounded-xl p-3` or icon box containers). Icons must sit directly on the surface without container fills.
 * **Allowed libraries (priority order):** `@phosphor-icons/react`, `hugeicons-react`, `@radix-ui/react-icons`, `@tabler/icons-react`.
 * **Discouraged:** `lucide-react`. Acceptable only when the user explicitly asks for it or the project already depends on it.
 * **NEVER hand-roll SVG icons.** If a glyph is missing, install a second library or compose from primitives - do not draw icon paths from scratch.
 * **One family per project.** Do not mix Phosphor with Lucide in the same component tree.
 * **Standardize `strokeWidth` globally** (e.g. `1.5` or `2.0`).
+
 
 ### 3.D Emoji Policy
 Discouraged by default in code, markup, and visible text. Replace symbols with icon-library glyphs. **Override:** allow emojis only when the user explicitly asks for a playful / chat-style / social-native vibe - and even then use them sparingly with intent.
@@ -214,7 +218,9 @@ LLMs default to clichés. Override these defaults proactively. Each rule has a c
 * Use cards ONLY when elevation communicates real hierarchy. Otherwise group with `border-t`, `divide-y`, or negative space.
 * When a shadow is used, tint it to the background hue. No pure-black drop shadows on light backgrounds.
 * For `VISUAL_DENSITY > 7`: generic card containers are banned. Data metrics breathe in plain layout.
-* **SHAPE CONSISTENCY LOCK (mandatory):** Pick ONE corner-radius scale for the page and stick to it. Options: all-sharp (radius 0), all-soft (radius 12-16px), all-pill (full radius for interactive). Mixed systems are allowed only when there is a documented rule (e.g. "buttons are full-pill, cards are 16px, inputs are 8px") and that rule is followed everywhere. Round buttons in a square layout, or square cards on a pill-button page, is broken design.
+* **SHAPE CONSISTENCY LOCK (mandatory):** Pick ONE corner-radius scale for the page and stick to it (e.g., all-sharp radius 0, or all-soft radius 12-16px). Mixed systems are allowed only when there is a documented rule and that rule is followed everywhere.
+* **PILL BAN (mandatory):** Do NOT create pills. Pill badges, floating pill tags, pill chips, and `rounded-full` pill containers (e.g. `<span class="rounded-full px-3 py-1 bg-...">...</span>`) are strictly forbidden. Structure labels, status indicators, and metadata using clean typographic hierarchy, micro-borders, or spatial layout instead of pill containers.
+
 
 ### 4.5 Interactive UI States
 LLMs default to "static successful state only." Always implement full cycles:
@@ -970,11 +976,15 @@ Run this matrix before outputting code. This is the last filter.
 - [ ] **`useEffect` animations** have strict cleanup functions?
 - [ ] **Empty / loading / error** states provided?
 - [ ] **Cards omitted** in favor of spacing where possible?
+- [ ] **Zero pills**: no pill badges, pill tags, pill chips, or floating rounded-full containers?
+- [ ] **No background colors behind icons**: icons sit directly on surface with zero colored boxes, tinted containers, or backdrop tiles?
+- [ ] **Image dominance**: page prioritizes rich imagery, real photography, product renders, UI captures, or technical diagrams over icons?
 - [ ] **Icons** from an allowed library only (Phosphor / HugeIcons / Radix / Tabler), no hand-rolled SVG paths?
 - [ ] **Motion** isolated in client-leaf components with `'use client'` at the top, memoized?
 - [ ] **No AI Tells** from Section 9 (Inter as default, AI-purple, three-equal cards, Jane Doe, Acme, "Quietly in use at")?
 - [ ] **Core Web Vitals** plausibly hit (LCP < 2.5s, INP < 200ms, CLS < 0.1)?
 - [ ] **One design system** per project (no Material + shadcn mixed)?
+
 
 If a single checkbox cannot be honestly ticked, the page is not done. Fix it before delivering.
 

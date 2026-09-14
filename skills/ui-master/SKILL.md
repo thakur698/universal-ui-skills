@@ -55,10 +55,12 @@ Final UI Task Complete
 
 ## Core Design Principles
 
-1. **Media-First Visual Storytelling**: Prefer `IMAGE`, `VIDEO`, `ILLUSTRATION`, `DIAGRAM`, `TYPOGRAPHY`, `LAYOUT`, and `MOTION` as primary visual storytelling tools. Icons are utilities for navigation and small controls, NOT the default visual language for feature storytelling.
-2. **Intentional Scroll Storytelling**: Use scroll interactions (pins, reveals, video scrubs, parallax) only where they elevate the narrative. Never animate every section simply because the capability exists.
-3. **Strict Media/Scroll Pre-Planning**: `Media Plan` and `Scroll Story Plan` MUST be defined before writing implementation code.
-4. **Iterative Adversarial Loop**: Do not treat generation as a one-shot task. The `CRITIC → FIX → RENDER` loop is mandatory.
+1. **Media-First Visual Storytelling (Use More Images Than Icons)**: Maximize use of `IMAGE`, `VIDEO`, `ILLUSTRATION`, `DIAGRAM`, and `TYPOGRAPHY`. Whenever building websites, apps, or UI, use more and more images than icons. Icons are strictly utility elements for navigation and small actions, NEVER the primary visual storytelling language.
+2. **Zero Pills (Strictly Forbidden)**: Do NOT create pills. Strictly avoid `rounded-full` pill badges, floating pill tags, pill chips, or pill containers (`px-3 py-1 rounded-full`). Use clean typographic hierarchy, micro-borders, or spatial layout instead.
+3. **No Background Color Behind Icons (Strictly Forbidden)**: Do NOT add background colors, tinted boxes, colored circles, square containers, or glass tiles behind icons (e.g. `bg-primary/10 rounded-xl p-3`). Icons must sit directly on the surface or inline with copy without decorative box fills.
+4. **Intentional Scroll Storytelling**: Use scroll interactions (pins, reveals, video scrubs, parallax) only where they elevate the narrative. Never animate every section simply because the capability exists.
+5. **Strict Media/Scroll Pre-Planning**: `Media Plan` and `Scroll Story Plan` MUST be defined before writing implementation code.
+6. **Iterative Adversarial Loop**: Do not treat generation as a one-shot task. The `CRITIC → FIX → RENDER` loop is mandatory.
 
 ## Execution & Reporting Requirements
 
@@ -72,7 +74,7 @@ CINEMATIC_INTENSITY: [1-10]
 BENTO_COMPLEXITY: [1-10]
 
 MEDIA PLAN:
-[Summary of media types, roles, scales, and treatments]
+[Summary of media types, roles, scales, and treatments - images prioritized over icons]
 
 SCROLL STORY:
 [Summary of scroll patterns, sticky/pinned behaviors, choreography]
@@ -94,8 +96,9 @@ MOBILE FALLBACK:
 [Strategy for mobile recomposition and scroll fallback]
 
 ANTI-SLOP:
-[Verification that generic AI tropes and repetitive icon cards were eliminated]
+[Verification that generic AI tropes, pill badges/chips, icon background containers, and repetitive icon cards were eliminated]
 
 PRE-FLIGHT:
 PASS / FAIL [All binary pre-flight gates passed]
 ```
+

@@ -7,9 +7,19 @@ description: Media-first composition system prioritizing images, video, illustra
 
 ## Mission
 
-Universal UI Skills treats **IMAGE, VIDEO, ILLUSTRATION, DIAGRAM, TYPOGRAPHY, LAYOUT, and MOTION** as the primary visual storytelling language. 
+Universal UI Skills treats **IMAGE, VIDEO, ILLUSTRATION, DIAGRAM, TYPOGRAPHY, LAYOUT, and MOTION** as the primary visual storytelling language.
 
-Icons are NOT the default visual language. Prefer visual assets over iconography for primary UI storytelling. Use icons sparingly and only when they improve usability or interaction clarity. When an icon is genuinely needed, prefer premium animated/interactable icon systems such as Lottie or Rive over generic static icon libraries.
+Whenever building a website, app, dashboard, or product experience with Universal UI Skills, **use more and more images than icons**. Primary visual communication MUST be carried by rich visual assets: real photography, product renders, live UI captures, 3D artwork, custom illustrations, or technical diagrams.
+
+Icons are strictly utility tools (navigation, actions, system controls), NOT the default visual language. Never use icons as a lazy replacement for meaningful visual media.
+
+---
+
+## Three Non-Negotiable Composition Rules
+
+1. **Maximize Image Prominence**: Populate sections with rich imagery, product renders, photography, and diagrams rather than icon lists. Images carry the narrative; icons do not.
+2. **Zero Pills**: Do NOT create pills. Strictly avoid `rounded-full` pill badges, floating pill tags, pill chips, or pill containers (e.g. `<span class="rounded-full px-3 py-1 bg-...">...</span>`). Use crisp typography, subtle borders, or spatial layout instead.
+3. **No Background Color Behind Icons**: Do NOT add background colors, tinted boxes, colored circles, square containers, or glass tiles behind icons. Icons must sit directly on the background surface or inline with copy without decorative box fills.
 
 ---
 
@@ -47,12 +57,12 @@ Does an interactive visual object improve it?
       ▼
 Is a utility icon actually required for immediate operational recognition?
       │
-      ├─────► [YES] ──► Use Minimal, Semantic Utility Icon
+      ├─────► [YES] ──► Use Minimal, Semantic Utility Icon (NO background color/box)
       │
      [NO]
       │
       ▼
-Use Strong Typography & Layout Composition Instead
+Use Strong Typography & Layout Composition Instead (NO pill badges)
 ```
 
 ---
@@ -68,15 +78,18 @@ Use Strong Typography & Layout Composition Instead
 - Directional indicators / arrows / pagination
 - Accessibility controls
 - Small utility actions (copy code, download, external link)
-- Semantic status indicators (verified badge, success checkmark, error dot)
+- Semantic status indicators (verified checkmark, error dot)
 
 ### Prohibited Uses of Icons:
-- ❌ **Feature Storytelling**: Do not build generic `[Icon] + Title + Description` grids repeated 3–6 times as the main feature section.
+- ❌ **Background Color Behind Icons**: Never add background color behind icons. Do not place icons inside colored boxes, tinted squares, rounded circles, or glass tiles (e.g., `<div class="bg-primary/10 rounded-xl p-3"><Icon /></div>`). Icons must rest directly on the surface.
+- ❌ **Pills & Pill Badges**: Never wrap icons or text in `rounded-full` pill badges, floating pill chips, or pill containers.
+- ❌ **Feature Storytelling**: Do not build generic `[Icon] + Title + Description` grids repeated 3–6 times as the main feature section. Use images and diagrams instead.
 - ❌ **Hero Visuals**: Do not place a large floating icon where a product screenshot, diagram, or illustration belongs.
 - ❌ **Product Differentiation**: Do not use generic icons to explain complex architectural advantages.
 - ❌ **Empty Card Filler**: Do not slap an icon into a card just because there is empty space.
 - ❌ **Replacing Real Visual Media**: If a photograph, interactive model, data visualization, or technical diagram is more expressive, you MUST use the richer media.
 - ❌ **Emoji Substitutions**: Never substitute emojis for semantic icons.
+
 
 ---
 

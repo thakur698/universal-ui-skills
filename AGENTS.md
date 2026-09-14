@@ -31,11 +31,22 @@ Optimize for:
 
 Do not rewrite unrelated functionality merely to change visual code.
 
-## Media-First Visual Language
+## Media-First Visual Language & Anti-Slop Rules
 
-Universal UI Skills prefers images, illustrations, diagrams, product renders, photography, video, and meaningful visual media over icons for primary feature communication.
+Universal UI Skills strictly mandates **IMAGE, VIDEO, ILLUSTRATION, DIAGRAM, AND TYPOGRAPHY** over icons. Whenever building a website, app, landing page, or dashboard:
 
-Do NOT automatically represent every feature, benefit, statistic, or content section with an icon.
+### 1. Image Dominance Over Icons (Mandatory)
+- **Use more and more images than icons**: Primary visual communication MUST be carried by rich images, real photography, product renders, UI captures, 3D artwork, custom illustrations, or architectural diagrams.
+- Icons are strictly utility tools (navigation, search, close, menu, status, playback, small actions), NEVER the primary visual storytelling language.
+- If you have a choice between an icon and an image/render/diagram/photo, ALWAYS choose the image.
+
+### 2. Zero Pills (Strictly Forbidden)
+- **Do NOT create pills**: No `rounded-full` pill badges, pill tags, floating pill chips, or pill containers (e.g., `<span class="rounded-full px-3 py-1 bg-...">✨ AI Powered</span>` or pill-shaped category labels).
+- Use clean typographic hierarchy, micro-rules, subtle borders, or spatial whitespace instead of pill containers.
+
+### 3. No Background Color Behind Icons (Strictly Forbidden)
+- **Do NOT add background color behind icons**: Never wrap an icon in a colored box, tinted container, circular backdrop, rounded square tile, or glassmorphic background (e.g., `<div class="bg-blue-100 rounded-lg p-2"><Icon /></div>` or `<div class="p-3 rounded-full bg-primary/10"><Icon /></div>` is strictly forbidden).
+- Icons must sit cleanly and directly on the surface or inline with text, with zero container background fill or tinted backdrops.
 
 ### Visual Hierarchy Priority
 1. Product imagery / photography
@@ -59,3 +70,6 @@ Avoid:
 - Icon + heading + paragraph repeated across cards
 - Decorative iconography used only to fill empty space
 - Replacing meaningful imagery with arbitrary icons
+- Adding background colors, shapes, or boxes behind icons
+- Pill-shaped badges, chips, or tag containers
+

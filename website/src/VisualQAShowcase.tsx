@@ -21,19 +21,19 @@ export function VisualQAShowcase() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '1rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1rem', marginBottom: '1rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>RUNTIME</span>
-              <span className="text-white">Antigravity / Playwright</span>
+              <span style={{ color: 'var(--text-primary)' }}>Antigravity / Playwright</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '1rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1rem', marginBottom: '1rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>PACKAGE</span>
-              <span className="text-white">browser_subagent</span>
+              <span style={{ color: 'var(--text-primary)' }}>browser_subagent</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '1rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1rem', marginBottom: '1rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>TARGET</span>
-              <span className="text-white">React / Web / Flutter</span>
+              <span style={{ color: 'var(--text-primary)' }}>React / Web / Flutter</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '1rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>VERIFICATION</span>
-              <span className="text-white">Self-Referential Screenshot</span>
+              <span style={{ color: 'var(--text-primary)' }}>Self-Referential Screenshot</span>
             </div>
           </div>
 
@@ -56,13 +56,13 @@ export function VisualQAShowcase() {
 
         {/* Timeline */}
         <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.875rem', color: 'var(--text-secondary)', overflowX: 'auto', paddingBottom: '1rem' }}>
-           <span className="text-white">LAUNCH BROWSER</span>
+           <span style={{ color: 'var(--text-primary)' }}>LAUNCH BROWSER</span>
            <span>→</span>
-           <span className="text-white">NAVIGATE</span>
+           <span style={{ color: 'var(--text-primary)' }}>NAVIGATE</span>
            <span>→</span>
-           <span className="text-white">SET VIEWPORT</span>
+           <span style={{ color: 'var(--text-primary)' }}>SET VIEWPORT</span>
            <span>→</span>
-           <span className="text-white">WAIT FOR RENDER</span>
+           <span style={{ color: 'var(--text-primary)' }}>WAIT FOR RENDER</span>
            <span>→</span>
            <span style={{ color: 'var(--accent-cyan)' }}>CAPTURE</span>
         </div>

@@ -1,7 +1,7 @@
 import { Lottie } from "lottie-react";
 // @ts-ignore
 // @ts-ignore
-import animationData from "../public/assets/loading.json";
+import animationData from "./assets/loading.json";
 
 export function LottieShowcase() {
   return (
@@ -24,23 +24,23 @@ export function LottieShowcase() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '1rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1rem', marginBottom: '1rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>RUNTIME</span>
-              <span className="text-white">React / Web</span>
+              <span style={{ color: 'var(--text-primary)' }}>React / Web</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '1rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1rem', marginBottom: '1rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>PACKAGE</span>
-              <span className="text-white">lottie-react</span>
+              <span style={{ color: 'var(--text-primary)' }}>lottie-react</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '1rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1rem', marginBottom: '1rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>ASSET</span>
-              <span className="text-white">loading.json</span>
+              <span style={{ color: 'var(--text-primary)' }}>loading.json</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '1rem', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1rem', marginBottom: '1rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>RENDERER</span>
-              <span className="text-white">Canvas / SVG</span>
+              <span style={{ color: 'var(--text-primary)' }}>Canvas / SVG</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '1rem' }}>
               <span style={{ color: 'var(--text-secondary)' }}>VERIFICATION</span>
-              <span className="text-white">Browser Visual QA</span>
+              <span style={{ color: 'var(--text-primary)' }}>Browser Visual QA</span>
             </div>
           </div>
 
@@ -58,13 +58,13 @@ export function LottieShowcase() {
 
         {/* Timeline */}
         <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem', fontFamily: 'var(--font-mono)', fontSize: '0.875rem', color: 'var(--text-secondary)', overflowX: 'auto', paddingBottom: '1rem' }}>
-           <span className="text-white">DOCUMENT</span>
+           <span style={{ color: 'var(--text-primary)' }}>EXTRACT</span>
            <span>→</span>
-           <span className="text-white">DETECT</span>
+           <span style={{ color: 'var(--text-primary)' }}>LOAD</span>
            <span>→</span>
-           <span className="text-white">CLASSIFY</span>
+           <span style={{ color: 'var(--text-primary)' }}>PARSE</span>
            <span>→</span>
-           <span className="text-white">EXECUTE</span>
+           <span style={{ color: 'var(--text-primary)' }}>MOUNT</span>
            <span>→</span>
            <span style={{ color: 'var(--accent-cyan)' }}>VERIFY</span>
         </div>

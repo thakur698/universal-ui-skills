@@ -30,17 +30,20 @@ Reject or reconsider:
 - giant blur effects
 - excessive glow
 - giant soft shadows
-- endless pills
+- pills of any kind (pill badges, tags, chips, floating pill eyebrows, or `rounded-full` containers are strictly banned)
+- background colors or tinted containers behind icons (colored circles, rounded square tiles, or icon boxes are strictly banned)
 - excessive rounded rectangles
 
 ### CATEGORY C — Generic Content Treatment
 
 Reject or reconsider:
-- unnecessary badges
+- unnecessary badges and pill tags
 - excessive labels
 - excessive helper text
 - emoji used as primary product icons
 - repetitive icon + label combinations
+- icon substitution instead of rich imagery (using generic icons where real photos, product renders, UI captures, or technical diagrams should carry the story)
+- background color behind icons (icons must sit directly on the surface without container boxes or tinted backdrops)
 
 ### CATEGORY D — Generic Motion
 
@@ -70,7 +73,11 @@ Ask yourself these questions before declaring success:
 5. Is hierarchy stronger than decoration?
 6. Is the typography doing enough visual work?
 7. Is the screen memorable without effects?
+8. Are there any pills or `rounded-full` pill badges/chips? (If yes, eliminate them; use clean typographic hierarchy).
+9. Is there any background color, tinted container, or box behind icons? (If yes, remove container backgrounds so icons sit cleanly on the surface).
+10. Does the design use more and more images than icons? (If it leans on generic icon grids, replace them with rich photography, product renders, live UI captures, or architectural diagrams).
 
 ## Enforcement
 
-If the result is generic, you must redesign it instead of simply reporting success. Remove unnecessary decorations, restore product context, and prioritize hierarchy over trends.
+If the result is generic, you must redesign it instead of simply reporting success. Remove unnecessary decorations, eliminate pills, remove icon background colors, prioritize rich imagery over icons, restore product context, and prioritize hierarchy over trends.
+

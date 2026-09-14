@@ -48,6 +48,13 @@ Require rigorous component states. Ensure you design and implement the following
 - **Error**: Invalid state.
 - **Success**: (Where applicable)
 
+## Anti-Slop Component Rules
+
+1. **No Pill Components**: Do NOT build or use pill badges, pill tags, pill chips, or floating pill containers (`rounded-full` enclosures). Structure metadata and labels with crisp typography, micro-borders, or simple layout hierarchy.
+2. **No Icon Background Containers**: Do NOT build component wrappers that add colored background fills, tinted boxes, circular backdrops, or square containers behind icons (e.g. `bg-primary/10 rounded-xl p-3`). Icons must render cleanly directly on the surface.
+3. **Image Primacy**: Design components to showcase rich visual media (screenshots, photography, 3D assets, architecture diagrams) rather than repetitive icon containers.
+
 ## Documentation
 
 Document your component structures using the `docs/design-system-template.md` format.
+

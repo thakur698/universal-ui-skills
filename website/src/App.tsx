@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, Check, X, Code2, MonitorPlay, Sparkles, Box, Workflow, Layers, Video, Palette } from 'lucide-react';
+import { ArrowRight, Check, X, Code2, MonitorPlay, Sparkles, Box, Workflow, Layers, Video, Palette, Sun, Moon } from 'lucide-react';
 import { BenchmarkShowcase } from './BenchmarkShowcase';
 import { CinematicStorySection } from './CinematicStorySection';
 import { AdaptiveOrchestrationShowcase } from './AdaptiveOrchestrationShowcase';
@@ -34,7 +34,18 @@ const GithubIcon = () => (
 );
 
 function App() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
   useIntersectionObserver();
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
   const [activeStoryStage, setActiveStoryStage] = useState(0);
 
   const storyStages = [
@@ -62,9 +73,18 @@ function App() {
             <a href="#reproduction">Reproduction</a>
             <a href="#integrations">Integrations</a>
           </div>
-          <a href="https://github.com/thakur698/universal-ui-skills" target="_blank" rel="noreferrer" className="btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.75rem' }}>
-            <GithubIcon /> GitHub
-          </a>
+          <div className="flex-gap" style={{ alignItems: 'center' }}>
+            <button 
+              onClick={toggleTheme} 
+              style={{ background: 'transparent', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: '0.5rem' }}
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+            </button>
+            <a href="https://github.com/thakur698/universal-ui-skills" target="_blank" rel="noreferrer" className="btn-secondary" style={{ padding: '0.5rem 1rem', fontSize: '0.75rem' }}>
+              <GithubIcon /> GitHub
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -225,13 +245,13 @@ function App() {
 
             <div className="anti-slop-card anti-slop-card-accent reveal delay-200">
               <div className="list-item" style={{ borderBottom: '1px solid var(--border-subtle)', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
-                <Check size={16} className="text-white" /> <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.875rem', color: '#fff' }}>UNIVERSAL UI V2 ENGINE</span>
+                <Check size={16} style={{ color: 'var(--text-primary)' }} /> <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.875rem', color: 'var(--text-primary)' }}>UNIVERSAL UI V2 ENGINE</span>
               </div>
-              <div className="list-item"><span className="text-white">✓</span> Media-first composition & diagrams</div>
-              <div className="list-item"><span className="text-white">✓</span> Pinned storytelling & deterministic scrubbing</div>
-              <div className="list-item"><span className="text-white">✓</span> Parameterized design dials (Density, Variance, Motion)</div>
-              <div className="list-item"><span className="text-white">✓</span> Adversarial visual critic refinement loop</div>
-              <div className="list-item"><span className="text-white">✓</span> Full `@media (prefers-reduced-motion)` fallbacks</div>
+              <div className="list-item"><span style={{ color: 'var(--text-primary)', fontWeight: 700 }}>✓</span> Media-first composition & diagrams</div>
+              <div className="list-item"><span style={{ color: 'var(--text-primary)', fontWeight: 700 }}>✓</span> Pinned storytelling & deterministic scrubbing</div>
+              <div className="list-item"><span style={{ color: 'var(--text-primary)', fontWeight: 700 }}>✓</span> Parameterized design dials (Density, Variance, Motion)</div>
+              <div className="list-item"><span style={{ color: 'var(--text-primary)', fontWeight: 700 }}>✓</span> Adversarial visual critic refinement loop</div>
+              <div className="list-item"><span style={{ color: 'var(--text-primary)', fontWeight: 700 }}>✓</span> Full `@media (prefers-reduced-motion)` fallbacks</div>
             </div>
           </div>
         </div>
@@ -380,16 +400,20 @@ function App() {
                 </p>
                 <div>
                   <div className="status-row text-anim-blur text-anim-delay-3">
-                    <span className="text-white">AVAILABLE + EXECUTABLE</span>
-                    <span style={{ color: 'var(--text-secondary)' }}>Agent invokes directly</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 700 }}>AVAILABLE + EXECUTABLE</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>Agent can invoke</span>
                   </div>
                   <div className="status-row text-anim-blur text-anim-delay-3">
-                    <span className="text-white">AVAILABLE + MANUAL</span>
-                    <span style={{ color: 'var(--text-secondary)' }}>Requires user confirmation</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 700 }}>AVAILABLE + MANUAL</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>Requires user</span>
                   </div>
                   <div className="status-row text-anim-blur text-anim-delay-3">
-                    <span className="text-white">NOT AVAILABLE</span>
-                    <span style={{ color: 'var(--text-secondary)' }}>Uses robust native fallback</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 700 }}>NOT AVAILABLE</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>Agent uses fallback</span>
+                  </div>
+                  <div className="status-row text-anim-blur text-anim-delay-3" style={{ border: 'none' }}>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 700 }}>REQUIRES USER SETUP</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>Missing credentials</span>
                   </div>
                 </div>
               </div>
@@ -408,7 +432,7 @@ function App() {
                   <tbody>
                     {Object.values(registry).map((integration, idx) => (
                       <tr key={idx}>
-                        <td className="text-white font-mono">{integration.tool}</td>
+                        <td style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}>{integration.tool}</td>
                         <td style={{ color: 'var(--text-secondary)' }}>{integration.verified_environment}</td>
                         <td style={{ color: integration.repository_status === 'VERIFIED' ? 'var(--accent-cyan)' : 'var(--text-secondary)' }}>
                           {integration.repository_status === 'VERIFIED' ? '✓ Verified' : '○ Pending'}
