@@ -11,6 +11,43 @@ While the Visual Critic scores aesthetics, the Pre-Flight Gate enforces hard mec
 
 ---
 
+## INTERACTIVE HERO MANDATE
+
+For website UI tasks, DO NOT default to:
+- centered headline
+- subtitle
+- two buttons
+- static image
+- generic gradient background
+- empty whitespace
+- generic SaaS hero template
+
+The default hero must be an intentional visual experience.
+
+REQUIRED:
+1. A product-specific visual concept.
+2. Meaningful imagery, product render, illustration, video, diagram, environmental scene, or other rich media.
+3. Purposeful motion or interaction.
+4. Strong visual depth/layering where appropriate.
+5. Responsive behavior that preserves the concept on mobile.
+
+PREFERRED:
+- animated image layers
+- parallax depth
+- cursor/reactive visuals
+- scroll-linked transformation
+- video or frame sequencing
+- interactive product visualization
+- layered typography/media choreography
+- animated diagrams
+- Rive/Lottie interactive visual objects where they add meaning
+
+The hero should communicate the product before the user reads every word.
+
+Do not add animation merely to satisfy this rule. Motion must reinforce hierarchy, product meaning, spatial depth, interaction, or storytelling.
+
+---
+
 ## Hard Pre-Flight Matrix
 
 Evaluate the design against these binary (PASS/FAIL) rules:
@@ -40,6 +77,10 @@ Evaluate the design against these binary (PASS/FAIL) rules:
 18. [ ] **FAIL: Insufficient contrast.** (Text contrast below $4.5:1$ on body copy).
 19. [ ] **FAIL: Placeholder imagery.** (Fake/generic placeholder boxes left in final render).
 20. [ ] **FAIL: Broken loading/error/empty state.** (Edge cases not handled).
+
+### Hero Gates:
+21. [ ] **FAIL: HERO_STATIC_TEMPLATE.** (Website hero is substantially composed of headline + paragraph + primary CTA + secondary CTA + static decorative/background image with no meaningful visual interaction, motion, transformation, or product-specific visual storytelling. Exception: Documented reason related to brief, product, accessibility, performance, or platform constraints.)
+22. [ ] **PASS: HERO_VISUAL_STORY.** (The hero has a distinct visual concept, meaningful media, purposeful motion/interaction, clear hierarchy, product-specific storytelling, coherent reduced-motion fallback, and mobile translation.)
 
 
 ---
