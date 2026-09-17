@@ -61,144 +61,137 @@ export function AdaptiveOrchestrationShowcase() {
   const cur = domainData[selectedDomain];
 
   return (
-    <section id="adaptive" className="section" style={{ backgroundColor: 'var(--bg-surface-elevated)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
-      <div className="container">
-        <div className="reveal" style={{ marginBottom: '3.5rem' }}>
-          <span className="tech-label">Track v2.1-Exp & v2.2 Architecture</span>
-          <h2>Complexity-Aware Adaptive Orchestration</h2>
-          <p style={{ color: 'var(--text-secondary)', maxWidth: '44rem' }}>
-            Instead of forcing every task through all 19 stages, Universal UI dynamically deploys the minimum sufficient pipeline depth—capturing <strong>93.8% of marginal gains</strong> while slashing tokens and latency.
-          </p>
+    <section id="adaptive" className="section" style={{ backgroundColor: 'var(--bg-base)', borderTop: '1px solid var(--border-strong)', borderBottom: '1px solid var(--border-strong)', position: 'relative', overflow: 'hidden' }}>
+      {/* Glowing Core Background */}
+      <div style={{ position: 'absolute', top: '50%', left: '50%', width: '100%', height: '100%', background: 'radial-gradient(ellipse at center, rgba(0, 240, 255, 0.05) 0%, transparent 60%)', transform: 'translate(-50%, -50%)', pointerEvents: 'none', zIndex: 0 }}></div>
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)', backgroundSize: '32px 32px', zIndex: 0 }}></div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+        <div className="reveal" style={{ marginBottom: '4rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', borderBottom: '1px solid var(--accent-cyan)', paddingBottom: '2rem' }}>
+          <div>
+            <span className="tech-label" style={{ color: 'var(--accent-cyan)' }}>[ ACTIVE MODULE : ORCHESTRATION ENGINE ]</span>
+            <h2 style={{ color: 'var(--text-primary)', textShadow: '0 0 20px rgba(0,240,255,0.2)' }}>Complexity-Aware Adaptive Orchestration</h2>
+            <p style={{ color: 'var(--text-secondary)', maxWidth: '44rem', fontSize: '1.1rem', margin: 0 }}>
+              Instead of forcing every task through all 19 stages, Universal UI dynamically deploys the minimum sufficient pipeline depth—capturing <strong>93.8% of marginal gains</strong> while slashing tokens and latency.
+            </p>
+          </div>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-dim)', textAlign: 'right' }}>
+            <span style={{ display: 'block', color: 'var(--accent-cyan)' }}>SYS.ROUTING: DYNAMIC</span>
+            OP.MODE: ADAPTIVE
+          </div>
         </div>
 
-        {/* Domain Selector Tabs */}
-        <div className="flex-gap reveal" style={{ marginBottom: '2.5rem' }}>
-          <button 
-            onClick={() => setSelectedDomain('landing')}
-            className={`tab-btn ${selectedDomain === 'landing' ? 'active' : ''}`}
-            style={{
-              padding: '0.75rem 1.5rem',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.8rem',
-              background: selectedDomain === 'landing' ? 'var(--bg-base)' : 'transparent',
-              border: `1px solid ${selectedDomain === 'landing' ? 'var(--accent-cyan)' : 'var(--border-strong)'}`,
-              color: selectedDomain === 'landing' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            01. Developer Portal (L1)
-          </button>
-          <button 
-            onClick={() => setSelectedDomain('mobile')}
-            className={`tab-btn ${selectedDomain === 'mobile' ? 'active' : ''}`}
-            style={{
-              padding: '0.75rem 1.5rem',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.8rem',
-              background: selectedDomain === 'mobile' ? 'var(--bg-base)' : 'transparent',
-              border: `1px solid ${selectedDomain === 'mobile' ? 'var(--accent-cyan)' : 'var(--border-strong)'}`,
-              color: selectedDomain === 'mobile' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            02. Field Mobile UI (L2)
-          </button>
-          <button 
-            onClick={() => setSelectedDomain('cinematic')}
-            className={`tab-btn ${selectedDomain === 'cinematic' ? 'active' : ''}`}
-            style={{
-              padding: '0.75rem 1.5rem',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.8rem',
-              background: selectedDomain === 'cinematic' ? 'var(--bg-base)' : 'transparent',
-              border: `1px solid ${selectedDomain === 'cinematic' ? 'var(--accent-cyan)' : 'var(--border-strong)'}`,
-              color: selectedDomain === 'cinematic' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease'
-            }}
-          >
-            05. Cinematic Story (L3)
-          </button>
+        {/* Domain Selector Tabs - Telemetry Ribbon */}
+        <div className="flex-gap reveal" style={{ marginBottom: '3rem', border: '1px solid var(--border-strong)', padding: '0.5rem', background: 'rgba(0,0,0,0.5)' }}>
+          {['landing', 'mobile', 'cinematic'].map((domain) => (
+            <button 
+              key={domain}
+              onClick={() => setSelectedDomain(domain as any)}
+              style={{
+                flex: 1,
+                padding: '1.5rem',
+                background: selectedDomain === domain ? 'rgba(0, 240, 255, 0.1)' : 'transparent',
+                color: selectedDomain === domain ? 'var(--text-primary)' : 'var(--text-secondary)',
+                border: selectedDomain === domain ? '1px solid var(--accent-cyan)' : '1px solid transparent',
+                borderLeft: selectedDomain === domain ? '4px solid var(--accent-cyan)' : '1px solid transparent',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.8rem',
+                letterSpacing: '0.1em',
+                cursor: 'pointer',
+                textAlign: 'left',
+                transition: 'all 0.2s',
+                boxShadow: selectedDomain === domain ? 'inset 0 0 20px rgba(0,240,255,0.05)' : 'none'
+              }}
+            >
+              <div style={{ color: selectedDomain === domain ? 'var(--accent-cyan)' : 'var(--text-dim)', marginBottom: '0.5rem', fontSize: '0.65rem' }}>
+                {domain === 'landing' ? 'L1_MINIMAL' : domain === 'mobile' ? 'L2_STANDARD' : 'L3_FULL_ENGINE'}
+              </div>
+              {domain === 'landing' ? '01. DEVELOPER PORTAL (L1)' : domain === 'mobile' ? '02. FIELD MOBILE UI (L2)' : '05. CINEMATIC STORY (L3)'}
+            </button>
+          ))}
         </div>
 
         {/* Interactive Matrix Display */}
-        <div className="grid-2 reveal delay-100">
+        <div className="grid-2 reveal delay-100" style={{ gap: '1px', background: 'var(--border-strong)', border: '1px solid var(--border-strong)' }}>
           {/* Left: Telemetry & Quality Card */}
-          <div style={{ background: 'var(--bg-base)', border: '1px solid var(--border-strong)', padding: '2.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div style={{ background: 'var(--bg-base)', padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
+            {/* HUD Corners */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '20px', height: '20px', borderTop: '2px solid var(--accent-cyan)', borderLeft: '2px solid var(--accent-cyan)' }}></div>
+            <div style={{ position: 'absolute', bottom: 0, right: 0, width: '20px', height: '20px', borderBottom: '2px solid var(--accent-cyan)', borderRight: '2px solid var(--accent-cyan)' }}></div>
+
             <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent-cyan)', marginBottom: '1.25rem' }}>
-                <span>{cur.id}</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--accent-cyan)', marginBottom: '1.5rem', letterSpacing: '0.1em', borderBottom: '1px dashed var(--border-strong)', paddingBottom: '0.5rem' }}>
+                <span>[ {cur.id} ]</span>
                 <span>MATCH: {cur.isExactMatch ? '✓ T_pred == T_opt' : '○'}</span>
               </div>
-              <h3 style={{ fontSize: '1.6rem', marginBottom: '0.75rem' }}>{cur.name}</h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '2rem' }}>
+              <h3 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>{cur.name}</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '3rem', maxWidth: '90%' }}>
                 {cur.rationale}
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '1.5rem' }}>
-                <div>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-dim)', display: 'block' }}>TASTE SCORE</span>
-                  <strong style={{ fontFamily: 'var(--font-mono)', fontSize: '1.1rem', color: 'var(--text-secondary)' }}>{cur.tasteScore} / 110</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border-strong)', border: '1px solid var(--border-strong)' }}>
+                <div style={{ background: 'var(--bg-surface)', padding: '1.5rem', textAlign: 'center' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--text-dim)', display: 'block', marginBottom: '0.5rem', letterSpacing: '0.1em' }}>TASTE SCORE</span>
+                  <strong style={{ fontFamily: 'var(--font-mono)', fontSize: '1.5rem', color: 'var(--text-secondary)' }}>{cur.tasteScore} <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>/ 110</span></strong>
                 </div>
-                <div>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-dim)', display: 'block' }}>ADAPTIVE ROUTE</span>
-                  <strong style={{ fontFamily: 'var(--font-mono)', fontSize: '1.1rem', color: 'var(--accent-cyan)' }}>{cur.adaptiveScore} / 110</strong>
+                <div style={{ background: 'rgba(0, 240, 255, 0.05)', padding: '1.5rem', textAlign: 'center', border: '1px solid var(--accent-cyan)' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--accent-cyan)', display: 'block', marginBottom: '0.5rem', letterSpacing: '0.1em' }}>ADAPTIVE ROUTE</span>
+                  <strong style={{ fontFamily: 'var(--font-mono)', fontSize: '1.5rem', color: 'var(--text-primary)', textShadow: '0 0 10px rgba(0,240,255,0.5)' }}>{cur.adaptiveScore} <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>/ 110</span></strong>
                 </div>
-                <div>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-dim)', display: 'block' }}>FULL L3 CONTROL</span>
-                  <strong style={{ fontFamily: 'var(--font-mono)', fontSize: '1.1rem', color: 'var(--text-primary)' }}>{cur.fullL3Score} / 110</strong>
+                <div style={{ background: 'var(--bg-surface)', padding: '1.5rem', textAlign: 'center' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--text-dim)', display: 'block', marginBottom: '0.5rem', letterSpacing: '0.1em' }}>FULL L3 CONTROL</span>
+                  <strong style={{ fontFamily: 'var(--font-mono)', fontSize: '1.5rem', color: 'var(--text-primary)' }}>{cur.fullL3Score} <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>/ 110</span></strong>
                 </div>
               </div>
             </div>
 
-            <div style={{ marginTop: '2rem', background: 'rgba(0, 240, 255, 0.05)', border: '1px solid rgba(0, 240, 255, 0.2)', padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'var(--font-mono)', fontSize: '0.75rem' }}>
-              <span style={{ color: 'var(--text-secondary)' }}>RETAINED MARGINAL GAIN (R_L)</span>
-              <strong style={{ color: 'var(--accent-cyan)' }}>{cur.retainedGain} (Target $\ge$ 90%)</strong>
+            <div style={{ marginTop: '3rem', background: 'var(--bg-surface)', border: '1px dashed var(--accent-cyan)', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'var(--font-mono)', fontSize: '0.8rem' }}>
+              <span style={{ color: 'var(--text-dim)', letterSpacing: '0.1em' }}>RETAINED MARGINAL GAIN (R_L)</span>
+              <strong style={{ color: 'var(--accent-cyan)', fontSize: '1rem', textShadow: '0 0 10px rgba(0,240,255,0.3)' }}>{cur.retainedGain} (Target $\ge$ 90%)</strong>
             </div>
           </div>
 
           {/* Right: Cost & Frontier Visualizer */}
-          <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-subtle)', padding: '2.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div style={{ background: 'var(--bg-base)', padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative' }}>
             <div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '2.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem', letterSpacing: '0.1em', borderBottom: '1px dashed var(--border-strong)', paddingBottom: '0.5rem' }}>
                 <Cpu size={16} style={{ color: 'var(--accent-cyan)' }} />
                 <span>PROCESS COST & PARETO FRONTIER</span>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', fontFamily: 'var(--font-mono)', fontSize: '0.8rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
-                    <span style={{ color: 'var(--text-secondary)' }}>PREDICTED TIER</span>
-                    <span style={{ color: 'var(--accent-cyan)' }}>{cur.classifiedTier}</span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+                    <span style={{ color: 'var(--text-dim)' }}>PREDICTED TIER CLASSIFICATION</span>
+                    <span style={{ color: 'var(--accent-cyan)', fontWeight: 700, textShadow: '0 0 10px rgba(0,240,255,0.2)' }}>{cur.classifiedTier}</span>
                   </div>
-                  <div style={{ height: '4px', background: 'var(--border-strong)', borderRadius: '2px', overflow: 'hidden' }}>
-                    <div style={{ height: '100%', width: selectedDomain === 'landing' ? '30%' : selectedDomain === 'mobile' ? '65%' : '100%', background: 'var(--accent-cyan)' }}></div>
+                  <div style={{ height: '4px', background: 'var(--bg-surface)', width: '100%', border: '1px solid var(--border-strong)' }}>
+                    <div style={{ height: '100%', width: selectedDomain === 'landing' ? '30%' : selectedDomain === 'mobile' ? '65%' : '100%', background: 'var(--accent-cyan)', boxShadow: '0 0 10px var(--accent-cyan)' }}></div>
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
-                  <span style={{ color: 'var(--text-secondary)' }}>TOKEN CONSUMPTION</span>
-                  <strong style={{ color: 'var(--text-primary)' }}>{cur.tokens} tok <span style={{ color: 'var(--accent-cyan)', fontSize: '0.7rem' }}>({cur.savings})</span></strong>
+                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dotted var(--border-strong)', paddingBottom: '1rem' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>TOKEN CONSUMPTION LOG</span>
+                  <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>{cur.tokens} tok <span style={{ color: 'var(--text-dim)', fontSize: '0.75rem', fontWeight: 400 }}>({cur.savings})</span></strong>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
-                  <span style={{ color: 'var(--text-secondary)' }}>TIME TO FIRST USABLE UI</span>
-                  <strong style={{ color: 'var(--text-primary)' }}>{cur.ttfui} <span style={{ color: 'var(--text-secondary)', fontSize: '0.7rem' }}>(vs. L3: {cur.fullTtfui})</span></strong>
+                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dotted var(--border-strong)', paddingBottom: '1rem' }}>
+                  <span style={{ color: 'var(--text-secondary)' }}>LATENCY (TIME TO FIRST USABLE UI)</span>
+                  <strong style={{ color: 'var(--text-primary)', fontSize: '1.1rem' }}>{cur.ttfui} <span style={{ color: 'var(--text-dim)', fontSize: '0.75rem', fontWeight: 400 }}>(vs. L3: {cur.fullTtfui})</span></strong>
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '0.5rem' }}>
-                  <span style={{ color: 'var(--text-secondary)' }}>PARETO STATUS</span>
-                  <strong style={{ color: '#4ade80' }}>✓ FRONTIER EFFICIENT (Dominates L2)</strong>
+                  <span style={{ color: 'var(--text-secondary)' }}>ALGORITHMIC PARETO STATUS</span>
+                  <strong style={{ color: 'var(--accent-cyan)', letterSpacing: '0.1em' }}>[ ✓ FRONTIER EFFICIENT ]</strong>
                 </div>
               </div>
             </div>
 
-            <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'center' }}>
-              <Zap size={18} style={{ color: 'var(--accent-cyan)', flexShrink: 0 }} />
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', margin: 0, lineHeight: '1.4' }}>
-                Empirical validation: Adaptive depth achieves optimal quality-cost balance without running redundant stages.
+            <div style={{ borderTop: '1px solid var(--border-strong)', paddingTop: '2rem', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', background: 'var(--bg-surface)', padding: '1.5rem', marginTop: '3rem' }}>
+              <Zap size={20} style={{ color: 'var(--accent-cyan)', flexShrink: 0 }} />
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: 0, lineHeight: '1.6' }}>
+                <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: '0.25rem' }}>EMPIRICAL VALIDATION</strong>
+                Adaptive depth achieves optimal quality-cost balance without running redundant stages.
               </p>
             </div>
           </div>
