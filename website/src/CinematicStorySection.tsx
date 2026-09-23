@@ -92,7 +92,7 @@ export function CinematicStorySection() {
         <div className="telemetry-depth-rail" style={{ position: 'absolute', left: '2rem', top: '50%', transform: 'translateY(-50%)', height: '60vh', display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <span className="rail-label" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--accent-cyan)', letterSpacing: '0.2em' }}>[ SCROLL TELEMETRY ]</span>
           <div className="depth-rail-track" style={{ width: '2px', height: '100%', background: 'var(--border-strong)', position: 'relative' }}>
-            <div className="depth-rail-fill" style={{ height: `${scrollProgress * 100}%`, background: 'var(--accent-cyan)', boxShadow: '0 0 10px var(--accent-cyan)' }}></div>
+            <div className="depth-rail-fill" style={{ height: `${scrollProgress * 100}%`, background: 'var(--accent-cyan)' }}></div>
             <div className="depth-rail-indicator" style={{ position: 'absolute', top: `${scrollProgress * 100}%`, transform: 'translateY(-50%)', left: '10px', background: 'var(--bg-base)', border: '1px solid var(--accent-cyan)', padding: '0.25rem 0.5rem', fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--accent-cyan)' }}>
               {(scrollProgress * 100).toFixed(0)}%
             </div>
@@ -134,7 +134,7 @@ export function CinematicStorySection() {
           </div>
 
           {/* Interactive Visual Transformation Stage */}
-          <div style={{ position: 'relative', height: '600px', width: '100%', border: '1px solid var(--accent-cyan)', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(10px)', boxShadow: '0 0 40px rgba(0, 240, 255, 0.05)' }}>
+          <div style={{ position: 'relative', height: '600px', width: '100%', border: '1px solid var(--accent-cyan)', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(10px)' }}>
             <div style={{ position: 'absolute', inset: '1rem', border: '1px dashed rgba(0, 240, 255, 0.3)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
               
               {/* Dynamic Interactive Visuals per Phase */}

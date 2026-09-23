@@ -11,7 +11,7 @@ import { HardwareButton } from './HardwareButton';
 import { AnimatedNavLink } from './AnimatedNavLink';
 import { motion, useMotionValue, useSpring, useTransform, useScroll, useMotionTemplate } from 'framer-motion';
 import registry from '../../integrations/registry.json';
-import Lenis from 'lenis';
+// import Lenis from 'lenis';
 
 // Native IntersectionObserver Hook for Scroll Reveals
 function useIntersectionObserver() {
@@ -264,7 +264,7 @@ function App() {
               <div className="diagram-node" style={{ background: 'var(--bg-base)' }}>01. Brief Extractor</div>
               <div className="diagram-line-v flow-v"></div>
               
-              <div className="diagram-node active" style={{ boxShadow: '0 0 20px rgba(0, 240, 255, 0.2)' }}>02. Design Read & Dials</div>
+              <div className="diagram-node active">02. Design Read & Dials</div>
               <div className="diagram-line-v flow-v"></div>
 
               <div className="diagram-branch" style={{ gap: '0.5rem' }}>
@@ -280,12 +280,12 @@ function App() {
               </div>
 
               <div className="diagram-line-v flow-v"></div>
-              <div className="diagram-node active" style={{ boxShadow: '0 0 20px rgba(0, 240, 255, 0.2)' }}>06. Implementation (React)</div>
+              <div className="diagram-node active">06. Implementation (React)</div>
               <div className="diagram-line-v flow-v"></div>
 
               <div className="diagram-branch" style={{ gap: '0.5rem' }}>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <div className="diagram-node active" style={{ color: 'var(--bg-base)', background: 'var(--accent-cyan)', borderColor: 'var(--accent-cyan)', padding: '0.5rem', width: '100%', boxShadow: '0 0 20px rgba(0, 240, 255, 0.4)' }}>Visual Critic (Fix)</div>
+                  <div className="diagram-node active" style={{ color: 'var(--bg-base)', background: 'var(--accent-cyan)', borderColor: 'var(--accent-cyan)', padding: '0.5rem', width: '100%' }}>Visual Critic (Fix)</div>
                 </div>
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <div className="diagram-node" style={{ padding: '0.5rem', width: '100%', background: 'var(--bg-base)' }}>Pre-Flight Gate</div>
@@ -333,7 +333,7 @@ function App() {
                     position: 'relative'
                   }}
                 >
-                  {activeStoryStage === idx && <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: 'var(--text-primary)', boxShadow: '0 0 16px var(--text-primary)' }}></div>}
+                  {activeStoryStage === idx && <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '4px', background: 'var(--text-primary)', boxShadow: '2px 0 8px rgba(255, 255, 255, 0.2)' }}></div>}
                   <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: activeStoryStage === idx ? 'var(--text-primary)' : 'var(--text-dim)', marginBottom: '0.75rem', letterSpacing: '0.1em' }}>
                     STAGE_0{idx + 1}
                   </div>
@@ -394,7 +394,7 @@ function App() {
           </div>
 
           <div className="grid-2" style={{ gap: '2rem' }}>
-            <div className="anti-slop-card reveal delay-100" style={{ position: 'relative', border: '1px solid #f87171', background: 'rgba(248, 113, 113, 0.05)', boxShadow: '0 0 40px rgba(248, 113, 113, 0.1)' }}>
+            <div className="anti-slop-card reveal delay-100" style={{ position: 'relative', border: '1px solid #f87171', background: 'rgba(248, 113, 113, 0.05)' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: '#f87171' }}></div>
               <div className="list-item" style={{ borderBottom: '1px dashed #f87171', paddingBottom: '1.5rem', marginBottom: '2rem' }}>
                 <X size={20} className="text-red" /> <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: '#f87171', letterSpacing: '0.1em' }}>[ FATAL : GENERIC AI DEFAULTS ]</span>
@@ -406,7 +406,7 @@ function App() {
               <div className="list-item" style={{ color: '#fca5a5' }}><span className="text-red">×</span> Broken layout when motion is disabled</div>
             </div>
 
-            <div className="anti-slop-card anti-slop-card-accent reveal delay-200" style={{ position: 'relative', border: '1px solid var(--accent-cyan)', background: 'rgba(0, 240, 255, 0.05)', boxShadow: '0 0 60px rgba(0, 240, 255, 0.15)' }}>
+            <div className="anti-slop-card anti-slop-card-accent reveal delay-200" style={{ position: 'relative', border: '1px solid var(--accent-cyan)', background: 'rgba(0, 240, 255, 0.05)' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--accent-cyan)' }}></div>
               <div className="list-item" style={{ borderBottom: '1px dashed var(--accent-cyan)', paddingBottom: '1.5rem', marginBottom: '2rem' }}>
                 <Check size={20} style={{ color: 'var(--text-primary)' }} /> <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--text-primary)', letterSpacing: '0.1em', textShadow: '0 0 10px rgba(255,255,255,0.3)' }}>[ NOMINAL : UNIVERSAL UI V2 ]</span>

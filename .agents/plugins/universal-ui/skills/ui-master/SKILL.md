@@ -16,6 +16,8 @@ For any substantial UI task, you MUST execute this exact sequence. Do not skip s
 ```text
 Brief
   ↓
+Visitor Mode Classification (Persuade | Operate | Read | Experience)
+  ↓
 Design Read (via ui-creative-director)
   ↓
 Reference Analysis (via ui-reference-first)
@@ -31,6 +33,8 @@ Media Plan (via ui-media-composition)
 Scroll Story Plan (via ui-scroll-storytelling)
   ↓
 Asset Plan (via ui-assets)
+  ↓
+Craft Floor Baseline (Theming, Elevation, Typography)
   ↓
 Implementation (via ui-web / ui-react / ui-mobile / ui-flutter)
   ↓
@@ -55,12 +59,14 @@ Final UI Task Complete
 
 ## Core Design Principles
 
-1. **Media-First Visual Storytelling (Use More Images Than Icons)**: Maximize use of `IMAGE`, `VIDEO`, `ILLUSTRATION`, `DIAGRAM`, and `TYPOGRAPHY`. Whenever building websites, apps, or UI, use more and more images than icons. Icons are strictly utility elements for navigation and small actions, NEVER the primary visual storytelling language.
-2. **Zero Pills (Strictly Forbidden)**: Do NOT create pills. Strictly avoid `rounded-full` pill badges, floating pill tags, pill chips, or pill containers (`px-3 py-1 rounded-full`). Use clean typographic hierarchy, micro-borders, or spatial layout instead.
-3. **No Background Color Behind Icons (Strictly Forbidden)**: Do NOT add background colors, tinted boxes, colored circles, square containers, or glass tiles behind icons (e.g. `bg-primary/10 rounded-xl p-3`). Icons must sit directly on the surface or inline with copy without decorative box fills.
-4. **Intentional Scroll Storytelling**: Use scroll interactions (pins, reveals, video scrubs, parallax) only where they elevate the narrative. Never animate every section simply because the capability exists.
-5. **Strict Media/Scroll Pre-Planning**: `Media Plan` and `Scroll Story Plan` MUST be defined before writing implementation code.
-6. **Iterative Adversarial Loop**: Do not treat generation as a one-shot task. The `CRITIC → FIX → RENDER` loop is mandatory.
+1. **Visitor Mode Discipline**: Categorize the surface into Persuade, Operate, Read, or Experience. Design decisions must serve the mode (e.g. no landing-page bento boxes in high-density Operate dashboards).
+2. **The Craft Floor**: Ensure browser surface theming (selection, scrollbars, focus), single elevation discipline (no ghost cards), logical typography measure (65-75ch), and tabular nums for data.
+3. **Media-First Visual Storytelling (Use More Images Than Icons)**: Maximize use of `IMAGE`, `VIDEO`, `ILLUSTRATION`, `DIAGRAM`, and `TYPOGRAPHY`. Whenever building websites, apps, or UI, use more and more images than icons. Icons are strictly utility elements for navigation and small actions, NEVER the primary visual storytelling language.
+4. **Zero Pills (Strictly Forbidden)**: Do NOT create pills. Strictly avoid `rounded-full` pill badges, floating pill tags, pill chips, or pill containers (`px-3 py-1 rounded-full`). Use clean typographic hierarchy, micro-borders, or spatial layout instead.
+5. **No Background Color Behind Icons (Strictly Forbidden)**: Do NOT add background colors, tinted boxes, colored circles, square containers, or glass tiles behind icons (e.g. `bg-primary/10 rounded-xl p-3`). Icons must sit directly on the surface or inline with copy without decorative box fills.
+6. **Intentional Scroll Storytelling**: Use scroll interactions (pins, reveals, video scrubs, parallax) only where they elevate the narrative. Never animate every section simply because the capability exists.
+7. **Strict Media/Scroll Pre-Planning**: `Media Plan` and `Scroll Story Plan` MUST be defined before writing implementation code.
+8. **Iterative Adversarial Loop**: Do not treat generation as a one-shot task. The `CRITIC → FIX → RENDER` loop is mandatory.
 
 ## WEBSITE DEFAULT
 

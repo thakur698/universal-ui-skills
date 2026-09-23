@@ -7,65 +7,36 @@ description: Discovers, evaluates, and conditionally activates UI tools, skills,
 
 ## Mission
 
-Make ui-tool-discovery the gateway for detecting available skills, MCP servers, integrations, animation tools, design tools, asset tools, browser/device tools, and visual-QA tools.
-Never claim a tool was used unless it was actually available and invoked.
+Agents must not blindly attempt to use tools that are not configured or available. `ui-tool-discovery` forces an explicit evaluation phase to map out exactly what is executable in the current environment before orchestrating a V2 UI pipeline.
 
-The orchestration contract is strict:
-`DISCOVER` → `DETECT` → `CLASSIFY` → `SELECT` → `ACTIVATE` → `USE` → `VERIFY`
+## The Discovery Pipeline
 
-## 4 Levels of Classification
+For each UI task, the agent must execute:
+`DISCOVER → CLASSIFY → SELECT → ACTIVATE → VERIFY`
 
-When assessing any tool, skill, or MCP server, classify it exactly into one of these categories:
-1. **AVAILABLE + EXECUTABLE**: The tool is installed/available and the agent can invoke it automatically.
-2. **AVAILABLE + MANUAL**: The tool is installed/available, but requires the human user to execute it manually.
-3. **NOT AVAILABLE**: The tool is not present in the environment or agent's capabilities.
-4. **REQUIRES USER SETUP**: The tool exists but lacks necessary credentials, API keys, or configuration to be used.
+## Classification Matrix
 
-## Discovery Workflow
+Every tool, MCP server, integration, or skill MUST be classified into one of these four buckets:
 
-Before starting UI implementation, execute this process:
+1. **AVAILABLE + EXECUTABLE**
+   - The tool is natively available and the agent has permission/capability to run it silently. (e.g., `browser_subagent`, `run_command` for `npm`).
+2. **AVAILABLE + MANUAL**
+   - The tool is available but requires user intervention or approval to run.
+3. **NOT AVAILABLE**
+   - The tool does not exist in this environment. (e.g., A Figma MCP when no token is provided).
+4. **REQUIRES USER SETUP**
+   - The tool could be used, but the user must first configure it (e.g., setting an API key, providing a specific `.riv` asset).
 
-### 1. DISCOVER
-- Check for available MCP (Model Context Protocol) servers in the agent environment.
-- Check installed project dependencies (`package.json`, `pubspec.yaml`, etc.).
-- Check available Universal UI Skills in `skills/`.
-- Check external integrations documented in `integrations/`.
+## Deterministic Verification
 
-### 2. DETECT
-Determine if the tools are available in the current environment.
+For libraries like **Rive** or **Lottie**, `ui-tool-discovery` MUST run a deterministic check before claiming `AVAILABLE + EXECUTABLE`. 
+- **Web**: Check `package.json` for `@rive-app/react-canvas` (or equivalent).
+- **Flutter**: Check `pubspec.yaml` for `rive`.
+- **Assets**: Verify a `.riv` or `.json` asset actually exists in the project.
+If the package is missing but the environment allows installation (e.g. `npm install`), the agent may install it *if the user requested motion*. If the asset is missing, it is `REQUIRES USER SETUP` (or `NOT AVAILABLE` if no installation is possible).
 
-### 3. CLASSIFY
-Classify every relevant tool honestly using the 4 classifications above.
+## Execution Rules
 
-### 4. SELECT
-Select only the tools relevant to the task.
-- Prefer already-installed tools.
-- Prefer deterministic/local tooling where possible.
-- **Rule**: Ask before installing paid services, account connections, API keys, or destructive installations.
-
-### 5. ACTIVATE
-Activate the selected internal skills and MCP servers.
-
-### 6. USE
-Invoke the selected integrations. Never claim a tool was used unless it was actually invoked.
-
-### 7. VERIFY
-Validate that the tool executed successfully.
-
-## Required Reporting
-
-When UI Tool Discovery is complete, provide an explicit log for the master orchestrator. For example:
-
-Tool: Rive
-Detected: YES
-Classification: AVAILABLE + EXECUTABLE
-Selected: YES
-Reason: Interactive animation required
-Used: YES
-Verification: Animation asset loaded and rendered successfully
-
-Tool: Figma
-Detected: NO
-Classification: NOT AVAILABLE
-Selected: NO
-Fallback: Use existing project components/design tokens
+- **Never Fabricate Execution**: Do not claim to have used a tool if it was classified as `NOT AVAILABLE` or `REQUIRES USER SETUP`.
+- **Honest Fallbacks**: If a preferred external tool (e.g., Figma for reference analysis) is unavailable, explicitly state the fallback mechanism (e.g., "Figma unavailable → Code-first design direction").
+- **Final Report**: The agent must output the discovery classification in its final execution report.

@@ -16,11 +16,14 @@ AI slop happens when an agent optimizes for "looks modern" instead of "fits the 
 
 Reject or reconsider:
 - every section becoming a card
+- nested cards (cards inside cards)
+- side-stripe borders (e.g. `border-l-4 border-primary` on cards/callouts)
 - repeated three-card layouts
 - generic SaaS dashboard grids
 - centered hero copied everywhere
 - excessive symmetrical layouts
 - arbitrary floating elements
+- kicker / eyebrow pill above every section heading
 
 ### CATEGORY B — Generic Styling
 
@@ -28,11 +31,13 @@ Reject or reconsider:
 - random purple/blue gradients
 - excessive glassmorphism
 - giant blur effects
-- excessive glow
+- excessive glow or zero-offset glow halos masquerading as depth
 - giant soft shadows
+- ghost cards (competing border + heavy shadow on the same element)
 - pills of any kind (pill badges, tags, chips, floating pill eyebrows, or `rounded-full` containers are strictly banned)
 - background colors or tinted containers behind icons (colored circles, rounded square tiles, or icon boxes are strictly banned)
 - excessive rounded rectangles
+- monospace used as a decorative costume for "technical" feel
 
 ### CATEGORY C — Generic Content Treatment
 
@@ -53,6 +58,7 @@ Reject or reconsider:
 - unnecessary bounce
 - perpetual decorative movement
 - motion that delays interaction
+- animating images on hover directly (provide feedback on the container or trigger instead)
 
 ### CATEGORY E — Generic Implementation
 

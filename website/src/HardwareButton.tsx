@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 interface HardwareButtonProps {
   children: ReactNode;
@@ -27,13 +27,6 @@ export function HardwareButton({ children, onClick, status = 'default', classNam
     }
   };
 
-  const getStatusShadow = () => {
-    switch (status) {
-      case 'active': return '0 0 15px rgba(0, 240, 255, 0.3)';
-      case 'warning': return '0 0 15px rgba(248, 113, 113, 0.3)';
-      default: return 'none';
-    }
-  };
 
   return (
     <motion.button
@@ -57,7 +50,7 @@ export function HardwareButton({ children, onClick, status = 'default', classNam
         cursor: 'pointer',
         position: 'relative',
         overflow: 'hidden',
-        boxShadow: getStatusShadow(),
+        boxShadow: 'none',
         width: fullWidth ? '100%' : 'auto',
       }}
     >

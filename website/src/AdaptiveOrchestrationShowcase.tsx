@@ -99,8 +99,7 @@ export function AdaptiveOrchestrationShowcase() {
                 letterSpacing: '0.1em',
                 cursor: 'pointer',
                 textAlign: 'left',
-                transition: 'all 0.2s',
-                boxShadow: selectedDomain === domain ? 'inset 0 0 20px rgba(0,240,255,0.05)' : 'none'
+                transition: 'all 0.2s'
               }}
             >
               <div style={{ color: selectedDomain === domain ? 'var(--accent-cyan)' : 'var(--text-dim)', marginBottom: '0.5rem', fontSize: '0.65rem' }}>
@@ -166,7 +165,7 @@ export function AdaptiveOrchestrationShowcase() {
                     <span style={{ color: 'var(--accent-cyan)', fontWeight: 700, textShadow: '0 0 10px rgba(0,240,255,0.2)' }}>{cur.classifiedTier}</span>
                   </div>
                   <div style={{ height: '4px', background: 'var(--bg-surface)', width: '100%', border: '1px solid var(--border-strong)' }}>
-                    <div style={{ height: '100%', width: selectedDomain === 'landing' ? '30%' : selectedDomain === 'mobile' ? '65%' : '100%', background: 'var(--accent-cyan)', boxShadow: '0 0 10px var(--accent-cyan)' }}></div>
+                    <div style={{ height: '100%', width: selectedDomain === 'landing' ? '30%' : selectedDomain === 'mobile' ? '65%' : '100%', background: 'var(--accent-cyan)' }}></div>
                   </div>
                 </div>
 

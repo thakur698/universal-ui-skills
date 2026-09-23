@@ -73,3 +73,49 @@ Avoid:
 - Adding background colors, shapes, or boxes behind icons
 - Pill-shaped badges, chips, or tag containers
 
+## Visitor Mode Discipline
+
+Every surface has an intentional visitor mode. Success differs by mode:
+- **Persuade**: Landing pages, marketing, campaigns. Visitor decides and acts; design is the product; high emotional resonance, real media, and clear conversion paths.
+- **Operate**: Dashboards, editors, tools, admin. Visitor completes a task; the tool disappears into the task; scanability, data density, keyboard efficiency, and standard affordances outrank expressive flash.
+- **Read**: Documentation, articles, changelogs. Visitor seeks comprehension; line length (measure 65-75ch), typographic hierarchy, and serene reading environment.
+- **Experience**: Portfolios, galleries, showcases. The artifact leads from the first viewport; UI recedes.
+
+Never apply marketing landing page tropes (huge display headings, sparse giant cards, decorative bento boxes) to Operate surfaces where users need high density and speed.
+
+## The Craft Floor (Mandatory Quality Standards & Refusals)
+
+Every interface must meet the uncompromised Craft Floor:
+
+### 1. Themed Browser Surfaces
+The parts you did not draw still carry the design. Theme them from the brand palette:
+- Custom `::selection` background and text color matching the palette.
+- Input `caret-color` set to the primary brand hue.
+- Custom styled scrollbars (`scrollbar-color` / `::-webkit-scrollbar`).
+- Distinct `:focus-visible` outline with offset (never default browser blue halos).
+- `text-underline-offset: 0.2em` on inline links.
+- Tabular figures (`font-variant-numeric: tabular-nums`) on all numeric data, counts, tables, and timers to prevent digit jitter.
+
+### 2. Single Elevation Discipline (No Ghost Cards)
+- Declare elevation once: either a subtle border OR a shadow. Never stack a 1px border under a wide soft shadow ("ghost cards").
+- Shadows must carry an offset and a soft blur. A zero-offset colored blur is a glow halo / decoration, not depth.
+
+### 3. Contrast & Secondary Text on Colored Surfaces
+- Body copy contrast $\ge 4.5:1$, large text $\ge 3:1$.
+- On colored surfaces, tint secondary text from that hue or the foreground; never generic washed-out gray.
+
+### 4. Typography Floor
+- Body measure strictly 65–75ch (prevent sprawling unreadable lines).
+- Display headlines must use `text-wrap: balance` to eliminate orphan words; paragraphs use `text-wrap: pretty`.
+- Letter spacing floor: tracking stops at -0.04em (never over-tighten body text).
+- Form inputs must maintain `font-size: 1rem (16px)` on mobile viewports to prevent iOS Safari auto-zooming.
+
+### 5. Mechanical Refusals
+- **No kicker / eyebrow on every heading**: Do not add repetitive uppercase category labels or pills above every heading; let headings speak for themselves.
+- **No side-stripe borders**: Ban `border-left` or `border-right` colored indicator stripes on cards, list items, or callouts.
+- **No nested cards**: Never place cards inside cards.
+- **No image hover animations**: Never animate an image directly on hover; give the container or action trigger the feedback.
+- **No fake mono**: Monospace is for code, data, timestamps, coordinates, or measurements — not a decorative costume for "technical".
+- **No doodle SVGs**: Do not use amateur sketchy vector doodles to stand in for real illustrations or diagrams.
+
+

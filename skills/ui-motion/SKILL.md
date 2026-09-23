@@ -37,10 +37,11 @@ Require every non-trivial animation to answer:
 
 ### Flutter
 - Use native animation primitives for simple motion (e.g., `AnimatedContainer`, `TweenAnimationBuilder`).
-- Use Rive when interactive, stateful animation is genuinely useful (e.g., complex characters, custom animated icons).
-- Use Lottie for authored, finite animations where appropriate.
+- Use **Rive** when interactive, stateful animation is genuinely useful (e.g., complex characters, custom animated icons, state machines). **Requires `ui-tool-discovery` verification.**
+- Use **Lottie** for authored, finite animations where appropriate.
 
 ### Web
-- Use CSS transitions/animations where sufficient (they are performant and native).
-- Use framework motion libraries (e.g., Framer Motion) only when they add real value (e.g., layout animations, complex orchestration).
-- Do NOT force a dependency just to have animation.
+- Use CSS transitions/animations where sufficient (they are performant and native). This is the default.
+- Use **Rive** for complex stateful interactions if `@rive-app/react-canvas` (or equivalent) is detected and `.riv` assets are available.
+- Use framework motion libraries (e.g., Framer Motion) only when they add real value (e.g., layout animations).
+- Do NOT force a dependency just to have animation. If Rive is `NOT AVAILABLE`, gracefully fallback to CSS/Native.

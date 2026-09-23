@@ -21,7 +21,7 @@ export function VisualQAShowcase() {
           
           {/* Left Column: Matrix */}
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', background: 'var(--bg-surface)', padding: '3rem', position: 'relative' }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'var(--accent-cyan)', boxShadow: '0 0 10px var(--accent-cyan)' }}></div>
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'var(--accent-cyan)' }}></div>
             <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed var(--border-strong)', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
               <span style={{ color: 'var(--text-dim)' }}>RUNTIME</span>
               <span style={{ color: 'var(--text-primary)' }}>Antigravity / Playwright</span>

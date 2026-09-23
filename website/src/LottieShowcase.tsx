@@ -23,7 +23,7 @@ export function LottieShowcase() {
           
           {/* Left Column: Matrix */}
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', background: 'var(--bg-surface)', padding: '3rem', position: 'relative' }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'var(--accent-cyan)', boxShadow: '0 0 10px var(--accent-cyan)' }}></div>
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'var(--accent-cyan)' }}></div>
             <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed var(--border-strong)', paddingBottom: '1rem', marginBottom: '1.5rem' }}>
               <span style={{ color: 'var(--text-dim)' }}>RUNTIME</span>
               <span style={{ color: 'var(--text-primary)' }}>React / Web</span>
@@ -59,7 +59,11 @@ export function LottieShowcase() {
              <div style={{ position: 'absolute', bottom: '1.5rem', right: '1.5rem', width: '15px', height: '15px', borderBottom: '2px solid var(--accent-cyan)', borderRight: '2px solid var(--accent-cyan)' }}></div>
              
              <div style={{ width: '240px', height: '240px', filter: 'brightness(1.5) drop-shadow(0 0 20px rgba(0,240,255,0.3))' }}>
-                <Lottie animationData={animationData} loop autoplay />
+                {/* @ts-ignore */}
+                {(() => {
+                  const LottieAny = Lottie as any;
+                  return <LottieAny animationData={animationData} loop autoplay />;
+                })()}
              </div>
           </div>
 

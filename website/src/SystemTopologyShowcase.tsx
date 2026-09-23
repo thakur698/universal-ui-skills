@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Network, Server, Database, Shield } from 'lucide-react';
+import { Network, Server, Database } from 'lucide-react';
 import { HardwareButton } from './HardwareButton';
 
 export function SystemTopologyShowcase() {
@@ -11,7 +11,7 @@ export function SystemTopologyShowcase() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: any = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 24 } }
   };
@@ -75,7 +75,7 @@ export function SystemTopologyShowcase() {
           </motion.div>
 
           {/* Node 3 */}
-          <motion.div variants={itemVariants} style={{ background: 'var(--bg-surface)', border: '1px solid #f87171', padding: '2rem', position: 'relative', boxShadow: 'inset 0 0 20px rgba(248, 113, 113, 0.05)' }}>
+          <motion.div variants={itemVariants} style={{ background: 'var(--bg-surface)', border: '1px solid #f87171', padding: '2rem', position: 'relative' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: '#f87171' }}></div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', borderBottom: '1px dashed #f87171', paddingBottom: '1rem' }}>
                <Database style={{ color: '#f87171' }} />

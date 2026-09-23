@@ -62,13 +62,16 @@ Score the current iteration on these dimensions:
 7. **Responsive Quality (/10)**: Does it reflow intelligently on mobile without awkward clipping?
 8. **Accessibility (/10)**: Contrast ($\ge 4.5:1$), touch targets ($\ge 48\times 48\text{px}$), semantic structure.
 9. **Anti-slop (/10)**: Total elimination of generic AI tropes (pills of any kind, colored boxes/backgrounds behind icons, purple glows, empty cards).
+10. **The Skeleton Test (/10)**: If all copy was stripped away, would the bare visual structure and hierarchy still communicate what the product is and why it matters?
+11. **The Memory Test (/10)**: If a visitor left after viewing the first viewport, how distinctly could they describe it an hour later?
+12. **Cognitive Load (/10)**: Are there 4 or fewer visible primary options at any single decision point? (Advanced controls must use progressive disclosure).
 
 ### Visual Storytelling & Interaction:
-10. **Media Quality (/10)**: Does the UI use more and more images than icons? Does imagery/video/diagrams carry real communicative value rather than relying on icon grids?
-11. **Scroll Quality (/10)**: Is scroll interaction purposeful and smooth? Does it avoid scroll traps and excessive movement?
-12. **Motion Coherence (/10)**: Does animation follow strict hierarchy without overwhelming content?
-13. **Cinematic Quality (/10)**: Do flagship moments (hero, reveals) feel theatrical, disciplined, and refined?
-14. **Mobile & Reduced Motion (/10)**: Does the experience work completely when animations are disabled or on small screens?
+13. **Media Quality (/10)**: Does the UI use more and more images than icons? Does imagery/video/diagrams carry real communicative value rather than relying on icon grids?
+14. **Scroll Quality (/10)**: Is scroll interaction purposeful and smooth? Does it avoid scroll traps and excessive movement?
+15. **Motion Coherence (/10)**: Does animation follow strict hierarchy without overwhelming content?
+16. **Cinematic Quality (/10)**: Do flagship moments (hero, reveals) feel theatrical, disciplined, and refined?
+17. **Mobile & Reduced Motion (/10)**: Does the experience work completely when animations are disabled or on small screens?
 
 ### Hero Score
 ```text
@@ -149,5 +152,6 @@ PROCEED TO PRE-FLIGHT (When Overall Average >= 8.0/10)
 
 ## Rules
 - The Overall Score is the average across all dimensions.
+- **Mode-Applicability Scoring**: Renormalize scores when specific dimensions do not apply to the Visitor Mode. For example, Cinematic Quality may be N/A for high-density Operate dashboards; do not penalize the total average.
 - If **Overall < 8.0**, the agent MUST revise the design and loop again.
 - If **Overall >= 8.0**, the agent may proceed to `ui-preflight`.

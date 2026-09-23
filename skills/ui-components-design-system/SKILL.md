@@ -16,15 +16,15 @@ Avoid both extremes:
 
 Require semantic design tokens. Do not hardcode magic values across the UI.
 At minimum cover:
-- **Typography**: scales, weights, line heights
+- **Typography**: scales, weights, line heights, and tabular figures (`font-variant-numeric: tabular-nums` for data/counts).
 - **Spacing**: padding, margins, gaps
-- **Colors**: semantic palette (primary, secondary, success, error, text, background)
+- **Colors**: semantic palette (primary, secondary, success, error, text, background). Secondary text on colored surfaces must be tinted from the background hue, NEVER generic gray.
 - **Surfaces**: background, elevated, raised, depressed
+- **Browser Surfaces**: `selection-bg`, `selection-text`, `caret-color`, `focus-ring` (with offset), `scrollbar`.
 - **Borders**: colors, widths, styles
-- **Radii**: none, small, medium, large, full
-- **Elevation**: shadows, z-index layers
+- **Radii**: none, small, medium, large (NO FULL/PILL RADII).
+- **Elevation**: Single elevation architecture (border OR shadow, never both/ghost cards). Shadows must have y-offset and blur (no zero-offset glow halos).
 - **Motion**: duration, easing curves
-- **Focus**: ring colors, offset
 - **States**: active, disabled, hover variables
 
 ### Semantic Token Naming

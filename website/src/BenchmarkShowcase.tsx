@@ -50,10 +50,9 @@ export function BenchmarkShowcase() {
               className={`tab-button ${activeTab === b.id ? 'active' : ''}`}
               style={{
                 flex: '1 1 auto',
-                background: activeTab === b.id ? 'rgba(0, 240, 255, 0.1)' : 'transparent',
+                background: activeTab === b.id ? 'var(--glow-cyan)' : 'var(--bg-surface)',
                 border: activeTab === b.id ? '1px solid var(--accent-cyan)' : '1px solid transparent',
-                color: activeTab === b.id ? 'var(--text-primary)' : 'var(--text-dim)',
-                boxShadow: activeTab === b.id ? 'inset 0 0 10px rgba(0,240,255,0.05)' : 'none',
+                color: activeTab === b.id ? 'var(--text-primary)' : 'var(--text-dim)'
               }}
               onClick={() => {
                 setActiveTab(b.id as BenchmarkId);

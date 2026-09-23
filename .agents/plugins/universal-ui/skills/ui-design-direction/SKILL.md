@@ -15,6 +15,7 @@ Establish a clear, product-specific visual language *before* you write layout co
 
 For every substantial UI task, you must establish the following elements before proceeding to implementation:
 
+0. **Visitor Mode**: Persuade, Operate, Read, or Experience. This dictates density, hierarchy, and chrome (e.g., Persuade uses large media and expressive chrome; Operate requires high density, scanability, and minimal chrome).
 1. **Product Identity**: What is this product?
 2. **Target User**: Who is using it?
 3. **Primary User Goal**: What is the main action they are trying to achieve?
@@ -24,8 +25,8 @@ For every substantial UI task, you must establish the following elements before 
 7. **Color Roles**: Primary brand color, semantic colors (success, error), background and surface hues.
 8. **Surface Strategy**: Flat vs. layered, contrast ratios.
 9. **Border Strategy**: Hard outlines vs. soft dividers, thickness.
-10. **Radius System**: Sharp corners, slight rounding, or fully rounded/pill?
-11. **Depth Model**: Flat, subtle drop shadows, atmospheric depth, or inner shadows?
+10. **Radius System**: Sharp corners, slight rounding, or substantial curves. (ZERO PILLS: NEVER use `rounded-full` pill badges, chips, or containers).
+11. **Depth Model**: Single Elevation Discipline. Flat, or subtle drop shadows (must have y-offset and blur; NEVER a zero-offset colored glow halo). Never stack a 1px border under a wide soft shadow (no ghost cards).
 12. **Imagery Strategy**: Photographs, vectors, abstract shapes, or none?
 13. **Icon Strategy**: Outlined, filled, duotone, weight matching typography?
 14. **Motion Personality**: Snappy, fluid, springy, or instant?

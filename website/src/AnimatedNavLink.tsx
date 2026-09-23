@@ -12,7 +12,7 @@ export function AnimatedNavLink({ href, children }: { href: string, children: st
       let iteration = 0;
       const interval = setInterval(() => {
         setDisplayText(
-          children.split("").map((letter, index) => {
+          children.split("").map((_, index) => {
             if (index < iteration) {
               return children[index];
             }

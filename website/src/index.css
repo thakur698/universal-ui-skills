@@ -56,10 +56,44 @@
   margin: 0;
   padding: 0;
   border-radius: 0 !important; /* Zero Pills Rule */
+  min-width: 0; /* Flex/Grid overflow defense */
 }
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: var(--border-strong) var(--bg-base);
+  scrollbar-width: thin;
+}
+
+/* --- THEMED BROWSER SURFACES (V2 Craft Floor) --- */
+::selection {
+  background-color: var(--accent-cyan);
+  color: var(--bg-base);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-strong);
+  border: 3px solid var(--bg-base);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-cyan);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-cyan) !important;
+  outline-offset: 4px !important;
+}
+
+input, textarea, select {
+  caret-color: var(--accent-cyan);
+  font-size: 16px; /* iOS Input Zoom Defense */
 }
 
 body {
@@ -146,12 +180,13 @@ h1, h2, h3, h4 {
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
 h1 { font-size: clamp(3.5rem, 8vw, 7rem); margin-bottom: 1.5rem; }
 h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.25rem; }
 h3 { font-size: 1.6rem; margin-bottom: 0.75rem; font-family: var(--font-body); font-weight: 600; letter-spacing: -0.02em; }
-p { margin-bottom: 1.5rem; }
+p { margin-bottom: 1.5rem; text-wrap: pretty; max-width: 75ch; }
 
 .tech-label {
   font-family: var(--font-mono);
@@ -273,7 +308,7 @@ p { margin-bottom: 1.5rem; }
   width: 100%;
   height: 2px;
   background: var(--accent-cyan);
-  box-shadow: 0 0 20px var(--accent-cyan), 0 0 60px var(--accent-cyan);
+  box-shadow: 0 4px 20px var(--accent-cyan), 0 10px 60px var(--accent-cyan); /* Added Y-offset to avoid zero-offset glow halo */
   animation: scanline 8s ease-in-out infinite;
   z-index: 1;
   pointer-events: none;
@@ -529,6 +564,7 @@ p { margin-bottom: 1.5rem; }
   font-size: 1.25rem;
   font-weight: 800;
   color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
 }
 
 .score-grid {
@@ -561,6 +597,7 @@ p { margin-bottom: 1.5rem; }
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
 }
 
 /* Terminal Styles */
