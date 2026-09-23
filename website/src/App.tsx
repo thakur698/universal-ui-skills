@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ArrowRight, Check, X, Code2, MonitorPlay, Sparkles, Box, Workflow, Layers, Video, Palette } from 'lucide-react';
 import { BenchmarkShowcase } from './BenchmarkShowcase';
 import { CinematicStorySection } from './CinematicStorySection';
@@ -11,27 +11,22 @@ import { HardwareButton } from './HardwareButton';
 import { AnimatedNavLink } from './AnimatedNavLink';
 import { motion, useMotionValue, useSpring, useTransform, useScroll, useMotionTemplate } from 'framer-motion';
 import registry from '../../integrations/registry.json';
-// import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Native IntersectionObserver Hook for Scroll Reveals
 function useIntersectionObserver() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
+  useGSAP(() => {
+    ScrollTrigger.batch('.reveal', {
+      onEnter: (elements) => {
+        elements.forEach((el) => el.classList.add('visible'));
       },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+      once: true
+    });
+  });
 }
 
 const GithubIcon = () => (

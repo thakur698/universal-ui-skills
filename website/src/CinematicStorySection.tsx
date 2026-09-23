@@ -1,40 +1,43 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { Layers, Sparkles, Sliders, ShieldCheck, ArrowDown } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+
+
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function CinematicStorySection() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeStoryChapter, setActiveStoryChapter] = useState(0);
+  
   const containerRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
+  const frontRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const bgParallaxY = useTransform(scrollYProgress, [0, 1], ["0px", "800px"]);
-  const frontParallaxY = useTransform(scrollYProgress, [0, 1], ["-200px", "500px"]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const trackHeight = containerRef.current.offsetHeight - window.innerHeight;
-      
-      if (rect.top <= 0 && trackHeight > 0) {
-        const rawProgress = Math.min(1, Math.max(0, -rect.top / trackHeight));
+  useGSAP(() => {
+    // Parallax & Progress Timeline via GSAP ScrollTrigger
+    ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+      onUpdate: (self) => {
+        const rawProgress = self.progress;
         setScrollProgress(rawProgress);
 
         if (rawProgress < 0.25) setActiveStoryChapter(0);
         else if (rawProgress < 0.50) setActiveStoryChapter(1);
         else if (rawProgress < 0.75) setActiveStoryChapter(2);
         else setActiveStoryChapter(3);
+        
+        // Manual parallax for the background layers
+        gsap.set(bgRef.current, { y: rawProgress * 800 });
+        gsap.set(frontRef.current, { y: -200 + (rawProgress * 700) });
       }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    });
+  }, { scope: containerRef });
 
   const chapters = [
     {
@@ -84,8 +87,8 @@ export function CinematicStorySection() {
   return (
     <div ref={containerRef} className="cinematic-story-track" style={{ position: 'relative' }}>
       {/* Background Matrix & Depth Elements */}
-      <motion.div style={{ position: 'absolute', top: '-50%', bottom: '-50%', left: 0, right: 0, pointerEvents: 'none', backgroundImage: 'radial-gradient(ellipse at center, rgba(0, 240, 255, 0.03) 0%, transparent 70%)', zIndex: 0, y: bgParallaxY }}></motion.div>
-      <motion.div style={{ position: 'absolute', top: '-50%', bottom: '-50%', left: 0, right: 0, pointerEvents: 'none', backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)', backgroundSize: '128px 128px', zIndex: 0, y: frontParallaxY }}></motion.div>
+      <div ref={bgRef} style={{ position: 'absolute', top: '-50%', bottom: '-50%', left: 0, right: 0, pointerEvents: 'none', backgroundImage: 'radial-gradient(ellipse at center, rgba(0, 240, 255, 0.03) 0%, transparent 70%)', zIndex: 0 }}></div>
+      <div ref={frontRef} style={{ position: 'absolute', top: '-50%', bottom: '-50%', left: 0, right: 0, pointerEvents: 'none', backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)', backgroundSize: '128px 128px', zIndex: 0 }}></div>
 
       <div className="sticky-stage-viewport" style={{ zIndex: 1 }}>
         {/* Left Telemetry Depth Gauge */}
