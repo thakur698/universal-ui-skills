@@ -18,7 +18,7 @@ Universal UI Skills replaces the generic `Prompt → Code` cycle with a rigorous
 
 ## The V2 Adaptive Engine
 
-The core engine is driven by 10 orchestrated skills:
+The core engine is driven by 10 orchestrated skills (the repository ships 26 skills in total, including the foundational layers below and `ui-gsap-animation` for GSAP/ScrollTrigger choreography):
 
 1. **`ui-creative-director`**: Extracts a Design Read (Audience, Metaphor, Density) from the brief.
 2. **`ui-design-dials`**: Provides a measurable 1-10 control surface (11 dials including `SCROLL_INTERACTION`, `MEDIA_PROMINENCE`, `CINEMATIC_INTENSITY`, `BENTO_COMPLEXITY`).
@@ -68,7 +68,7 @@ Visual Render (via ui-visual-qa)
   ↓
 Visual Critic (via ui-visual-critic)
   ↓
-Fix (Loop until Critic Score >= 8)
+Fix (Loop until Critic Score >= 8, max 3 iterations)
   ↓
 Re-render
   ↓
@@ -94,7 +94,7 @@ Universal UI Skills V2 includes a formal A/B benchmark suite for measuring UI qu
 | **Game UI** | 28 / 110 | 49 / 110 | Pending | 88 / 110 | ✅ Completed |
 | **React SaaS** | 38 / 110 | 51 / 110 | Pending | 89 / 110 | ✅ Completed |
 
-*In our controlled 4-way blinded benchmark on the Web Landing Page task (`02-web-landing-page`), Universal UI V2 scored 93/110 versus 92/110 for the officially executed Taste skill (`design-taste-frontend`), 69/110 for the Taste-simulated control, and 33/110 for the baseline. While the simulated control scored 69, running the actual Taste skill scored 92, proving that official Taste is far superior to a brutalist simulation. Universal UI V2 won by 1 point through iterative motion states and diagram-led composition.*
+*In our controlled 4-way blinded benchmark on the Web Landing Page task (`02-web-landing-page`), Universal UI V2 scored 93/110 versus 92/110 for the officially executed Taste skill (`design-taste-frontend`), 69/110 for the Taste-simulated control, and 33/110 for the baseline. A 1-point gap on a single task and run is within expected noise, so V2 and Taste should be considered comparable on this task. Both scored far above the simulated control, which shows a simulation is not a substitute for running the real skill. Raw results live in `evals/benchmarks`; more runs and graders are needed before drawing wider conclusions.*
 
 ---
 
@@ -147,6 +147,18 @@ For every new product, the agent must re-evaluate typography, composition, densi
 
 ---
 
+## Quick Start
+
+After installing, ask your agent for UI work and name the pipeline:
+
+```text
+Use ui-master to build a pricing page for a developer-tools product. Operate mode, high density.
+```
+
+The agent will produce a Design Read, dials and composition plan before writing code.
+
+---
+
 ## Installation
 
 Install the full repository:
@@ -178,7 +190,7 @@ The official website is located in `website/` and was built using the project's 
 ## Versioning & Validation
 
 Currently at `v2.0.0`.
-All skills, frontmatter, and websites have been successfully validated using internal repository CI checks (`check_skills.py`).
+All skills, frontmatter, links, and the sync between `skills/` and `.agents/plugins/universal-ui/skills/` are validated by CI (`python scripts/check_skills.py`).
 
 **The Flutter Benchmark:**
 - Tested on a real Flutter project.

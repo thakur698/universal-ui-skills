@@ -43,6 +43,12 @@
       "skillPath": "skills/ui-flutter/SKILL.md",
       "computedHash": "27605e70264db59a0a5206b649200f60c556ca686257932a8e2f5a88d8132073"
     },
+    "ui-gsap-animation": {
+      "source": "thakur698/universal-ui-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ui-gsap-animation/SKILL.md",
+      "computedHash": "02f347dc0ae1bf50d0ddaa7ef8a612d51192565a7ff7835a5bc5bde5cc368847"
+    },
     "ui-layout-responsive": {
       "source": "thakur698/universal-ui-skills",
       "sourceType": "github",
