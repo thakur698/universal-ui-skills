@@ -68,9 +68,39 @@ Reject or reconsider:
 - arbitrary magic numbers
 - visual duplication instead of a design system
 
+## Anti-Patterns (Code Examples)
+
+When auditing code, strictly reject the following structures. Agents learn best from concrete examples:
+
+### 1. Icon Background Containers (Strictly Forbidden)
+❌ **SLOP (Reject):**
+```html
+<div class="bg-blue-100 rounded-lg p-2 flex items-center justify-center">
+  <svg class="w-5 h-5 text-blue-600">...</svg>
+</div>
+```
+✅ **ANTI-SLOP (Accept):**
+```html
+<svg class="w-6 h-6 text-blue-600">...</svg>
+```
+*Icons must sit cleanly on the surface. No containers, no boxes, no tinted backdrops.*
+
+### 2. Ghost Cards
+❌ **SLOP (Reject):**
+```html
+<div class="border border-gray-200 shadow-xl rounded-xl">...</div>
+```
+✅ **ANTI-SLOP (Accept):**
+```html
+<!-- Either Border OR Shadow, never both -->
+<div class="border border-gray-200 rounded-xl">...</div>
+<!-- OR -->
+<div class="shadow-xl border-transparent rounded-xl">...</div>
+```
+
 ## Anti-Slop Review Questions
 
-Ask yourself these questions before declaring success:
+Before declaring success, you MUST explicitly output a markdown checklist answering these 10 questions. You cannot pass the review unless question 8 (Pills) and 9 (Icon Backgrounds) are explicitly answered 'No':
 
 1. Could this UI belong to 20 unrelated products?
 2. Which visual decisions are actually specific to the product?

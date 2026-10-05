@@ -57,6 +57,11 @@ Pre-flight (via ui-preflight)
 Final UI Task Complete
 ```
 
+### Pipeline Execution Rules
+
+- **Context Loading:** Before starting any step marked with `(via skill-name)`, you MUST use the `view_file` tool to read the `SKILL.md` of that specific skill. Do not hallucinate or guess the rules of other skills.
+- **Strict Progression:** Do not proceed to the Implementation step (via ui-web, ui-react, etc.) until the Composition Plan, Media Plan, and Scroll Story Plan have been explicitly formulated and approved.
+
 ## Core Design Principles
 
 1. **Visitor Mode Discipline**: Categorize the surface into Persuade, Operate, Read, or Experience. Design decisions must serve the mode (e.g. no landing-page bento boxes in high-density Operate dashboards).
@@ -126,7 +131,7 @@ Do not add animation merely to satisfy this rule. Motion must reinforce hierarch
 
 ## Execution & Reporting Requirements
 
-At the conclusion of every UI task, the agent must output a structured execution report:
+At the conclusion of every UI task, the agent must output a structured execution report by creating a Markdown artifact named `ui_execution_report.md`. This ensures the plan is persisted for the user:
 
 ```text
 DESIGN DIALS
