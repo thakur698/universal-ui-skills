@@ -67,9 +67,8 @@ function App() {
   // Nav scroll behavior
   const { scrollY, scrollYProgress } = useScroll();
   const navPadding = useTransform(scrollY, [0, 50], ["1.5rem 0", "0.75rem 0"]);
-  const navBackground = useTransform(scrollY, [0, 50], ["rgba(10, 10, 10, 0)", "rgba(10, 10, 10, 0.8)"]);
+  const navBackground = useTransform(scrollY, [0, 50], ["rgba(10, 10, 10, 0)", "rgba(10, 10, 10, 1)"]);
   const navBorder = useTransform(scrollY, [0, 50], ["1px solid rgba(0, 240, 255, 0)", "1px solid rgba(0, 240, 255, 0.3)"]);
-  const navBackdropFilter = useTransform(scrollY, [0, 50], ["blur(0px)", "blur(12px)"]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const x = e.clientX / window.innerWidth - 0.5;
@@ -83,27 +82,14 @@ function App() {
   // Global Background Color Transform
   const globalBgColor = useTransform(
     scrollYProgress,
-    [0, 0.25, 0.5, 0.75, 1],
+    [0, 1],
     [
-      "rgba(10, 10, 10, 1)",      // Top - Base very dark
-      "rgba(6, 16, 20, 1)",       // 25% - Subtle deep cyan hint
-      "rgba(12, 10, 18, 1)",      // 50% - Deep warm/purple tint for cinematic section
-      "rgba(5, 8, 12, 1)",        // 75% - Deep navy
-      "rgba(10, 10, 10, 1)"       // Bottom - Back to base
+      "rgba(10, 10, 10, 1)",
+      "rgba(10, 10, 10, 1)"
     ]
   );
 
-  const spotlightColor = useTransform(
-    scrollYProgress,
-    [0, 0.25, 0.5, 0.75, 1],
-    [
-      "rgba(0, 240, 255, 0.12)",   // Cyan
-      "rgba(0, 150, 255, 0.12)",   // Blue
-      "rgba(150, 0, 255, 0.08)",   // Purple
-      "rgba(0, 50, 255, 0.08)",    // Navy
-      "rgba(0, 240, 255, 0.12)"    // Cyan
-    ]
-  );
+
 
   const gridParallaxY = useTransform(scrollYProgress, [0, 1], ["0px", "-1500px"]);
 
@@ -133,16 +119,7 @@ function App() {
 
       {/* Subtle Cinematic Film Grain Overlay */}
       <div className="noise-overlay" />
-      
-      <motion.div
-        style={{
-          position: 'fixed',
-          top: 0, left: 0, right: 0, bottom: 0,
-          pointerEvents: 'none',
-          zIndex: 50,
-          background: useMotionTemplate`radial-gradient(800px circle at ${spotlightX}px ${spotlightY}px, ${spotlightColor}, transparent 80%)`
-        }}
-      />
+
       {/* Navigation */}
       <motion.nav 
         className="nav"
@@ -153,10 +130,9 @@ function App() {
           right: 0, 
           zIndex: 100, 
           background: navBackground, 
-          borderBottom: navBorder, 
-          backdropFilter: navBackdropFilter,
+          borderBottom: navBorder,
           padding: navPadding,
-          transition: 'backdrop-filter 0.3s, background 0.3s'
+          transition: 'background 0.3s'
         }}
       >
         <div className="container flex-between">
@@ -246,9 +222,9 @@ function App() {
             style={{ position: 'relative', overflow: 'hidden', padding: '4rem', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(10px)', x: parallaxX, y: parallaxY }}
           >
             
-            {/* Glowing Core */}
+            {/* Architectural Grid Core (Removed soft glow) */}
             <div style={{ position: 'absolute', top: '50%', left: '50%', width: '150%', height: '150%', transform: 'translate(-50%, -50%)', pointerEvents: 'none', zIndex: 0 }}>
-              <motion.div style={{ width: '100%', height: '100%', background: 'radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, transparent 50%)', mixBlendMode: 'screen', x: bgParallaxX, y: bgParallaxY }}></motion.div>
+              <motion.div style={{ width: '100%', height: '100%', background: 'var(--bg-base)', x: bgParallaxX, y: bgParallaxY }}></motion.div>
             </div>
 
             <div className="diagram-wrapper" style={{ position: 'relative', zIndex: 1 }}>

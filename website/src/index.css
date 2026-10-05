@@ -124,15 +124,7 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-/* Background Atmosphere */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: -1;
-}
+/* Background Atmosphere (Removed giant radial gradient slop) */
 
 /* --- CINEMATIC FILM GRAIN NOISE --- */
 @keyframes noise {
@@ -243,9 +235,7 @@ p { margin-bottom: 1.5rem; text-wrap: pretty; max-width: 75ch; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: var(--bg-base);
   border-bottom: 1px solid var(--border-strong);
 }
 
@@ -358,7 +348,7 @@ p { margin-bottom: 1.5rem; text-wrap: pretty; max-width: 75ch; }
   border: 1px solid var(--border-strong);
   padding: 3rem;
   position: relative;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+  /* Removed soft shadow for flat design */
 }
 .hero-diagram-container::before {
   content: '';
